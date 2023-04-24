@@ -1,0 +1,122 @@
+.header {
+  background: rgba($black, 0.75);
+  backdrop-filter: blur(4px);
+  // box-shadow: $header-shadow;
+  height: 56px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100vw;
+
+  &-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0 12px;
+
+    @include responsive(s-xl) {
+      padding: 0 24px;
+    }
+  }
+
+  &-brand {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+
+    svg {
+      fill: $primary-color;
+      height: 40px;
+      margin-right: 8px;
+      transition: 0.25s transform ease-in-out;
+      width: 40px;
+    }
+
+    h1 {
+      color: $white;
+      font-size: 22px;
+      transition: 0.25s color ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+
+      h1 {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &-burger {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    padding: 8px;
+    width: 56px;
+
+    &:hover {
+      path {
+        stroke: $primary-color;
+      }
+    }
+
+    path {
+      fill: none;
+      stroke: $white;
+      stroke-width: 6;
+      transition: stroke-dasharray 0.6s
+          $header-cubic-bezier,
+        stroke-dashoffset 0.6s
+          $header-cubic-bezier,
+        0.25s stroke ease-in-out;
+    }
+
+    path:nth-child(1) {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+
+    path:nth-child(2) {
+      stroke-dasharray: 60 60;
+      stroke-width: 6;
+    }
+
+    path:nth-child(3) {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+  }
+
+  &-open {
+    .header {
+      &-burger {
+        path:nth-child(1) {
+          stroke-dasharray: 90 207;
+          stroke-dashoffset: -134;
+          stroke-width: 6;
+        }
+
+        path:nth-child(2) {
+          stroke-dasharray: 1 60;
+          stroke-dashoffset: -30;
+          stroke-width: 6;
+        }
+
+        path:nth-child(3) {
+          stroke-dasharray: 90 207;
+          stroke-dashoffset: -134;
+          stroke-width: 6;
+        }
+      }
+    }
+  }
+}

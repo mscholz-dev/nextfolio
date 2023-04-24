@@ -1,0 +1,42 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "next.config.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "git:deploy": "git checkout prod && git merge main && git push && git checkout main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mscholz-dev/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mscholz-dev/portfolio/issues"
+  },
+  "homepage": "https://github.com/mscholz-dev/portfolio#readme",
+  "dependencies": {
+    "@svgr/webpack": "^7.0.0",
+    "framer-motion": "^10.12.4",
+    "html-react-parser": "^3.0.16",
+    "next": "^13.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-text-typist": "^1.1.7",
+    "sass": "^1.62.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "@types/react": "^18.0.38",
+    "@types/react-dom": "^18.0.11",
+    "eslint": "^8.39.0",
+    "eslint-config-next": "^13.3.1",
+    "eslint-config-prettier": "^8.8.0",
+    "typescript": "^5.0.4"
+  }
+}

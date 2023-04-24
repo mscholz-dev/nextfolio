@@ -1,0 +1,38 @@
+.separator {
+  position: relative;
+
+  &:before,
+  &:after {
+    background: $light;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30%;
+  }
+
+  &:before {
+    left: 12px;
+
+    @include responsive(s-xl) {
+      left: 24px;
+    }
+  }
+
+  &:after {
+    right: 12px;
+
+    @include responsive(s-xl) {
+      right: 24px;
+    }
+  }
+
+  svg {
+    display: flex;
+    fill: $primary-color;
+    height: 64px;
+    margin: 0 auto;
+    width: 64px;
+  }
+}

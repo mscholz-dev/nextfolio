@@ -1,0 +1,27 @@
+.wrapper {
+  &-container {
+    max-width: 1000px;
+  }
+
+  &-padding {
+    &-x {
+      padding-left: 12px;
+      padding-right: 12px;
+
+      @include responsive(s-xl) {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+
+    &-y {
+      padding-bottom: 32px;
+      padding-top: 32px;
+
+      @include responsive(t-xs) {
+        padding-bottom: 64px;
+        padding-top: 64px;
+      }
+    }
+  }
+}
