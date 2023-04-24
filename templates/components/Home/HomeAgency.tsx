@@ -45,7 +45,7 @@ const HomeAgency: FC = () => {
           <p>
             Tayler <IconLogo /> Barthold
           </p>
-          <h2>
+          <h2 className="title-secondary">
             Best creative and modern agency.
           </h2>
         </div>

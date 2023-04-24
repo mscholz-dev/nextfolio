@@ -19,6 +19,7 @@ const Index: FC = () => {
         <HomeAgency />
         <Separator />
         <HomeXp />
+        <Separator />
         <div style={{ height: "100vh" }}></div>
       </>
     </Page>
