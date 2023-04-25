@@ -29,9 +29,7 @@ module.exports = {
     return config;
   },
   // init .env variables
-  env: {
-    NODEENV: process.env.NODEENV,
-  },
+  env: {},
   // disable trash header
   poweredByHeader: false,
   // custom next server headers

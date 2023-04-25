@@ -2,11 +2,9 @@ import React, { FC } from "react";
 import Head from "next/head";
 import Header from "@/templates/layouts/Header";
 import Footer from "@/templates/layouts/Footer";
-import BackgroundAnim from "@/templates/layouts/BackgroundAnim";
-// import { ToastContainer } from "react-toastify";
 
 // interfaces
-import { IPage } from "../../utils/interfaces";
+import { IPage } from "@/utils/interfaces";
 
 const Page: FC<IPage> = ({
   children,
@@ -14,7 +12,6 @@ const Page: FC<IPage> = ({
   description,
   padding,
   className,
-  noBackgroundAnim,
 }) => {
   return (
     <>
@@ -44,10 +41,6 @@ const Page: FC<IPage> = ({
       >
         {children}
       </main>
-
-      {/* {!noBackgroundAnim && <BackgroundAnim />} */}
-
-      {/* <ToastContainer /> */}
 
       <Footer />
     </>

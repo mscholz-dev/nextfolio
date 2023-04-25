@@ -15,16 +15,12 @@ $breakpoints: (
 // color
 $transparent: transparent;
 
-$white: #fff;
+$white: #f3f1ef;
 $black: #171513;
 
-$light: #bbbbbb;
+$primary-color: #e84d34;
 
-$grey: #555555;
-
-$primary-color: #e94d35;
-
-$secondary-color: #2eb086;
+// $secondary-color: #2eb086;
 
 $green-color: #64d171;
 $orange-color: #f67457;
@@ -33,18 +29,11 @@ $yellow-color: #ffea20;
 $gold-color: #fac213;
 $purple-color: #512da8;
 
-// gradient
-// $primary-secondary-gradient: linear-gradient(
-//   90deg,
-//   $black,
-//   $secondary-color
-// );
-
 // shadow
-// $header-shadow: rgba($black, 0.16) 0px 3px 6px,
-//   rgba($black, 0.23) 0px 3px 6px;
-// $home-benefits-shadow: rgba($black, 0.24) 0px 3px
-//   8px;
+$header-shadow: rgba($black, 0.16) 0px 3px 6px,
+  rgba($black, 0.23) 0px 3px 6px;
+$home-benefits-shadow: rgba($black, 0.24) 0px 3px
+  8px;
 
 // cubic-bezier
 $header-cubic-bezier: cubic-bezier(

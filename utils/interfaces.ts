@@ -4,5 +4,4 @@ export interface IPage {
   description: string;
   padding?: boolean;
   className?: string;
-  noBackgroundAnim?: boolean;
 }

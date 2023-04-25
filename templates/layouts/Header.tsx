@@ -1,32 +1,53 @@
 import React, { FC, useState } from "react";
-import IconLogo from "@/public/icons/logo.svg";
 import Link from "next/link";
+import IconLogo from "@/public/icons/logo.svg";
 import IconBurgerMenu from "@/public/icons/burger-menu.svg";
 
-const Footer: FC = () => {
+const Header: FC = () => {
   const [open, setOpen] =
     useState<boolean>(false);
 
   const links = [
     {
       id: 0,
-      url: "#projets",
-      title: "Projets",
+      url: "#presentation",
+      title: "👨‍💻 Présentation",
     },
     {
       id: 1,
-      url: "#competences",
-      title: "Compétences",
+      url: "#projets",
+      title: "⚡ Projets",
     },
     {
       id: 2,
-      url: "#temoignages",
-      title: "Témoignages",
+      url: "#competences-techniques",
+      title: "🧠 Compétences techniques",
     },
     {
       id: 3,
+      url: "#formations",
+      title: "💡 Formations",
+      // TODO: ajouter la formation accessibilité et ThreeJS journey
+    },
+    {
+      id: 4,
+      url: "#experiences-professionnelles",
+      title: "👨‍💼 Expérience professionnelle",
+    },
+    {
+      id: 5,
+      url: "#references",
+      title: "🗨️ Références",
+    },
+    {
+      id: 6,
+      url: "#articles",
+      title: "📚 Articles",
+    },
+    {
+      id: 7,
       url: "#contact",
-      title: "Contact",
+      title: "📨 Contact",
     },
   ];
 
@@ -42,19 +63,36 @@ const Footer: FC = () => {
     >
       <div className="header-wrapper">
         <Link href="/" className="header-brand">
-          <IconLogo />
-          <h1>mscholz.dev</h1>
+          <IconLogo className="header-brand-logo" />
+          <h1 className="header-brand-title">
+            mscholz.dev
+          </h1>
         </Link>
 
-        <button
+        <div className="header-category">
+          {links.map(({ id, url, title }) => (
+            <Link
+              key={id}
+              href={url}
+              className="header-category-item"
+              onClick={handleClick}
+            >
+              <span className="header-category-item-container">
+                <span className="header-category-item-title">
+                  {title}
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        <IconBurgerMenu
           className="header-burger"
           onClick={handleOpen}
-        >
-          <IconBurgerMenu />
-        </button>
+        />
       </div>
     </header>
   );
 };
 
-export default Footer;
+export default Header;

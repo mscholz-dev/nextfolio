@@ -6,19 +6,7 @@
 @import "bases/variables", "bases/reset",
   "bases/html";
 
-@import "components/title",
-  "components/web-gl-background",
-  "components/home/home-intro",
-  "components/home/home-agency",
-  "components/separator",
-  "components/home/home-xp",
-  "components/home/home-projects",
-  "components/home/home-services",
-  "components/home/home-articles",
-  "components/form/form-input",
-  "components/form/form-contact",
-  "components/home/home-customers";
+@import "components/title";
 
 @import "layouts/main", "layouts/wrapper",
-  "layouts/header", "layouts/footer",
-  "layouts/background-anim";
+  "layouts/header", "layouts/footer";

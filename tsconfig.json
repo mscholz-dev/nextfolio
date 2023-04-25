@@ -21,8 +21,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "utils/webGlBackgroundScript.js"
+    "**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }
