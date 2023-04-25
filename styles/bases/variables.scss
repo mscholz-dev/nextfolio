@@ -52,30 +52,6 @@ $bounce-cubic-bezier: cubic-bezier(
   1.55
 );
 
-// animations
-// $loading-animation: loading 1s infinite linear;
-// @keyframes loading {
-//   from {
-//     transform: translate(-50%, -50%) rotate(0);
-//   }
-
-//   to {
-//     transform: translate(-50%, -50%) rotate(1turn);
-//   }
-// }
-
-// $loading-no-translate-animation: loadingNoTranslate
-//   1s infinite linear;
-// @keyframes loadingNoTranslate {
-//   from {
-//     transform: rotate(0);
-//   }
-
-//   to {
-//     transform: rotate(1turn);
-//   }
-// }
-
 // fonts
 // primary
 $primary-font-regular: "primaryRegular";

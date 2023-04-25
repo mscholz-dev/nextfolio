@@ -1,0 +1,42 @@
+.separator {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  &-line {
+    &-one,
+    &-two {
+      background: $black;
+      display: block;
+      height: 2px;
+      width: 100%;
+    }
+  }
+
+  &-icon {
+    fill: $primary-color;
+    margin: 0 24px;
+    height: 64px;
+    min-height: 64px;
+    min-width: 64px;
+    width: 64px;
+
+    @include responsive(s-xl) {
+      margin: 0 48px;
+      height: 72px;
+      min-height: 72px;
+      min-width: 72px;
+      width: 72px;
+    }
+
+    @include responsive(t-xs) {
+      margin: 0 64px;
+      height: 96px;
+      min-height: 96px;
+      min-width: 96px;
+      width: 96px;
+    }
+  }
+}
