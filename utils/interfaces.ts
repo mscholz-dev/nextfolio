@@ -1,3 +1,6 @@
+// types
+import { TFormInput } from "./types";
+
 export interface IPage {
   children: JSX.Element;
   title: string;
@@ -5,3 +8,5 @@ export interface IPage {
   padding?: boolean;
   className?: string;
 }
+
+export interface IFormInput extends TFormInput {}

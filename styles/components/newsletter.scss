@@ -1,0 +1,46 @@
+.newsletter {
+  background: $light;
+
+  &-wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+
+    @include responsive(t-xs) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+
+    @include responsive(s-xl) {
+      font-size: 26px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 28px;
+      margin-bottom: 0;
+      margin-right: 24px;
+    }
+  }
+
+  &-form {
+    @include responsive(s-xl) {
+      align-items: center;
+      display: flex;
+    }
+
+    .form-input {
+      margin-bottom: 32px;
+
+      @include responsive(s-xl) {
+        margin-bottom: 0;
+        margin-right: 24px;
+        width: 100%;
+      }
+    }
+  }
+}

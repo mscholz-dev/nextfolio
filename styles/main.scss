@@ -6,7 +6,9 @@
 @import "bases/variables", "bases/reset",
   "bases/html";
 
-@import "components/title";
+@import "components/title",
+  "components/newsletter", "components/btn",
+  "components/form/form-input";
 
 @import "layouts/main", "layouts/wrapper",
   "layouts/header", "layouts/footer";

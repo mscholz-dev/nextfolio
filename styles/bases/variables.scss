@@ -18,6 +18,8 @@ $transparent: transparent;
 $white: #f3f1ef;
 $black: #171513;
 
+$light: #e6e3dd;
+
 $primary-color: #e84d34;
 
 // $secondary-color: #2eb086;
@@ -43,12 +45,12 @@ $header-cubic-bezier: cubic-bezier(
   1
 );
 
-// $bounce-cubic-bezier: cubic-bezier(
-//   0.68,
-//   -0.55,
-//   0.265,
-//   1.55
-// );
+$bounce-cubic-bezier: cubic-bezier(
+  0.68,
+  -0.55,
+  0.265,
+  1.55
+);
 
 // animations
 // $loading-animation: loading 1s infinite linear;

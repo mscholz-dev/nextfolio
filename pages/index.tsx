@@ -1,3 +1,4 @@
+import Newsletter from "@/templates/components/Newsletter";
 import Page from "@/templates/layouts/Page";
 import React, { FC } from "react";
 
@@ -9,7 +10,7 @@ const Index: FC = () => {
       padding
     >
       <>
-        <p>test</p>
+        <Newsletter />
       </>
     </Page>
   );

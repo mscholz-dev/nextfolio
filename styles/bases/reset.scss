@@ -126,6 +126,7 @@ input[type="number"] {
 }
 input,
 textarea {
+  background: $transparent;
   border: 0;
   outline: none !important;
   padding: 0;

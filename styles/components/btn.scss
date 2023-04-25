@@ -1,0 +1,18 @@
+.btn {
+  &-primary {
+    border: 2px solid $black;
+    @include background200vw($light, $black);
+    color: $light;
+    font-size: 16px;
+    min-height: 52px;
+    padding: 12px 32px;
+    transition: 0.25s background-position
+        ease-in-out,
+      0.25s color ease-in-out;
+
+    &:hover {
+      background-position: left;
+      color: $black;
+    }
+  }
+}
