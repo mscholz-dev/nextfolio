@@ -2,8 +2,16 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 32px auto;
   max-width: 1000px;
+
+  @include responsive(s-xl) {
+    margin: 48px auto;
+  }
+
+  @include responsive(t-xs) {
+    margin-bottom: 64px auto;
+  }
 
   &-line {
     &-one,

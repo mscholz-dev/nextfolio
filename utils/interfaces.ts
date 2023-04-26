@@ -10,3 +10,10 @@ export interface IPage {
 }
 
 export interface IFormInput extends TFormInput {}
+
+export interface IProjectItem {
+  imgSrc: string;
+  imgAlt: string;
+  category: string;
+  title: string;
+}

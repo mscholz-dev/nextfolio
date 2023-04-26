@@ -1,6 +1,14 @@
 .title {
   &-secondary {
     font-size: 32px;
+
+    @include responsive(s-xl) {
+      font-size: 38px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 48px;
+    }
   }
 
   &-tertiary {

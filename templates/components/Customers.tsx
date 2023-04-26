@@ -1,27 +1,23 @@
 import React, { FC } from "react";
-import IconCopyright from "@/public/icons/copyright.svg";
+import IconPCGenius from "@/public/icons/customers/pc-genius.svg";
 
 const Customers: FC = () => {
   const companies = [
     {
       id: 0,
-      icon: <IconCopyright />,
-      name: "PC Genius",
-    },
-    {
-      id: 2,
-      icon: <IconCopyright />,
+      icon: <IconPCGenius />,
       name: "PC Genius",
     },
   ];
 
-  // TODO: here
-
   return (
-    <section className="customers">
-      <h2 className="customers-title">
+    <section className="customers wrapper-padding-x">
+      <h2 className="customers-title title-secondary">
         Clients conquis
       </h2>
+      <p className="customers-subtitle">
+        Clientèle satisfaite, résultats concrets
+      </p>
 
       <article className="customers-wrapper">
         {companies.map(({ id, icon, name }) => (

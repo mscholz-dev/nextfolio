@@ -3,6 +3,8 @@ import Customers from "@/templates/components/Customers";
 import Newsletter from "@/templates/components/Newsletter";
 import Separator from "@/templates/components/Separator";
 import Page from "@/templates/layouts/Page";
+import Services from "@/templates/components/Services";
+import Projects from "@/templates/components/Projects";
 
 const Index: FC = () => {
   return (
@@ -12,6 +14,11 @@ const Index: FC = () => {
       padding
     >
       <>
+        <Separator />
+        <Projects />
+        <Separator />
+        <Services />
+        <Separator />
         <Customers />
         <Separator />
         <Newsletter />

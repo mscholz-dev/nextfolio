@@ -1,0 +1,136 @@
+.project-item {
+  cursor: pointer;
+
+  @include responsive(s-xl) {
+    display: flex;
+
+    &:nth-of-type(2n) {
+      flex-direction: row-reverse;
+
+      .project-item {
+        &-content {
+          margin-left: 0;
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .project-item {
+      &-img {
+        transform: scale(1.15);
+      }
+
+      &-category {
+        background-position: left;
+      }
+
+      &-cta {
+        &:after {
+          width: 0;
+        }
+      }
+    }
+  }
+
+  &-cover {
+    display: block;
+    height: 260px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    width: 100%;
+
+    @include responsive(s-xl) {
+      height: 100%;
+      margin-bottom: 0;
+      width: 50%;
+    }
+  }
+
+  &-img {
+    height: 100%;
+    object-fit: cover;
+    transition: 0.25s transform ease-in-out;
+    width: 100%;
+  }
+
+  &-content {
+    @include responsive(s-xl) {
+      margin-left: 24px;
+      width: calc(50% - 24px);
+    }
+  }
+
+  &-category {
+    background: $primary-color;
+    @include background200vw(
+      $transparent,
+      $primary-color
+    );
+    color: $white;
+    font-size: 18px;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    position: relative;
+    text-transform: uppercase;
+    transition: 0.25s background-position
+      ease-in-out;
+    width: fit-content;
+
+    &:after {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    @include responsive(s-xl) {
+      margin-bottom: 24px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &-title {
+    margin-bottom: 12px;
+
+    @include responsive(s-xl) {
+      margin-bottom: 24px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &-cta {
+    font-family: $secondary-font-regular;
+    font-size: 20px;
+    position: relative;
+    width: fit-content;
+
+    &:after {
+      background: $black;
+      bottom: 0;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transform-origin: right;
+      transition: 0.25s width ease-in-out;
+      width: 100%;
+    }
+
+    @include responsive(s-xl) {
+      margin-bottom: 24px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 24px;
+    }
+  }
+}
