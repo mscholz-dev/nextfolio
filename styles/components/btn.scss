@@ -1,8 +1,11 @@
 .btn {
   &-primary {
     border: 2px solid $black;
-    @include background200vw($light, $black);
-    color: $light;
+    @include background200vw(
+      $transparent,
+      $black
+    );
+    color: $white;
     font-size: 16px;
     min-height: 52px;
     padding: 12px 32px;
@@ -13,6 +16,17 @@
     &:hover {
       background-position: left;
       color: $black;
+    }
+
+    &-light {
+      @extend .btn-primary;
+      @include background200vw($light, $black);
+      color: $light;
+    }
+
+    &-full {
+      @extend .btn-primary;
+      width: 100%;
     }
   }
 }

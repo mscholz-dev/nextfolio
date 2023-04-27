@@ -1,15 +1,115 @@
 .article {
+  border: 2px solid $black;
+  cursor: pointer;
+  flex-direction: column;
+  margin-bottom: 24px;
+  transition: 0.25s background ease-in-out;
+
+  &:hover {
+    background: $black;
+
+    .article {
+      &-img {
+        transform: scale(1.15);
+      }
+
+      &-details {
+        color: $white;
+
+        &-item {
+          color: $white;
+        }
+      }
+
+      &-title {
+        color: $primary-color;
+      }
+
+      &-description {
+        color: $light;
+      }
+    }
+  }
+
+  @include responsive(s-xl) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &:nth-last-of-type(2n) {
+      .article {
+        &-img {
+          order: 1;
+        }
+
+        &-wrapper {
+          order: -1;
+        }
+      }
+    }
+  }
+
   &-img {
+    height: 100%;
+    object-fit: cover;
+    transition: 0.25s transform ease-in-out;
+    width: 100%;
+
+    &-container {
+      display: flex;
+      height: 250px;
+      overflow: hidden;
+      width: 100%;
+
+      @include responsive(s-xl) {
+        height: 100%;
+      }
+    }
+  }
+
+  &-wrapper {
+    padding: 24px 12px;
+
+    @include responsive(s-xl) {
+      padding: 24px;
+    }
+  }
+
+  &-details,
+  &-details-item,
+  &-title,
+  &-description {
+    transition: 0.25s color ease-in-out;
   }
 
   &-details {
+    color: $primary-color;
+    margin-bottom: 12px;
+
+    @include responsive(t-xs) {
+      font-size: 18px;
+    }
+
     &-item {
+      color: $primary-color;
+      text-transform: uppercase;
     }
   }
 
   &-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+
+    @include responsive(t-xs) {
+      font-size: 28px;
+    }
   }
 
   &-description {
+    color: $dark;
+    font-size: 14px;
+
+    @include responsive(t-xs) {
+      font-size: 16px;
+    }
   }
 }

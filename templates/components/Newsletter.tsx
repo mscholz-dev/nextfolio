@@ -50,7 +50,7 @@ const Newsletter: FC = () => {
             ariaDescribedby="Veuillez renseigner votre adresse email pour recevoir les newsletters"
           />
 
-          <button className="btn-primary">
+          <button className="btn-primary-light">
             S&apos;abonner
           </button>
         </form>

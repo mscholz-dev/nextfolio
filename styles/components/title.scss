@@ -26,6 +26,10 @@
       margin-bottom: 32px;
       text-align: center;
       text-transform: uppercase;
+
+      @include responsive(t-xs) {
+        margin-bottom: 48px;
+      }
     }
   }
 }

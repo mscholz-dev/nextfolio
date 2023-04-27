@@ -20,7 +20,7 @@ const Page: FC<IPage> = ({
           name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no"
         />
-        <title>{`MSCHOLZ.DEV • ${title}`}</title>
+        <title>{`mscholz.dev • ${title}`}</title>
         <meta
           name="description"
           content={description}

@@ -6,7 +6,7 @@ import articlesData from "@/utils/data/articles";
 
 const Articles: FC = () => {
   return (
-    <section className="articles">
+    <section className="articles wrapper-padding-x">
       <h2 className="title-home-secondary">
         Articles
       </h2>
@@ -37,6 +37,10 @@ const Articles: FC = () => {
           ),
         )}
       </div>
+
+      <button className="btn-primary-full articles-btn">
+        Chercher plus d&apos;articles
+      </button>
     </section>
   );
 };

@@ -13,14 +13,16 @@ const Article: FC<IArticle> = ({
 }) => {
   return (
     <article className="article">
-      {/* eslint-disable-next-line */}
-      <img
-        src={`/img/articles/${imgSrc}.webp`}
-        alt={imgAlt}
-        className="article-img"
-      />
+      <span className="article-img-container">
+        {/* eslint-disable-next-line */}
+        <img
+          src={`/img/articles/${imgSrc}.webp`}
+          alt={imgAlt}
+          className="article-img"
+        />
+      </span>
 
-      <div>
+      <div className="article-wrapper">
         <p className="article-details">
           <span className="article-details-item">
             {category}
@@ -30,12 +32,13 @@ const Article: FC<IArticle> = ({
             {date}
           </span>
         </p>
-        <h3 className="article-title">{title}</h3>
-      </div>
 
-      <p className="article-description">
-        {description}
-      </p>
+        <h3 className="article-title">{title}</h3>
+
+        <p className="article-description">
+          {description}
+        </p>
+      </div>
     </article>
   );
 };
