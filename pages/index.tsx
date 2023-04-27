@@ -7,6 +7,8 @@ import Services from "@/templates/components/Services";
 import Projects from "@/templates/components/Project/Projects";
 import Diplomas from "@/templates/components/Diploma/Diplomas";
 import Articles from "@/templates/components/Article/Articles";
+import Intro from "@/templates/components/Intro";
+import Details from "@/templates/components/Details";
 
 const Index: FC = () => {
   return (
@@ -16,6 +18,8 @@ const Index: FC = () => {
       padding
     >
       <>
+        <Intro />
+        <Details />
         <Separator />
         <Diplomas />
         <Separator />
