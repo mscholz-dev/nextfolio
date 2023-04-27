@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import IconArrow from "@/public/icons/arrow.svg";
 
 // interfaces
 import { IProjectItem } from "@/utils/interfaces";
@@ -21,15 +22,25 @@ const ProjectItem: FC<IProjectItem> = ({
       </span>
 
       <div className="project-item-content">
-        <p className="project-item-category">
-          {category}
-        </p>
+        <div className="project-item-category">
+          <p className="project-item-category-light">
+            {category}
+          </p>
+
+          <p className="project-item-category-colored">
+            {category}
+          </p>
+        </div>
+
         <h3 className="project-item-title title-tertiary">
           {title}
         </h3>
 
         <p className="project-item-cta">
-          Voir plus
+          <span className="project-item-cta-text">
+            Voir plus
+          </span>
+          <IconArrow className="project-item-cta-arrow" />
         </p>
       </div>
     </div>

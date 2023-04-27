@@ -23,12 +23,29 @@
       }
 
       &-category {
-        background-position: left;
+        &-light {
+          clip-path: polygon(
+            100% 0,
+            100% 0,
+            100% 100%,
+            100% 100%
+          );
+        }
       }
 
       &-cta {
-        &:after {
-          width: 0;
+        &-text {
+          &:after {
+            width: 0;
+          }
+        }
+
+        &-arrow {
+          margin-left: 24px;
+
+          @include responsive(t-xs) {
+            margin-left: 32px;
+          }
         }
       }
     }
@@ -63,25 +80,36 @@
   }
 
   &-category {
-    background: $primary-color;
-    @include background200vw(
-      $transparent,
-      $primary-color
-    );
-    color: $white;
     font-size: 18px;
     margin-bottom: 12px;
-    padding: 6px 12px;
     position: relative;
     text-transform: uppercase;
-    transition: 0.25s background-position
-      ease-in-out;
     width: fit-content;
 
-    &:after {
+    &-light,
+    &-colored {
+      padding: 6px 12px;
+    }
+
+    &-light {
+      background: $primary-color;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0% 100%
+      );
+      color: $white;
       left: 0;
+      overflow: hidden;
       position: absolute;
       top: 0;
+      transition: 0.25s clip-path ease-in-out;
+      z-index: 1;
+    }
+
+    &-colored {
+      color: $primary-color;
     }
 
     @include responsive(s-xl) {
@@ -108,29 +136,47 @@
   }
 
   &-cta {
-    font-family: $secondary-font-regular;
-    font-size: 20px;
-    position: relative;
+    align-items: center;
+    display: flex;
     width: fit-content;
-
-    &:after {
-      background: $black;
-      bottom: 0;
-      content: "";
-      height: 2px;
-      left: 0;
-      position: absolute;
-      transform-origin: right;
-      transition: 0.25s width ease-in-out;
-      width: 100%;
-    }
 
     @include responsive(s-xl) {
       margin-bottom: 24px;
     }
 
-    @include responsive(t-xs) {
-      font-size: 24px;
+    &-text {
+      font-family: $secondary-font-regular;
+      font-size: 20px;
+      position: relative;
+
+      &:after {
+        background: $black;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        transform-origin: right;
+        transition: 0.25s width ease-in-out;
+        width: 100%;
+      }
+
+      @include responsive(t-xs) {
+        font-size: 24px;
+      }
+    }
+
+    &-arrow {
+      height: 16px;
+      margin-left: 12px;
+      transition: 0.25s margin-left ease-in-out;
+      width: 16px;
+
+      @include responsive(t-xs) {
+        height: 20px;
+        margin-left: 16px;
+        width: 20px;
+      }
     }
   }
 }
