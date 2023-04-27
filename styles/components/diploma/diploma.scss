@@ -1,0 +1,125 @@
+.diploma {
+  border: 2px solid $black;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 24px;
+  padding: 12px;
+  transition: 0.25s background ease-in-out;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background: $black;
+
+    .diploma {
+      &-id {
+        background: $primary-color;
+      }
+
+      &-title,
+      &-category {
+        color: $white;
+      }
+
+      &-school {
+        color: $light;
+      }
+
+      &-year {
+        color: $primary-color;
+      }
+    }
+  }
+
+  @include responsive(s-xl) {
+    padding: 24px;
+  }
+
+  &-title,
+  &-category,
+  &-school,
+  &-year {
+    transition: 0.25s color ease-in-out;
+  }
+
+  &-id {
+    align-items: center;
+    background: $black;
+    color: $white;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    margin-right: 24px;
+    min-height: 36px;
+    min-width: 36px;
+    transition: 0.25s background ease-in-out;
+    width: 36px;
+
+    @include responsive(s-xl) {
+      height: 42px;
+      font-size: 18px;
+      min-height: 42px;
+      min-width: 42px;
+      width: 42px;
+    }
+  }
+
+  &-wrapper {
+    width: 100%;
+
+    @include responsive(t-xs) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &-content {
+    margin-bottom: 16px;
+
+    @include responsive(t-xs) {
+      margin-bottom: 0;
+      width: 60%;
+    }
+  }
+
+  &-title {
+    font-size: 18px;
+    margin-bottom: 4px;
+
+    @include responsive(s-xl) {
+      font-size: 24px;
+    }
+  }
+
+  &-school {
+    color: $dark;
+  }
+
+  &-details {
+    @include responsive(s-xl) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include responsive(t-xs) {
+      max-width: 250px;
+      width: fit-content;
+    }
+  }
+
+  &-category {
+    margin-bottom: 4px;
+    text-transform: uppercase;
+
+    @include responsive(s-xl) {
+      margin-bottom: 0;
+      margin-right: 24px;
+    }
+  }
+
+  &-year {
+  }
+}

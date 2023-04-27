@@ -2,17 +2,6 @@
   margin: 0 auto;
   max-width: 1000px;
 
-  &-title {
-    text-align: center;
-    margin-bottom: 12px;
-  }
-
-  &-subtitle {
-    text-align: center;
-    margin-bottom: 32px;
-    text-transform: uppercase;
-  }
-
   &-wrapper {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -27,7 +16,28 @@
 
   &-item {
     border: 2px solid $black;
+    cursor: pointer;
     padding: 24px 12px;
+    transition: 0.25s background ease-in-out;
+
+    &:hover {
+      background: $black;
+
+      .services-item {
+        &-title {
+          color: $primary-color;
+        }
+
+        &-text {
+          color: $white;
+        }
+      }
+    }
+
+    &-title,
+    &-text {
+      transition: 0.25s color ease-in-out;
+    }
 
     &-title {
       margin-bottom: 24px;

@@ -1,15 +1,4 @@
 .customers {
-  &-title {
-    margin-bottom: 12px;
-    text-align: center;
-  }
-
-  &-subtitle {
-    margin-bottom: 32px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
   &-wrapper {
     display: flex;
   }
@@ -17,20 +6,39 @@
   &-item {
     align-items: center;
     border: 2px solid $black;
+    cursor: pointer;
     display: flex;
     height: 72px;
     justify-content: center;
     margin: 0 auto;
     max-width: 250px;
+    transition: 0.25s background ease-in-out;
     width: 100%;
 
+    &:hover {
+      background: $black;
+
+      .customers-item {
+        &-icon {
+          background: $white;
+        }
+
+        &-name {
+          color: $white;
+        }
+      }
+    }
+
     &-icon {
+      border-radius: 50%;
       height: 24px;
       margin-right: 8px;
+      transition: 0.25s background ease-in-out;
       width: 24px;
     }
 
     &-name {
+      transition: 0.25s color ease-in-out;
     }
   }
 }

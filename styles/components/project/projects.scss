@@ -2,17 +2,6 @@
   margin: 0 auto;
   max-width: 1000px;
 
-  &-title {
-    margin-bottom: 12px;
-    text-align: center;
-  }
-
-  &-subtitle {
-    margin-bottom: 32px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
   &-wrapper {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

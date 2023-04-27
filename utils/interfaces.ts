@@ -17,3 +17,20 @@ export interface IProjectItem {
   category: string;
   title: string;
 }
+
+export interface IDiploma {
+  id: number;
+  title: string;
+  school: string;
+  category: string;
+  year: number;
+}
+
+export interface IArticle {
+  imgSrc: string;
+  imgAlt: string;
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+}
