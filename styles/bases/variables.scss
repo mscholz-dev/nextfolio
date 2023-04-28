@@ -24,8 +24,6 @@ $dark: #555;
 
 $primary-color: #e84d34;
 
-// $secondary-color: #2eb086;
-
 $green-color: #64d171;
 $orange-color: #f67457;
 $blue-color: #00a4fd;
@@ -62,6 +60,7 @@ $primary-font-regular-path: "/fonts/cantarell/regular.ttf";
 $primary-font-bold: "primaryBold";
 $primary-font-bold-path: "/fonts/cantarell/bold.ttf";
 
+// secondary
 $secondary-font-regular: "secondaryRegular";
 $secondary-font-regular-path: "/fonts/fira-code/regular.ttf";
 
@@ -73,8 +72,6 @@ $secondary-font-semi-bold-path: "/fonts/fira-code/semi-bold.ttf";
 
 $secondary-font-bold: "secondaryBold";
 $secondary-font-bold-path: "/fonts/fira-code/bold.ttf";
-
-// secondary
 
 // primary
 @font-face {

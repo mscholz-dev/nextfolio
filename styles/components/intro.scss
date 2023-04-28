@@ -1,2 +1,78 @@
 .intro {
+  margin-bottom: 128px;
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &-item {
+      font-size: 32px;
+      text-transform: uppercase;
+
+      &-icon {
+        fill: $primary-color;
+        height: 40px;
+        position: relative;
+        top: 8px;
+        width: 40px;
+      }
+
+      &-strike {
+        position: relative;
+        text-decoration: none;
+
+        &:after {
+          background: $black;
+          content: "";
+          height: 2px;
+          left: 0;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+
+    &-title {
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    &-icon {
+      fill: $primary-color;
+      margin: 0 8px;
+      height: 24px;
+      position: relative;
+      top: 2px;
+      width: 24px;
+    }
+  }
+
+  &-btn {
+    border: 2px solid $black;
+    display: flex;
+    flex-direction: row;
+
+    &-container {
+      position: relative;
+    }
+
+    &-text {
+      font-size: 16px;
+
+      &:first-child {
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
 }
