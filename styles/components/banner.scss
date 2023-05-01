@@ -1,0 +1,32 @@
+.banner {
+  align-items: center;
+  background: $black;
+  bottom: -200px;
+  display: flex;
+  left: 0;
+  padding: 24px 32px;
+  position: absolute;
+  transform: rotate(-4deg);
+  transform-origin: left bottom;
+  width: max-content;
+
+  &-container {
+    align-items: center;
+    display: flex;
+  }
+
+  &-icon {
+    fill: $primary-color;
+    height: 24px;
+    margin: 0 24px;
+    min-height: 24px;
+    min-width: 24px;
+    width: 24px;
+  }
+
+  &-word {
+    color: $white;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}

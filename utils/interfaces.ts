@@ -34,3 +34,10 @@ export interface IArticle {
   category: string;
   date: string;
 }
+
+export interface IBanner {
+  words: {
+    id: number;
+    word: string;
+  }[];
+}

@@ -1,5 +1,11 @@
 .intro {
-  margin-bottom: 128px;
+  margin-bottom: 256px;
+  position: relative;
+
+  &-main {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
 
   &-title {
     display: flex;
@@ -61,17 +67,74 @@
     display: flex;
     flex-direction: row;
 
+    &:hover {
+      .intro-btn-text {
+        &:first-child {
+          clip-path: polygon(
+            100% 0,
+            100% 0,
+            100% 100%,
+            100% 100%
+          );
+        }
+      }
+    }
+
     &-container {
+      cursor: pointer;
+      display: block;
+      font-size: 16px;
       position: relative;
+      width: fit-content;
+
+      &:first-child {
+        .intro-btn-text {
+          &:first-child {
+            background: $black;
+            color: $white;
+          }
+
+          &:last-child {
+            background: $primary-color;
+            color: $black;
+          }
+        }
+      }
+
+      &:last-child {
+        .intro-btn-text {
+          &:first-child {
+            background: $white;
+            color: $black;
+          }
+
+          &:last-child {
+            background: $black;
+            color: $white;
+          }
+        }
+      }
     }
 
     &-text {
+      display: block;
       font-size: 16px;
+      padding: 12px 24px;
 
       &:first-child {
+        border: 0;
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% 100%,
+          0% 100%
+        );
         left: 0;
+        overflow: hidden;
         position: absolute;
         top: 0;
+        transition: 0.25s clip-path ease-in-out;
+        z-index: 1;
       }
     }
   }
