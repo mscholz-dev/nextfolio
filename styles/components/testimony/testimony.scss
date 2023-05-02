@@ -1,4 +1,17 @@
 .testimony {
+  margin: 0 auto;
+  max-width: 1000px;
+
   &-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @include responsive(t-xs) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 824px;
+    }
   }
 }

@@ -1,5 +1,13 @@
-import React, { FC, useState } from "react";
+import React, {
+  FC,
+  useEffect,
+  useState,
+  useRef,
+} from "react";
 import Image from "next/image";
+import IconPause from "@/public/icons/pause.svg";
+import IconPlay from "@/public/icons/play.svg";
+import IconBackward from "@/public/icons/backward.svg";
 
 // interfaces
 import { ITestimonyItem } from "@/utils/interfaces";
@@ -12,11 +20,63 @@ const TestimonyItem: FC<ITestimonyItem> = ({
   company,
   audio,
 }) => {
+  const indicatorRef =
+    useRef<HTMLSpanElement>(null);
+
+  const [audioFile, setAudioFile] =
+    useState<null | HTMLAudioElement>(null);
+
   const [listening, setListening] =
     useState(false);
 
-  const handleClick = () =>
-    setListening(!listening);
+  const handleClick = (): void => {
+    // prevent nullable
+    if (!audioFile) return;
+
+    if (listening) {
+      setListening(false);
+      audioFile.pause();
+      return;
+    }
+
+    audioFile.currentTime = 0;
+    audioFile.play();
+    setListening(true);
+  };
+
+  const handleCurrentTime = (): void => {
+    // prevent nullable
+    if (!indicatorRef.current || !audioFile)
+      return;
+
+    indicatorRef.current.style.width = `${
+      (audioFile.currentTime /
+        audioFile.duration) *
+      100
+    }%`;
+  };
+
+  useEffect((): void => {
+    setAudioFile(
+      new Audio(
+        `/audios/testimonies/${audio}.mp3`,
+      ),
+    );
+
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect((): void => {
+    // prevent nullable
+    if (!audioFile) return;
+
+    audioFile.addEventListener(
+      "timeupdate",
+      handleCurrentTime,
+    );
+
+    // eslint-disable-next-line
+  }, [audioFile]);
 
   return (
     <button
@@ -34,6 +94,8 @@ const TestimonyItem: FC<ITestimonyItem> = ({
         height={500}
         width={500}
       />
+
+      <span className="testimony-item-filter" />
 
       <div className="testimony-item-content">
         <h3 className="testimony-item-title">
@@ -54,14 +116,21 @@ const TestimonyItem: FC<ITestimonyItem> = ({
         </p>
       </div>
 
-      <div className="testimony-item-btn">
-        <span className="testimony-item-btn-icon" />
+      <span className="testimony-item-btn">
+        {audioFile !== null &&
+        audioFile.currentTime !== 0 ? (
+          <IconBackward className="testimony-item-btn-icon" />
+        ) : listening ? (
+          <IconPause className="testimony-item-btn-icon" />
+        ) : (
+          <IconPlay className="testimony-item-btn-icon play" />
+        )}
+      </span>
 
-        <audio
-          src={`/audios/testimonies/${audio}.mp3`}
-          className="testimony-item-audio"
-        />
-      </div>
+      <span
+        ref={indicatorRef}
+        className="testimony-item-indicator"
+      />
     </button>
   );
 };

@@ -1,26 +1,133 @@
 .testimony-item {
+  align-items: flex-end;
+  cursor: pointer;
+  display: flex;
+  height: 500px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  max-width: 400px;
+  padding: 32px 24px;
+  position: relative;
+  text-align: start;
+  width: 100%;
+
+  @include responsive(t-xs) {
+    margin-bottom: 0;
+    width: calc(50% - 12px);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   &-img {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &-filter {
+    background: linear-gradient(
+      $transparent,
+      $black
+    );
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: 0.25s opacity ease-in-out;
+    width: 100%;
+  }
+
+  &-content,
+  &-btn {
+    position: relative;
+    z-index: 1;
   }
 
   &-content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
   }
 
   &-title {
+    margin-bottom: 12px;
+
     &-item {
+      color: $white;
+      font-family: $primary-font-bold;
+      font-size: 18px;
+      transition: 0.25s color ease-in-out;
     }
+  }
+
+  &-job,
+  &-company {
+    color: $light;
+    font-size: 14px;
   }
 
   &-job {
-  }
-
-  &-company {
+    margin-bottom: 4px;
   }
 
   &-btn {
+    align-items: center;
+    background: rgba($white, 0.25);
+    border: 2px solid $white;
+    border-radius: 50%;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    margin-left: 12px;
+    min-height: 48px;
+    min-width: 48px;
+    transition: 0.25s border ease-in-out;
+    width: 48px;
+
     &-icon {
+      fill: $white;
+      height: 24px;
+      width: 24px;
     }
   }
 
-  &-audio {
+  &-indicator {
+    background: $primary-color;
+    bottom: 0;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    transition: 0.25s width linear;
+    width: 0;
+  }
+
+  &-listening,
+  &:hover {
+    .testimony-item {
+      &-filter {
+        opacity: 0.75;
+      }
+
+      &-title {
+        &-item {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  &-listening {
+    .testimony-item {
+      &-btn {
+        background: rgba($white, 0.25);
+        border: 2px solid $primary-color;
+      }
+    }
   }
 }
