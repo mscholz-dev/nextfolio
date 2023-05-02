@@ -35,6 +35,10 @@ const homeBanner = [
     id: 8,
     word: "Collaboration avec les clients",
   },
+  {
+    id: 9,
+    word: "Design responsive",
+  },
 ];
 
 export default homeBanner;
