@@ -59,7 +59,11 @@
 
     &-text {
       color: $dark;
-      margin-bottom: 48px;
+      margin-bottom: 24px;
+
+      &:last-of-type {
+        margin-bottom: 48px;
+      }
     }
 
     &-wrapper {

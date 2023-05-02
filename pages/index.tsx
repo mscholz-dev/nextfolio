@@ -9,6 +9,7 @@ import Diplomas from "@/templates/components/Diploma/Diplomas";
 import Articles from "@/templates/components/Article/Articles";
 import Intro from "@/templates/components/Intro";
 import Details from "@/templates/components/Details";
+import Testimony from "@/templates/components/Testimony/Testimony";
 
 const Index: FC = () => {
   return (
@@ -19,18 +20,28 @@ const Index: FC = () => {
     >
       <>
         <Intro />
+
         <Details />
         <Separator />
+
         <Diplomas />
         <Separator />
+
         <Projects />
         <Separator />
+
         <Services />
         <Separator />
+
         <Customers />
         <Separator />
+
+        <Testimony />
+        <Separator />
+
         <Articles />
         <Separator />
+
         <Newsletter />
       </>
     </Page>

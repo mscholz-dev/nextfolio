@@ -15,26 +15,24 @@ const Diplomas: FC = () => {
       </p>
 
       <article className="diplomas-wrapper">
-        {diplomasData
-          .reverse()
-          .map(
-            ({
-              id,
-              title,
-              school,
-              category,
-              year,
-            }) => (
-              <Diploma
-                key={id}
-                id={id}
-                title={title}
-                school={school}
-                category={category}
-                year={year}
-              />
-            ),
-          )}
+        {diplomasData.map(
+          ({
+            id,
+            title,
+            school,
+            category,
+            year,
+          }) => (
+            <Diploma
+              key={id}
+              id={id}
+              title={title}
+              school={school}
+              category={category}
+              year={year}
+            />
+          ),
+        )}
       </article>
     </section>
   );

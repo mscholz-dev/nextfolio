@@ -38,6 +38,9 @@ const Details: FC = () => {
           objectifs uniques, afin de concevoir des
           solutions web uniques et évolutives qui
           répondent à leurs besoins spécifiques.
+        </p>
+
+        <p className="details-info-text">
           Mes solutions de développement web sur
           mesure sont conçues pour améliorer
           l&apos;efficacité et la rentabilité de
@@ -48,6 +51,9 @@ const Details: FC = () => {
           mes solutions web offrent une expérience
           utilisateur exceptionnelle, tout en
           répondant à vos objectifs commerciaux.
+        </p>
+
+        <p className="details-info-text">
           Si vous cherchez un partenaire en
           développement web pour des solutions sur
           mesure, n&apos;hésitez pas à explorer

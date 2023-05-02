@@ -22,4 +22,4 @@ const diplomas = [
   },
 ];
 
-export default diplomas;
+export default diplomas.reverse();

@@ -41,3 +41,12 @@ export interface IBanner {
     word: string;
   }[];
 }
+
+export interface ITestimonyItem {
+  firstName: string;
+  lastName: string;
+  job: string;
+  company: string;
+  audio: string;
+  img: string;
+}
