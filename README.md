@@ -2,11 +2,13 @@ google search console
 
 Ajouter une image dans intro
 
-audio test
+audio
 
 form contact
 
-block techno
-
 contenu blog
 contenu projets
+
+ajouter un captcha
+
+stockage mongodb + discord
