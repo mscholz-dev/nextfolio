@@ -2,10 +2,11 @@ google search console
 
 Ajouter une image dans intro
 
-refaire le header
-
-block testi
+audio test
 
 form contact
 
 block techno
+
+contenu blog
+contenu projets

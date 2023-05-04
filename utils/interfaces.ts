@@ -1,4 +1,5 @@
 // types
+import { Dispatch, SetStateAction } from "react";
 import { TFormInput } from "./types";
 
 export interface IPage {
@@ -49,4 +50,20 @@ export interface ITestimonyItem {
   company: string;
   audio: string;
   img: string;
+}
+
+export interface IMerntItem {
+  id: number;
+  icon: JSX.Element;
+  color: string;
+  title: string;
+  subtitle: string;
+  text: string;
+  open: { [id: number]: boolean };
+  setOpen: Dispatch<
+    SetStateAction<{ [id: number]: boolean }>
+  >;
+  hover: { [id: number]: boolean };
+  handleFocus: (id: number) => void;
+  handleBlur: (id: number) => void;
 }

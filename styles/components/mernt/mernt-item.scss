@@ -1,0 +1,105 @@
+.mernt-item {
+  cursor: pointer;
+  margin-bottom: 24px;
+  padding: 6px 12px;
+  position: relative;
+  text-align: start;
+
+  @include responsive(t-xs) {
+    padding: 12px 24px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover,
+  &-hover {
+    .mernt-item {
+      &-title {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &-line {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 4px;
+  }
+
+  &-header {
+    align-items: center;
+    display: flex;
+  }
+
+  &-icon {
+    display: flex;
+    height: 32px;
+    margin-right: 8px;
+    min-height: 32px;
+    min-width: 32px;
+    width: 32px;
+
+    @include responsive(t-xs) {
+      height: 42px;
+      margin-right: 8px;
+      min-height: 42px;
+      min-width: 42px;
+      width: 42px;
+    }
+  }
+
+  &-title {
+    font-size: 20px;
+    transition: 0.25s color ease-in-out;
+
+    @include responsive(t-xs) {
+      font-size: 24px;
+    }
+  }
+
+  &-container {
+    height: 0;
+    overflow-y: hidden;
+    transition: 0.25s height ease-in-out;
+  }
+
+  &-content {
+    padding-top: 12px;
+
+    @include responsive(t-xs) {
+      padding-top: 16px;
+    }
+  }
+
+  &-subtitle {
+    font-size: 16px;
+    margin-bottom: 12px;
+    transition: 0.25s color ease-in-out;
+
+    @include responsive(t-xs) {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &-text {
+    font-size: 14px;
+
+    @include responsive(t-xs) {
+      font-size: 16px;
+    }
+  }
+
+  &-open {
+    .mernt-item {
+      &-subtitle {
+        color: $primary-color;
+      }
+    }
+  }
+}

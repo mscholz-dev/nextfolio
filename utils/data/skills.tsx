@@ -1,13 +1,13 @@
-import IconSass from "@/public/icons/skills/sass.svg";
-import IconJavascript from "@/public/icons/skills/javascript.svg";
-import IconTypescript from "@/public/icons/skills/typescript.svg";
-import IconNodeJs from "@/public/icons/skills/node-js.svg";
-import IconMySql from "@/public/icons/skills/my-sql.svg";
-import IconNextJs from "@/public/icons/skills/next-js.svg";
-import IconReactJs from "@/public/icons/skills/react-js.svg";
-import IconGatsbyJs from "@/public/icons/skills/gatsby-js.svg";
-import IconExpressJs from "@/public/icons/skills/express-js.svg";
-import IconMongoDb from "@/public/icons/skills/mongo-db.svg";
+import IconSass from "@/public/icons/dev/sass.svg";
+import IconJavascript from "@/public/icons/dev/javascript.svg";
+import IconTypescript from "@/public/icons/dev/typescript.svg";
+import IconNodeJs from "@/public/icons/dev/node-js.svg";
+import IconMySql from "@/public/icons/dev/my-sql.svg";
+import IconNextJs from "@/public/icons/dev/next-js.svg";
+import IconReactJs from "@/public/icons/dev/react-js.svg";
+import IconGatsbyJs from "@/public/icons/dev/gatsby-js.svg";
+import IconExpressJs from "@/public/icons/dev/express-js.svg";
+import IconMongoDb from "@/public/icons/dev/mongo-db.svg";
 
 const skills = {
   languages: [
