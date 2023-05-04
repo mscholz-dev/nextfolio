@@ -2,7 +2,9 @@ import React, {
   FC,
   useEffect,
   useRef,
+  useState,
 } from "react";
+import HTMLReactParser from "html-react-parser";
 
 // interfaces
 import { IMerntItem } from "@/utils/interfaces";
@@ -23,7 +25,11 @@ const MerntItem: FC<IMerntItem> = ({
   const containerRef =
     useRef<HTMLDivElement>(null);
 
-  const handleResize = (): void => {
+  const [winW, setWinW] = useState<number>(0);
+
+  const handleResize = (open: {
+    [id: number]: boolean;
+  }): void => {
     // prevent nullable
     if (!containerRef.current) return;
 
@@ -67,19 +73,19 @@ const MerntItem: FC<IMerntItem> = ({
   };
 
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      handleResize,
+    window.addEventListener("resize", () =>
+      // set winW and not trigger handleResize because open state doesn't get the updated value
+      setWinW(window.innerWidth),
     );
 
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    handleResize();
+    handleResize(open);
 
     // eslint-disable-next-line
-  }, [open]);
+  }, [open, winW]);
 
   return (
     <button
@@ -118,9 +124,9 @@ const MerntItem: FC<IMerntItem> = ({
             {subtitle}
           </h4>
 
-          <p className="mernt-item-text">
-            {text}
-          </p>
+          <div className="mernt-item-text">
+            {HTMLReactParser(text)}
+          </div>
         </div>
       </div>
     </button>

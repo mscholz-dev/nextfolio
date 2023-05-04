@@ -4,6 +4,9 @@
   position: relative;
 
   &-main {
+    display: flex;
+    flex-direction: column-reverse;
+
     @include responsive(t-xs) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -20,13 +23,12 @@
   }
 
   &-stack {
-    position: absolute;
-    right: 0;
-    top: 0;
+    margin-bottom: 32px;
+    position: relative;
 
     @include responsive(t-xs) {
       grid-area: 1 / 2 / 2 / 3;
-      position: relative;
+      margin-bottom: 0;
     }
 
     &-item {
@@ -43,15 +45,51 @@
 
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
-          top: calc(80px + $i * 96px * -1);
+          top: calc(86px + $i * 86px * -1);
           z-index: 5 - $i;
+        }
+      }
+
+      @include responsive(s-xs) {
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            top: calc(96px + $i * 96px * -1);
+            z-index: 5 - $i;
+          }
+        }
+      }
+
+      @include responsive(s) {
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            top: calc(124px + $i * 124px * -1);
+            z-index: 5 - $i;
+          }
+        }
+      }
+
+      @include responsive(s-xl) {
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            top: calc(156px + $i * 156px * -1);
+            z-index: 5 - $i;
+          }
+        }
+      }
+
+      @include responsive(t-xs) {
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            top: calc(56px + $i * 96px * -1);
+            z-index: 5 - $i;
+          }
         }
       }
 
       @include responsive(t) {
         @for $i from 1 through 5 {
           &:nth-child(#{$i}) {
-            top: calc(80px + $i * 124px * -1);
+            top: calc(86px + $i * 124px * -1);
             z-index: 5 - $i;
           }
         }
@@ -80,6 +118,16 @@
         transition: 0.25s opacity ease-in-out;
         width: 96px;
         z-index: 1;
+
+        @include responsive(s-xl) {
+          height: 124px;
+          width: 124px;
+        }
+
+        @include responsive(t-xs) {
+          height: 96px;
+          width: 96px;
+        }
 
         @include responsive(t) {
           height: 124px;

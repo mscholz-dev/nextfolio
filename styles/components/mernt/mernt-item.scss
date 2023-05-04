@@ -69,26 +69,34 @@
   }
 
   &-content {
-    padding-top: 12px;
+    padding-top: 16px;
 
     @include responsive(t-xs) {
-      padding-top: 16px;
+      padding-top: 24px;
     }
   }
 
   &-subtitle {
     font-size: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     transition: 0.25s color ease-in-out;
 
     @include responsive(t-xs) {
       font-size: 20px;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
     }
   }
 
   &-text {
     font-size: 14px;
+
+    p {
+      margin-bottom: 12px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
 
     @include responsive(t-xs) {
       font-size: 16px;

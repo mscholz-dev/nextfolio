@@ -2,6 +2,7 @@ import React, {
   FC,
   useEffect,
   useState,
+  useRef,
 } from "react";
 import MerntItem from "./MerntItem";
 import IconStackGeometry from "@/public/icons/stack-geometry.svg";
@@ -10,6 +11,8 @@ import IconStackGeometry from "@/public/icons/stack-geometry.svg";
 import merntData from "@/utils/data/mernt";
 
 const Mernt: FC = () => {
+  const stackRef = useRef<HTMLDivElement>(null);
+
   const [open, setOpen] = useState<{
     [id: number]: boolean;
   }>({});
@@ -70,8 +73,63 @@ const Mernt: FC = () => {
     });
   };
 
-  // init objects
+  const handleStackHeight = (): void => {
+    // prevent nullable
+    if (!stackRef.current) return;
+
+    let stackHeight = 0;
+
+    for (const item of stackRef.current
+      .children) {
+      stackHeight += item.clientHeight;
+    }
+
+    const winW = window.innerWidth;
+
+    if (winW < 375) {
+      stackRef.current.style.height = `${
+        stackHeight - 86 * 4
+      }px`;
+      return;
+    }
+
+    if (winW < 480) {
+      stackRef.current.style.height = `${
+        stackHeight - 96 * 4
+      }px`;
+      return;
+    }
+
+    if (winW < 576) {
+      stackRef.current.style.height = `${
+        stackHeight - 124 * 4
+      }px`;
+      return;
+    }
+
+    if (winW < 768) {
+      stackRef.current.style.height = `${
+        stackHeight - 156 * 4
+      }px`;
+      return;
+    }
+
+    if (winW < 992) {
+      stackRef.current.style.height = `${
+        stackHeight - 96 * 4 - 40
+      }px`;
+      return;
+    }
+
+    stackRef.current.style.height = `${
+      stackHeight - 124 * 4 - 38
+    }px`;
+
+    return;
+  };
+
   useEffect(() => {
+    // init objects
     const init: { [id: number]: boolean } = {};
 
     for (const { id } of merntData) {
@@ -80,6 +138,13 @@ const Mernt: FC = () => {
 
     setOpen(init);
     setHover(init);
+
+    // set stack height from its childrends heights
+    handleStackHeight();
+    window.addEventListener(
+      "resize",
+      handleStackHeight,
+    );
   }, []);
 
   return (
@@ -123,7 +188,10 @@ const Mernt: FC = () => {
           )}
         </article>
 
-        <div className="mernt-stack">
+        <div
+          ref={stackRef}
+          className="mernt-stack"
+        >
           {merntData.map(
             ({ id, iconLarge, color }) => (
               <button
