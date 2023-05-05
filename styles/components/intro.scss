@@ -112,6 +112,7 @@
     border: 2px solid $black;
     display: flex;
     flex-direction: row;
+    transition: 0.15s transform ease-in-out;
 
     &:hover {
       .intro-btn-text {
@@ -124,6 +125,10 @@
           );
         }
       }
+    }
+
+    &:active {
+      transform: scale(0.9);
     }
 
     &-container {

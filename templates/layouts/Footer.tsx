@@ -34,6 +34,7 @@ const Footer: FC = () => {
                 href={url}
                 className="footer-social-link-item"
                 title={title}
+                target="_blank"
               >
                 {icon}
               </a>

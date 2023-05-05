@@ -1,6 +1,8 @@
 .title {
   &-secondary {
     font-size: 32px;
+    margin: 0 auto;
+    max-width: 600px;
 
     @include responsive(s-xl) {
       font-size: 38px;

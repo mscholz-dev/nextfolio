@@ -40,7 +40,8 @@
       justify-content: center;
       opacity: 0.5;
       position: relative;
-      transition: 0.25s opacity ease-in-out;
+      transition: 0.25s opacity ease-in-out,
+        0.15s transform ease-in-out;
       width: 100%;
 
       @for $i from 1 through 5 {
@@ -145,6 +146,10 @@
             opacity: 1;
           }
         }
+      }
+
+      &:active {
+        transform: scale(0.9);
       }
     }
   }

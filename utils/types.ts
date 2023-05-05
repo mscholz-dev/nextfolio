@@ -10,4 +10,5 @@ export interface TFormInput {
   min: number;
   max: number;
   ariaDescribedby: string;
+  asterix: boolean;
 }

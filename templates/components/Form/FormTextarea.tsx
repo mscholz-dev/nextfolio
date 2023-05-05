@@ -1,18 +1,17 @@
 import React, { FC, useState } from "react";
 
 // interfaces
-import { IFormInput } from "@/utils/interfaces";
+import { IFormTextarea } from "@/utils/interfaces";
 
-const FormInput: FC<IFormInput> = ({
+const FormTextarea: FC<IFormTextarea> = ({
   id,
   handleChange,
-  icon,
   label,
-  type,
   value,
   min,
   max,
   ariaDescribedby,
+  rows,
   asterix,
 }) => {
   const [focus, setFocus] =
@@ -29,11 +28,7 @@ const FormInput: FC<IFormInput> = ({
         value.length ? " form-input-filled" : ""
       }`}
     >
-      <span className="form-input-icon">
-        {icon}
-      </span>
-
-      <p className="form-input-title">
+      <p className="form-input-title form-textarea-title">
         {label.split("").map((letter, index) => (
           <span
             key={index}
@@ -68,11 +63,10 @@ const FormInput: FC<IFormInput> = ({
         )}
       </p>
 
-      <input
+      <textarea
         className="form-input-control"
         id={id}
         onChange={handleChange}
-        type={type}
         value={value}
         minLength={min}
         maxLength={max}
@@ -80,9 +74,10 @@ const FormInput: FC<IFormInput> = ({
         onBlur={handleBlur}
         placeholder=""
         aria-describedby={ariaDescribedby}
+        rows={rows}
       />
     </label>
   );
 };
 
-export default FormInput;
+export default FormTextarea;

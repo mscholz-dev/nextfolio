@@ -11,6 +11,7 @@ import Intro from "@/templates/components/Intro";
 import Details from "@/templates/components/Details";
 import Testimony from "@/templates/components/Testimony/Testimony";
 import Mernt from "@/templates/components/Mernt/Mernt";
+import FormHome from "@/templates/components/Form/FormHome";
 
 const Index: FC = () => {
   return (
@@ -47,6 +48,10 @@ const Index: FC = () => {
         <Separator />
 
         <Newsletter />
+        <Separator />
+
+        <FormHome />
+        <Separator />
       </>
     </Page>
   );

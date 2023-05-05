@@ -4,7 +4,8 @@
   display: flex;
   margin-bottom: 24px;
   padding: 12px;
-  transition: 0.25s background ease-in-out;
+  transition: 0.25s background ease-in-out,
+    0.15s transform ease-in-out;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -30,6 +31,14 @@
       &-year {
         color: $primary-color;
       }
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+
+    @include responsive(t-xs) {
+      transform: scale(0.975);
     }
   }
 

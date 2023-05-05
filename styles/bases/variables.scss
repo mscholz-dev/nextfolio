@@ -57,6 +57,21 @@ $bounce-cubic-bezier: cubic-bezier(
   1.55
 );
 
+// keyframes
+@keyframes network-loader-animation {
+  0% {
+    height: 10px;
+  }
+
+  50% {
+    height: 50px;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
 // fonts
 // primary
 $primary-font-regular: "primaryRegular";

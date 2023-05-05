@@ -37,7 +37,8 @@
     &-title {
       color: $white;
       font-size: 20px;
-      transition: 0.25s color ease-in-out;
+      transition: 0.25s color ease-in-out,
+        0.25s transform ease-in-out;
     }
 
     &:hover {
@@ -48,6 +49,16 @@
 
         &-title {
           color: $primary-color;
+        }
+      }
+    }
+
+    &:active {
+      .footer-brand {
+        &-logo,
+        &-title {
+          transform: scale(0.9);
+          transition: 0.15s transform ease-in-out;
         }
       }
     }
@@ -87,8 +98,10 @@
       margin-right: 24px;
       padding: 12px;
       transition: 0.25s border ease-in-out,
-        0.25s fill ease-in-out;
+        0.25s fill ease-in-out,
+        0.25s transform ease-in-out;
       width: 20px;
+
       & > svg {
         transition: 0.25s transform ease-in-out;
       }
@@ -99,6 +112,10 @@
         & > svg {
           transform: scale(1.2);
         }
+      }
+
+      &:active {
+        transform: scale(0.9);
       }
     }
   }

@@ -1,5 +1,6 @@
+import { ChangeEvent } from "react";
+
 // types
-import { Dispatch, SetStateAction } from "react";
 import { TFormInput } from "./types";
 
 export interface IPage {
@@ -64,4 +65,25 @@ export interface IMerntItem {
   handleFocus: (id: number) => void;
   handleBlur: (id: number) => void;
   handleClick: (id: number) => void;
+}
+
+export interface IFormTextarea {
+  id: string;
+  handleChange: (e: ChangeEvent) => void;
+  label: string;
+  value: string;
+  min: number;
+  max: number;
+  ariaDescribedby: string;
+  rows: number;
+  asterix: boolean;
+}
+
+export interface IFormCheckbox {
+  id: string;
+  handleChange: (e: ChangeEvent) => void;
+  label: string;
+  checked: boolean;
+  ariaDescribedby: string;
+  asterix: boolean;
 }

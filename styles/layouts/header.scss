@@ -39,7 +39,8 @@
     &-title {
       color: $white;
       font-size: 20px;
-      transition: 0.25s color ease-in-out;
+      transition: 0.25s color ease-in-out,
+        0.25s transform ease-in-out;
     }
 
     &:hover {
@@ -50,6 +51,16 @@
 
         &-title {
           color: $primary-color;
+        }
+      }
+    }
+
+    &:active {
+      .header-brand {
+        &-logo,
+        &-title {
+          transform: scale(0.9);
+          transition: 0.15s transform ease-in-out;
         }
       }
     }

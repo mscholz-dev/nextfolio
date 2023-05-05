@@ -1,2 +1,23 @@
 .form-home {
+  margin: 0 auto;
+  max-width: 1000px;
+
+  &-asterix {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+
+  &-wrapper {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-btn {
+    cursor: pointer;
+  }
 }
