@@ -10,7 +10,6 @@ const FormTextarea: FC<IFormTextarea> = ({
   value,
   min,
   max,
-  ariaDescribedby,
   rows,
   asterix,
 }) => {
@@ -65,7 +64,7 @@ const FormTextarea: FC<IFormTextarea> = ({
 
       <textarea
         className="form-input-control"
-        id={id}
+        id={`form-${id}`}
         onChange={handleChange}
         value={value}
         minLength={min}
@@ -73,7 +72,6 @@ const FormTextarea: FC<IFormTextarea> = ({
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholder=""
-        aria-describedby={ariaDescribedby}
         rows={rows}
       />
     </label>

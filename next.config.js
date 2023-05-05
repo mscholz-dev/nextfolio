@@ -29,7 +29,10 @@ module.exports = {
     return config;
   },
   // init .env variables
-  env: {},
+  env: {
+    WEBHOOK_CONTACT: process.env.WEBHOOK_CONTACT,
+    WEBHOOK_500: process.env.WEBHOOK_500,
+  },
   // disable trash header
   poweredByHeader: false,
   // custom next server headers

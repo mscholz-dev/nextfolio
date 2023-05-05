@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Head from "next/head";
 import Header from "@/templates/layouts/Header";
 import Footer from "@/templates/layouts/Footer";
+import { ToastContainer } from "react-toastify";
 
 // interfaces
 import { IPage } from "@/utils/interfaces";
@@ -41,6 +42,8 @@ const Page: FC<IPage> = ({
       >
         {children}
       </main>
+
+      <ToastContainer />
 
       <Footer />
     </>

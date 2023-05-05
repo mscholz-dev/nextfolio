@@ -13,27 +13,86 @@ import FormTextarea from "@/templates/components/Form/FormTextarea";
 import FormCheckbox from "@/templates/components/Form/FormCheckbox";
 import FormClass from "@/utils/Form";
 import NetwordLoader from "@/templates/components/Loader/NetwordLoader";
+import ContactValidatorClass from "@/utils/validators/ContactValidator";
+import { toast } from "react-toastify";
+import axios from "axios";
+
+// types
+import { TContactData } from "@/utils/types";
 
 // classes
 const Form = new FormClass();
+const ContactValidator =
+  new ContactValidatorClass();
 
 const FormHome: FC = () => {
-  const [form, setForm] = useState({
+  const initForm: TContactData = {
     fullName: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
     consent: false,
-  });
+  };
+
+  const [form, setForm] =
+    useState<TContactData>(initForm);
 
   const [loading, setLoading] =
     useState<boolean>(false);
 
-  const handleSubmit = (
+  const handleSubmit = async (
     e: SyntheticEvent,
-  ): void => {
+  ): Promise<void> => {
     e.preventDefault();
+
+    // prevent spamming
+    if (loading) return;
+
+    setLoading(true);
+
+    const errors =
+      ContactValidator.inspectContactData(form);
+
+    if (errors.length) {
+      // focus to first error element
+      const firstErrorElement =
+        document.getElementById(
+          `form-${errors[0].key}`,
+        );
+
+      // existing ?
+      if (firstErrorElement) {
+        firstErrorElement.focus();
+      }
+
+      // add error aspect to all inputs
+      for (const { key, message } of errors) {
+        ContactValidator.errorStyle(key);
+        toast.error(message);
+      }
+
+      setLoading(false);
+      return;
+    }
+
+    try {
+      await axios.post("/api/contact", form);
+
+      toast.success(
+        "Votre demande a été pris en compte",
+      );
+
+      setForm(initForm);
+      setLoading(false);
+
+      return;
+    } catch (err: unknown) {
+      toast.error("Une erreur est survenu");
+      setLoading(false);
+
+      return;
+    }
   };
 
   return (
@@ -72,7 +131,6 @@ const FormHome: FC = () => {
             value={form.fullName}
             min={0}
             max={60}
-            ariaDescribedby=""
             asterix={true}
           />
 
@@ -92,7 +150,6 @@ const FormHome: FC = () => {
             value={form.email}
             min={0}
             max={255}
-            ariaDescribedby=""
             asterix={true}
           />
 
@@ -112,7 +169,6 @@ const FormHome: FC = () => {
             value={form.phone}
             min={0}
             max={10}
-            ariaDescribedby=""
             asterix={false}
           />
 
@@ -132,7 +188,6 @@ const FormHome: FC = () => {
             value={form.subject}
             min={0}
             max={255}
-            ariaDescribedby=""
             asterix={true}
           />
           <FormTextarea
@@ -149,7 +204,6 @@ const FormHome: FC = () => {
             value={form.message}
             min={0}
             max={5_000}
-            ariaDescribedby=""
             rows={4}
             asterix={true}
           />
@@ -166,7 +220,6 @@ const FormHome: FC = () => {
             }
             label="J'accepte que mes données soient traitées dans le cadre de ma demande"
             checked={form.consent}
-            ariaDescribedby=""
             asterix={true}
           />
 

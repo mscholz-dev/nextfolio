@@ -12,7 +12,9 @@ import FormClass from "@/utils/Form";
 const Form = new FormClass();
 
 const Newsletter: FC = () => {
-  const [form, setForm] = useState({ email: "" });
+  const [form, setForm] = useState({
+    newsletter: "",
+  });
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
@@ -33,21 +35,21 @@ const Newsletter: FC = () => {
         >
           <FormInput
             icon={<IconNewspaper />}
-            id="email"
+            id="newsletter"
             handleChange={(e: ChangeEvent) =>
               Form.handleChange(
                 e,
-                "email",
+                "newsletter",
                 setForm,
                 form,
               )
             }
-            label="Adresse email"
+            label="Email"
             type="email"
-            value={form.email}
+            value={form.newsletter}
             min={0}
             max={60}
-            ariaDescribedby="Veuillez renseigner votre adresse email pour recevoir les newsletters"
+            asterix={false}
           />
 
           <button className="btn-primary-light">

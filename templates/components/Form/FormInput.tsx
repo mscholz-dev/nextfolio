@@ -12,7 +12,6 @@ const FormInput: FC<IFormInput> = ({
   value,
   min,
   max,
-  ariaDescribedby,
   asterix,
 }) => {
   const [focus, setFocus] =
@@ -70,7 +69,7 @@ const FormInput: FC<IFormInput> = ({
 
       <input
         className="form-input-control"
-        id={id}
+        id={`form-${id}`}
         onChange={handleChange}
         type={type}
         value={value}
@@ -79,7 +78,6 @@ const FormInput: FC<IFormInput> = ({
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholder=""
-        aria-describedby={ariaDescribedby}
       />
     </label>
   );

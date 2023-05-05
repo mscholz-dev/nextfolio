@@ -9,7 +9,6 @@ const FormCheckbox: FC<IFormCheckbox> = ({
   handleChange,
   label,
   checked,
-  ariaDescribedby,
   asterix,
 }) => {
   const [focus, setFocus] =
@@ -36,7 +35,7 @@ const FormCheckbox: FC<IFormCheckbox> = ({
       </p>
 
       <input
-        id={id}
+        id={`form-${id}`}
         type="checkbox"
         className="form-checkbox-control"
         checked={checked}
@@ -44,7 +43,6 @@ const FormCheckbox: FC<IFormCheckbox> = ({
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        aria-describedby={ariaDescribedby}
       />
     </label>
   );

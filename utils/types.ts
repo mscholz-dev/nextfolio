@@ -9,6 +9,21 @@ export interface TFormInput {
   value: string;
   min: number;
   max: number;
-  ariaDescribedby: string;
   asterix: boolean;
 }
+
+export type TInspectData = Record<string, any>;
+
+export type TInspectDataErrors = {
+  key: string;
+  message: string;
+}[];
+
+export type TContactData = {
+  fullName: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+  consent: boolean;
+};

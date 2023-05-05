@@ -1,18 +1,19 @@
 .network-loader {
   align-items: flex-end;
   display: flex;
-  height: 100px;
+  height: 48px;
   justify-content: center;
-  width: 300px;
+  width: 100%;
 
   &-bar {
     animation: network-loader-animation 1s
       ease-in-out infinite;
     background: $primary-color;
     border-radius: 5px;
-    height: 10px;
+    height: 20%;
     margin: 0 5px;
-    width: 20px;
+    transition: 0.25s background ease-in-out;
+    width: 14px;
 
     &:nth-child(2) {
       animation-delay: 0.1s;

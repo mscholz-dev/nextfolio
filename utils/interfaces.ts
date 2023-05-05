@@ -74,7 +74,6 @@ export interface IFormTextarea {
   value: string;
   min: number;
   max: number;
-  ariaDescribedby: string;
   rows: number;
   asterix: boolean;
 }
@@ -84,6 +83,5 @@ export interface IFormCheckbox {
   handleChange: (e: ChangeEvent) => void;
   label: string;
   checked: boolean;
-  ariaDescribedby: string;
   asterix: boolean;
 }
