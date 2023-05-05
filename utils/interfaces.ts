@@ -60,10 +60,8 @@ export interface IMerntItem {
   subtitle: string;
   text: string;
   open: { [id: number]: boolean };
-  setOpen: Dispatch<
-    SetStateAction<{ [id: number]: boolean }>
-  >;
   hover: { [id: number]: boolean };
   handleFocus: (id: number) => void;
   handleBlur: (id: number) => void;
+  handleClick: (id: number) => void;
 }

@@ -17,10 +17,10 @@ const MerntItem: FC<IMerntItem> = ({
   subtitle,
   text,
   open,
-  setOpen,
   hover,
   handleFocus,
   handleBlur,
+  handleClick,
 }) => {
   const containerRef =
     useRef<HTMLDivElement>(null);
@@ -36,40 +36,29 @@ const MerntItem: FC<IMerntItem> = ({
     // maximize height
     if (open[id]) {
       containerRef.current.style.height = `${containerRef.current.children[0].clientHeight}px`;
+
+      // waiting height animation finish
+      setTimeout(() => {
+        if (!containerRef.current) return;
+
+        const y =
+          containerRef.current.getBoundingClientRect()
+            .top +
+          window.scrollY -
+          128;
+
+        window.scroll({
+          top: y,
+          behavior: "smooth",
+        });
+      }, 500);
+
       return;
     }
 
     // minimize height
     containerRef.current.style.height = "0px";
     return;
-  };
-
-  const handleClick = (): void => {
-    // prevent nullable
-    if (!containerRef.current) return;
-
-    // set all open value to false
-    const initOpen: { [id: number]: boolean } =
-      {};
-
-    Object.keys(open).map((id) => {
-      const container = document.getElementById(
-        `merntItemContainer${id}`,
-      );
-
-      if (container) {
-        container.style.height = "0px";
-      }
-
-      // set open to false
-      initOpen[Number(id)] = false;
-    });
-
-    // set opposite value or set true
-    setOpen({
-      ...initOpen,
-      [id]: !open[id],
-    });
   };
 
   useEffect(() => {
@@ -92,7 +81,7 @@ const MerntItem: FC<IMerntItem> = ({
       className={`mernt-item${
         open[id] ? " mernt-item-open" : ""
       }${hover[id] ? " mernt-item-hover" : ""}`}
-      onClick={handleClick}
+      onClick={() => handleClick(id)}
       // start transition event
       onMouseEnter={() => handleFocus(id)}
       onFocus={() => handleFocus(id)}

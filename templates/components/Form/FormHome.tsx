@@ -1,4 +1,8 @@
 import React, { FC } from "react";
+import IconUser from "@/public/icons/user.svg";
+import IconEnvelope from "@/public/icons/envelope.svg";
+import IconPhone from "@/public/icons/phone.svg";
+import IconBellConcierge from "@/public/icons/bell-concierge.svg";
 
 const FormHome: FC = () => {
   // const formInputs = [

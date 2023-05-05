@@ -25,11 +25,17 @@ thead {
   line-height: normal;
 }
 
+// for phone when body is visible
 body {
-  background: $white;
+  background: $black;
   overflow-x: hidden;
   position: relative;
   width: 100vw;
+}
+
+// for phone when body is visible
+main {
+  background: $white;
 }
 
 button {

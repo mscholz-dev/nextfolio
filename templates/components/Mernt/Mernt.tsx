@@ -59,19 +59,17 @@ const Mernt: FC = () => {
     return hoverInit;
   };
 
-  const handleFocus = (id: number): void => {
+  const handleFocus = (id: number): void =>
     setHover({
       ...resetHoverObject(),
       [id]: true,
     });
-  };
 
-  const handleBlur = (id: number): void => {
+  const handleBlur = (id: number): void =>
     setHover({
       ...resetHoverObject(),
       [id]: false,
     });
-  };
 
   const handleStackHeight = (): void => {
     // prevent nullable
@@ -177,12 +175,14 @@ const Mernt: FC = () => {
                 subtitle={subtitle}
                 text={text}
                 open={open}
-                setOpen={setOpen}
                 hover={hover}
                 handleFocus={() =>
                   handleFocus(id)
                 }
                 handleBlur={() => handleBlur(id)}
+                handleClick={() =>
+                  handleStackClick(id)
+                }
               />
             ),
           )}
