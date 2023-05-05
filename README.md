@@ -1,14 +1,17 @@
-google search console
+# URGENT
 
-Ajouter une image dans intro
+- block intro
+- audio
+- contenu blog
+- contenu projets
+- page blog
+- page projets
+- framer motion
 
-audio
+# SECONDAIRE
 
-form contact
-
-contenu blog
-contenu projets
-
-ajouter un captcha
-
-stockage mongodb + discord
+- améliorer le design du contact form
+- google search console
+- ajouter un captcha
+- stockage mongodb
+- mettre en place les cors
