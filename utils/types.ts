@@ -27,3 +27,7 @@ export type TContactData = {
   message: string;
   consent: boolean;
 };
+
+export type TNewsletterData = {
+  newsletter: string;
+};

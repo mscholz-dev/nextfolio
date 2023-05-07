@@ -85,3 +85,7 @@ export interface IFormCheckbox {
   checked: boolean;
   asterix: boolean;
 }
+
+export interface INetworkLoader {
+  tiny?: boolean;
+}

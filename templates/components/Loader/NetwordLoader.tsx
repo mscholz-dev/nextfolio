@@ -1,8 +1,17 @@
 import React, { FC } from "react";
 
-const NetwordLoader: FC = () => {
+// interfaces
+import { INetworkLoader } from "@/utils/interfaces";
+
+const NetworkLoader: FC<INetworkLoader> = ({
+  tiny,
+}) => {
   return (
-    <div className="network-loader">
+    <div
+      className={`network-loader${
+        tiny ? " network-loader-tiny" : ""
+      }`}
+    >
       <div className="network-loader-bar"></div>
       <div className="network-loader-bar"></div>
       <div className="network-loader-bar"></div>
@@ -11,4 +20,4 @@ const NetwordLoader: FC = () => {
   );
 };
 
-export default NetwordLoader;
+export default NetworkLoader;

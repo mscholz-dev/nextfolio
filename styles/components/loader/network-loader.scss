@@ -27,4 +27,14 @@
       animation-delay: 0.3s;
     }
   }
+
+  &-tiny {
+    height: 32px;
+
+    .network-loader {
+      &-bar {
+        width: 12px;
+      }
+    }
+  }
 }

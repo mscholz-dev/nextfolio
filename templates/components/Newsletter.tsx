@@ -7,19 +7,81 @@ import React, {
 import FormInput from "@/templates/components/Form/FormInput";
 import IconNewspaper from "@/public/icons/newspaper.svg";
 import FormClass from "@/utils/Form";
+import { toast } from "react-toastify";
+import axios from "axios";
+import NewsletterValidatorClass from "@/utils/validators/NewsletterValidator";
+import NetwordLoader from "@/templates/components/Loader/NetwordLoader";
 
 // classes
 const Form = new FormClass();
+const NewsletterValidator =
+  new NewsletterValidatorClass();
 
 const Newsletter: FC = () => {
-  const [form, setForm] = useState({
+  const initForm = {
     newsletter: "",
-  });
+  };
 
-  const handleSubmit = (e: SyntheticEvent) => {
+  const [form, setForm] = useState(initForm);
+
+  const [loading, setLoading] =
+    useState<boolean>(false);
+
+  const handleSubmit = async (
+    e: SyntheticEvent,
+  ) => {
     e.preventDefault();
 
-    console.log(form);
+    // prevent spamming
+    if (loading) return;
+
+    setLoading(true);
+
+    // errors
+    const errors =
+      NewsletterValidator.inspectNewsletterData(
+        form,
+      );
+
+    if (errors.length) {
+      // focus to first error element
+      const firstErrorElement =
+        document.getElementById(
+          `form-${errors[0].key}`,
+        );
+
+      // existing ?
+      if (firstErrorElement) {
+        firstErrorElement.focus();
+      }
+
+      // add error aspect to all inputs
+      for (const { key, message } of errors) {
+        NewsletterValidator.errorStyle(key);
+        toast.error(message);
+      }
+
+      setLoading(false);
+      return;
+    }
+
+    try {
+      await axios.post("/api/newsletter", form);
+
+      toast.success(
+        "Vous êtes abonné à la newsletter !",
+      );
+
+      setForm(initForm);
+      setLoading(false);
+
+      return;
+    } catch (err: unknown) {
+      toast.error("Une erreur est survenu");
+      setLoading(false);
+
+      return;
+    }
   };
 
   return (
@@ -52,8 +114,12 @@ const Newsletter: FC = () => {
             asterix={false}
           />
 
-          <button className="btn-primary-light">
-            S&apos;abonner
+          <button className="btn-primary-light btn-primary-fix-height btn-primary-fix-width">
+            {!loading ? (
+              "S'abonner"
+            ) : (
+              <NetwordLoader tiny />
+            )}
           </button>
         </form>
       </div>

@@ -4,10 +4,12 @@ import {
 } from "next";
 import axios from "axios";
 import ContactValidatorClass from "@/utils/validators/ContactValidator";
+import InternalErrorClass from "@/utils/InternalError";
 
 // classes
 const ContactValidator =
   new ContactValidatorClass();
+const InternalError = new InternalErrorClass();
 
 const contact = async (
   req: NextApiRequest,
@@ -62,13 +64,9 @@ ${message}
     }
   } catch (err: unknown) {
     // create discord 500 request
-    await axios.post(
-      `https://discord.com/api/webhooks/${process.env.WEBHOOK_500}`,
-      {
-        content: `
-**Erreur :** ${err}
-          `,
-      },
+    await InternalError.UnexpectedError(
+      "api/contact",
+      err,
     );
 
     // return error response

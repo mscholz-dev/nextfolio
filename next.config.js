@@ -30,8 +30,19 @@ module.exports = {
   },
   // init .env variables
   env: {
+    // DISCORD
     WEBHOOK_CONTACT: process.env.WEBHOOK_CONTACT,
     WEBHOOK_500: process.env.WEBHOOK_500,
+    WEBHOOK_NEWSLETTER_EMAIL:
+      process.env.WEBHOOK_NEWSLETTER_EMAIL,
+    WEBHOOK_NEWSLETTER_LOG:
+      process.env.WEBHOOK_NEWSLETTER_LOG,
+
+    // NODEMAILER
+    MAILER_HOST: process.env.MAILER_HOST,
+    MAILER_PORT: process.env.MAILER_PORT,
+    MAILER_USER: process.env.MAILER_USER,
+    MAILER_PASSWORD: process.env.MAILER_PASSWORD,
   },
   // disable trash header
   poweredByHeader: false,
