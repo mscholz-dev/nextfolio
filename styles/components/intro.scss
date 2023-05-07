@@ -201,4 +201,25 @@
       }
     }
   }
+
+  &-photo {
+    bottom: -90px;
+    height: auto;
+    max-width: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    @include responsive(t-xs) {
+      top: calc(100px - 100vw / 26);
+      left: auto;
+      right: 0;
+      transform: translateX(0);
+    }
+
+    @include responsive(t) {
+      right: calc(50vw - 500px);
+    }
+  }
 }

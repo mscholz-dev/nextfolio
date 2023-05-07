@@ -1,4 +1,8 @@
-import React, { FC } from "react";
+import React, {
+  FC,
+  useEffect,
+  useRef,
+} from "react";
 import IconLogo from "@/public/icons/logo.svg";
 import Banner from "./Banner";
 
@@ -6,8 +10,39 @@ import Banner from "./Banner";
 import homeBanner from "@/utils/data/homeBanner";
 
 const Intro: FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const photoRef = useRef<HTMLImageElement>(null);
+
+  const handleSectionPadding = (): void => {
+    // prevent nullable
+    if (!sectionRef.current || !photoRef.current)
+      return;
+
+    if (window.innerWidth < 768) {
+      sectionRef.current.style.paddingBottom = `${
+        photoRef.current.offsetHeight - 64
+      }px`;
+
+      return;
+    }
+
+    sectionRef.current.style.paddingBottom = `${0}px`;
+  };
+
+  useEffect(() => {
+    handleSectionPadding();
+
+    window.addEventListener(
+      "resize",
+      handleSectionPadding,
+    );
+  }, []);
+
   return (
-    <section className="intro wrapper-padding-x">
+    <section
+      ref={sectionRef}
+      className="intro wrapper-padding-x"
+    >
       <div className="intro-main">
         <h2 className="intro-title">
           <span className="intro-title-item">
@@ -61,6 +96,13 @@ const Intro: FC = () => {
         </button>
       </div>
 
+      {/* eslint-disable-next-line */}
+      <img
+        ref={photoRef}
+        src="/img/morgan-scholz-picture.webp"
+        alt="Photo de Morgan Scholz"
+        className="intro-photo"
+      />
       <Banner words={homeBanner} />
     </section>
   );
