@@ -5,12 +5,14 @@ import {
 import axios from "axios";
 import ContactValidatorClass from "@/utils/validators/ContactValidator";
 import InternalErrorClass from "@/utils/InternalError";
+import EmailClass from "@/utils/email/Email";
 
 // classes
 import MongoDB from "@/utils/MongoDB";
 const ContactValidator =
   new ContactValidatorClass();
 const InternalError = new InternalErrorClass();
+const Email = new EmailClass();
 
 const contact = async (
   req: NextApiRequest,
@@ -86,6 +88,16 @@ ${message}
           `,
         },
       );
+
+      // send contact request email
+      await Email.contactRequestTemplate({
+        fullName,
+        email,
+        phone,
+        subject,
+        message,
+        consent,
+      });
 
       // return empty response
       return res.status(200).end();

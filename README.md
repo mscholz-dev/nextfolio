@@ -1,6 +1,6 @@
 # URGENT
 
-- tester en prod newsletter / finir la page de desinscription de la newsletter
+- tester en prod newsletter / contact
 
 - contenu blog
 - contenu projets
@@ -8,7 +8,6 @@
 - page projets
 - framer motion
 - page mentions legales
-- send email when contact request
 
 # SECONDAIRE
 

@@ -2,6 +2,7 @@ import fs from "fs";
 import nodemailer from "nodemailer";
 
 // types
+import { TContactData } from "@/utils/types";
 
 export default class Email {
   send(
@@ -58,6 +59,40 @@ export default class Email {
     await this.send(
       email,
       "ABONNEMENT À LA NEWSLETTER DE MORGAN SCHOLZ",
+      fileHtmlClient,
+    );
+
+    return;
+  }
+
+  async contactRequestTemplate({
+    fullName,
+    email,
+    phone,
+    subject,
+    message,
+    consent,
+  }: TContactData): Promise<void> {
+    const fileClient = fs
+      .readFileSync(
+        "./utils/email/fr/contact/request.html",
+      )
+      .toString();
+
+    const fileHtmlClient = fileClient
+      .replace("$fullName", fullName)
+      .replace("$email", email)
+      .replace("$phone", phone || "non renseigné")
+      .replace("$subject", subject)
+      .replace("$message", message)
+      .replace(
+        "$consent",
+        consent ? "Oui" : "Non",
+      );
+
+    await this.send(
+      email,
+      "RÉCAPITULATIF DE LA DEMANDE DE CONTACT",
       fileHtmlClient,
     );
 
