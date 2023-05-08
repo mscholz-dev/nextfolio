@@ -1,8 +1,12 @@
 import fs from "fs";
 import nodemailer from "nodemailer";
+import ToolClass from "@/utils/Tool";
 
 // types
 import { TContactData } from "@/utils/types";
+
+// classes
+const Tool = new ToolClass();
 
 export default class Email {
   send(
@@ -45,11 +49,9 @@ export default class Email {
   async newsletterSubscribeTemplate(
     email: string,
   ): Promise<void> {
-    const fileClient = fs
-      .readFileSync(
-        "public/emails/fr/newsletter/subscribe.html",
-      )
-      .toString();
+    const fileClient = Tool.readFileSync(
+      "../public/emails/fr/newsletter/subscribe.html",
+    );
 
     const fileHtmlClient = fileClient.replace(
       "$email",
@@ -73,11 +75,9 @@ export default class Email {
     message,
     consent,
   }: TContactData): Promise<void> {
-    const fileClient = fs
-      .readFileSync(
-        "public/emails/fr/contact/request.html",
-      )
-      .toString();
+    const fileClient = Tool.readFileSync(
+      "../public/emails/fr/contact/request.html",
+    );
 
     const fileHtmlClient = fileClient
       .replace("$fullName", fullName)
