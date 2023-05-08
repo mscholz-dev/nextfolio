@@ -49,9 +49,13 @@ export default class Email {
   async newsletterSubscribeTemplate(
     email: string,
   ): Promise<void> {
-    const fileClient = Tool.readFileSync(
-      "public/emails/fr/newsletter/subscribe.html",
-    );
+    const fileClient = Tool.readFileSync([
+      "public",
+      "emails",
+      "fr",
+      "newsletter",
+      "subscribe.html",
+    ]);
 
     const fileHtmlClient = fileClient.replace(
       "$email",
@@ -75,9 +79,13 @@ export default class Email {
     message,
     consent,
   }: TContactData): Promise<void> {
-    const fileClient = Tool.readFileSync(
-      "public/emails/fr/contact/request.html",
-    );
+    const fileClient = Tool.readFileSync([
+      "public",
+      "emails",
+      "fr",
+      "contact",
+      "request.html",
+    ]);
 
     const fileHtmlClient = fileClient
       .replace("$fullName", fullName)
