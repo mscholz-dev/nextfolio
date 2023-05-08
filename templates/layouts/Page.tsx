@@ -13,6 +13,7 @@ const Page: FC<IPage> = ({
   description,
   padding,
   className,
+  center,
 }) => {
   return (
     <>
@@ -36,9 +37,12 @@ const Page: FC<IPage> = ({
       <Header />
 
       <main
+        id="main"
         className={`main${
           padding ? " main-padding" : ""
-        }${className ? ` ${className}` : ""}`}
+        }${className ? ` ${className}` : ""}${
+          center ? " main-center" : ""
+        }`}
       >
         {children}
       </main>

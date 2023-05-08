@@ -4,7 +4,7 @@ import IconDiscord from "@/public/icons/discord.svg";
 import IconInstagram from "@/public/icons/instagram.svg";
 import IconRootMe from "@/public/icons/root-me.svg";
 
-const socialNetwords = [
+const socialNetworks = [
   {
     id: 0,
     icon: <IconLinkedin />,
@@ -37,4 +37,4 @@ const socialNetwords = [
   },
 ];
 
-export default socialNetwords;
+export default socialNetworks;

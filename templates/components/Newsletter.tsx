@@ -9,8 +9,8 @@ import IconNewspaper from "@/public/icons/newspaper.svg";
 import FormClass from "@/utils/Form";
 import { toast } from "react-toastify";
 import axios from "axios";
+import NetworkLoader from "@/templates/components/Loader/NetworkLoader";
 import NewsletterValidatorClass from "@/utils/validators/NewsletterValidator";
-import NetwordLoader from "@/templates/components/Loader/NetwordLoader";
 
 // classes
 const Form = new FormClass();
@@ -110,15 +110,15 @@ const Newsletter: FC = () => {
             type="email"
             value={form.newsletter}
             min={0}
-            max={60}
+            max={255}
             asterix={false}
           />
 
-          <button className="btn-primary-light btn-primary-fix-height btn-primary-fix-width">
+          <button className="btn-primary-light btn-primary-fix-height btn-primary-fix-width btn-network-light-black">
             {!loading ? (
               "S'abonner"
             ) : (
-              <NetwordLoader tiny />
+              <NetworkLoader tiny />
             )}
           </button>
         </form>

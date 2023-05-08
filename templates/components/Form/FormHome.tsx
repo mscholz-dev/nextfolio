@@ -12,7 +12,7 @@ import FormInput from "@/templates/components/Form/FormInput";
 import FormTextarea from "@/templates/components/Form/FormTextarea";
 import FormCheckbox from "@/templates/components/Form/FormCheckbox";
 import FormClass from "@/utils/Form";
-import NetwordLoader from "@/templates/components/Loader/NetwordLoader";
+import NetworkLoader from "@/templates/components/Loader/NetworkLoader";
 import ContactValidatorClass from "@/utils/validators/ContactValidator";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -227,7 +227,7 @@ const FormHome: FC = () => {
             {!loading ? (
               "Envoyer ma demande"
             ) : (
-              <NetwordLoader />
+              <NetworkLoader />
             )}
           </button>
         </form>

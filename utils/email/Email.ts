@@ -44,11 +44,16 @@ export default class Email {
   async newsletterSubscribeTemplate(
     email: string,
   ): Promise<void> {
-    const fileHtmlClient = fs
+    const fileClient = fs
       .readFileSync(
         "./utils/email/fr/newsletter/subscribe.html",
       )
       .toString();
+
+    const fileHtmlClient = fileClient.replace(
+      "$email",
+      email,
+    );
 
     await this.send(
       email,

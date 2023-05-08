@@ -8,6 +8,7 @@
 - page projets
 - framer motion
 - page mentions legales
+- send email when contact request
 
 # SECONDAIRE
 
@@ -22,3 +23,10 @@
 - sitemap.xml
 - robots.txt
 - fonctionnalité dumb des emails dans le channel discord
+- meta descri
+
+La protection de la vie privée est pourtant un argument commercial de plus en plus recherché par les consommateurs et clients. La newsletter étant un rendez-vous fréquent avec vos prospects, c’est un point de contact pour lequel la mise en avant de votre respect des règles peut devenir un gage de confiance intéressant à activer.
+
+- mettre en place une section regle RGPD???
+
+- site map jolie ?

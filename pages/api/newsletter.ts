@@ -8,6 +8,7 @@ import InternalErrorClass from "@/utils/InternalError";
 import EmailClass from "@/utils/email/Email";
 
 // classes
+import MongoDB from "@/utils/MongoDB";
 const NewsletterValidator =
   new NewsletterValidatorClass();
 const InternalError = new InternalErrorClass();
@@ -34,30 +35,53 @@ const newsletter = async (
           .status(400)
           .json({ err: errors });
 
-      // create discord newsletter-email request
-      await axios.post(
-        `https://discord.com/api/webhooks/${process.env.WEBHOOK_NEWSLETTER_EMAIL}`,
-        {
-          content: `
-**Email :** ${newsletter}
-              `,
-        },
+      // store email in mongoDB
+      const client =
+        await MongoDB.clientPromise();
+      const db = client.db(
+        `portfolio${
+          process.env.NODEENV === "dev"
+            ? "_dev"
+            : ""
+        }`,
       );
 
-      // create discord newsletter-log request (create this log to know all users registred, even if someone unsubscribe)
-      await axios.post(
-        `https://discord.com/api/webhooks/${process.env.WEBHOOK_NEWSLETTER_LOG}`,
-        {
-          content: `
-**Nouvelle abonnement**
-              `,
-        },
-      );
+      // search existing email
+      const newsletterId = await db
+        .collection("newsletter")
+        .findOne(
+          { email: newsletter },
+          { projection: { _id: 1 } },
+        );
 
-      // send subscribe email
-      await Email.newsletterSubscribeTemplate(
-        newsletter,
-      );
+      // email doesn't exist
+      if (newsletterId === null) {
+        // same datetime
+        const newDate = new Date();
+
+        await db
+          .collection("newsletter")
+          .insertOne({
+            email: newsletter,
+            created_at: newDate,
+            updated_at: newDate,
+          });
+
+        // create discord newsletter-log request
+        await axios.post(
+          `https://discord.com/api/webhooks/${process.env.WEBHOOK_NEWSLETTER_LOG}`,
+          {
+            content: `
+  **Nouvelle abonnement**
+                `,
+          },
+        );
+
+        // send subscribe email
+        await Email.newsletterSubscribeTemplate(
+          newsletter,
+        );
+      }
 
       // return empty response
       return res.status(200).end();
@@ -85,15 +109,35 @@ const newsletter = async (
           .status(400)
           .json({ err: errors });
 
-      // create discord newsletter-log request
-      await axios.post(
-        `https://discord.com/api/webhooks/${process.env.WEBHOOK_NEWSLETTER_LOG}`,
-        {
-          content: `
-**Suppression d'abonnement :** ${email}
-              `,
-        },
+      // delete email in mongoDB
+      const client =
+        await MongoDB.clientPromise();
+      const db = client.db(
+        `portfolio${
+          process.env.NODEENV === "dev"
+            ? "_dev"
+            : ""
+        }`,
       );
+
+      const { deletedCount } = await db
+        .collection("newsletter")
+        .deleteOne({
+          email,
+        });
+
+      // email really deleted ?
+      if (deletedCount !== 0) {
+        // create discord newsletter-log request
+        await axios.post(
+          `https://discord.com/api/webhooks/${process.env.WEBHOOK_NEWSLETTER_LOG}`,
+          {
+            content: `
+    **Suppression d'abonnement**
+                  `,
+          },
+        );
+      }
 
       // return empty response
       return res.status(200).end();

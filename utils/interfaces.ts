@@ -9,6 +9,7 @@ export interface IPage {
   description: string;
   padding?: boolean;
   className?: string;
+  center?: boolean;
 }
 
 export interface IFormInput extends TFormInput {}
@@ -88,4 +89,12 @@ export interface IFormCheckbox {
 
 export interface INetworkLoader {
   tiny?: boolean;
+}
+
+export interface INewsletterUnsubscribe {
+  email: string;
+}
+
+export interface IFormUnsubscribe {
+  email: string;
 }

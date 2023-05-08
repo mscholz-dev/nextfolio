@@ -7,6 +7,7 @@ import ContactValidatorClass from "@/utils/validators/ContactValidator";
 import InternalErrorClass from "@/utils/InternalError";
 
 // classes
+import MongoDB from "@/utils/MongoDB";
 const ContactValidator =
   new ContactValidatorClass();
 const InternalError = new InternalErrorClass();
@@ -44,6 +45,31 @@ const contact = async (
           .status(400)
           .json({ err: errors });
 
+      // store contact request in mongoDB
+      const client =
+        await MongoDB.clientPromise();
+      const db = client.db(
+        `portfolio${
+          process.env.NODEENV === "dev"
+            ? "_dev"
+            : ""
+        }`,
+      );
+
+      // same datetime
+      const newDate = new Date();
+
+      await db.collection("contact").insertOne({
+        fullName,
+        email,
+        phone: phone ? phone : null,
+        subject,
+        message,
+        consent,
+        created_at: newDate,
+        updated_at: newDate,
+      });
+
       // create discord contact request
       await axios.post(
         `https://discord.com/api/webhooks/${process.env.WEBHOOK_CONTACT}`,
@@ -51,7 +77,9 @@ const contact = async (
           content: `
 **Nom et prénom :** ${fullName}
 **Email :** ${email}
-**Numéro de téléphone :** ${phone}
+**Numéro de téléphone :** ${
+            phone ? phone : "non renseigné"
+          }
 **Sujet :** ${subject}
 **Message :**
 ${message}

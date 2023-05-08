@@ -1,0 +1,13 @@
+.form-unsubscribe {
+  margin: 0 auto 32px;
+  max-width: 1000px;
+
+  @include responsive(t-xs) {
+    margin-bottom: 48px;
+  }
+
+  &-form {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}

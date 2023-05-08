@@ -30,11 +30,12 @@ module.exports = {
   },
   // init .env variables
   env: {
+    // NODE
+    NODEENV: process.env.NODEENV,
+
     // DISCORD
     WEBHOOK_CONTACT: process.env.WEBHOOK_CONTACT,
     WEBHOOK_500: process.env.WEBHOOK_500,
-    WEBHOOK_NEWSLETTER_EMAIL:
-      process.env.WEBHOOK_NEWSLETTER_EMAIL,
     WEBHOOK_NEWSLETTER_LOG:
       process.env.WEBHOOK_NEWSLETTER_LOG,
 
@@ -43,6 +44,9 @@ module.exports = {
     MAILER_PORT: process.env.MAILER_PORT,
     MAILER_USER: process.env.MAILER_USER,
     MAILER_PASSWORD: process.env.MAILER_PASSWORD,
+
+    // MONGODB
+    MONGODB_URI: process.env.MONGODB_URI,
   },
   // disable trash header
   poweredByHeader: false,

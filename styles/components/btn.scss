@@ -104,4 +104,24 @@
       transform: scale(0.9);
     }
   }
+
+  &-network {
+    &-light-black {
+      .network-loader-bar {
+        background: $light;
+      }
+
+      &:hover {
+        .network-loader-bar {
+          background: $black;
+        }
+      }
+    }
+  }
+
+  &-width {
+    &-full {
+      width: 100%;
+    }
+  }
 }

@@ -4,4 +4,10 @@
   &-padding {
     padding-top: 96px;
   }
+
+  &-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 }

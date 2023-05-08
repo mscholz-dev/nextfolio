@@ -4,11 +4,14 @@ import IconCopyright from "@/public/icons/copyright.svg";
 import Link from "next/link";
 
 // data
-import socialNetwords from "@/utils/data/socialNetworks";
+import socialNetworks from "@/utils/data/socialNetworks";
 
 const Footer: FC = () => {
   return (
-    <footer className="footer wrapper-padding-x wrapper-padding-y">
+    <footer
+      id="footer"
+      className="footer wrapper-padding-x wrapper-padding-y"
+    >
       <div className="footer-wrapper">
         <Link href="/" className="footer-brand">
           <IconLogo className="footer-brand-logo" />
@@ -27,7 +30,7 @@ const Footer: FC = () => {
         </div>
 
         <div className="footer-social-link">
-          {socialNetwords.map(
+          {socialNetworks.map(
             ({ id, icon, url, title }) => (
               <a
                 key={id}
