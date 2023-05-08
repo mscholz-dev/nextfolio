@@ -50,7 +50,9 @@ export default class Email {
     email: string,
   ): Promise<void> {
     const fileClient = Tool.readFileSync([
-      "public",
+      process.env.NODEENV === "prod"
+        ? ""
+        : "public",
       "emails",
       "fr",
       "newsletter",
@@ -80,7 +82,9 @@ export default class Email {
     consent,
   }: TContactData): Promise<void> {
     const fileClient = Tool.readFileSync([
-      "public",
+      process.env.NODEENV === "prod"
+        ? ""
+        : "public",
       "emails",
       "fr",
       "contact",
