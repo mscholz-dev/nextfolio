@@ -1,8 +1,12 @@
 import fs from "fs";
 import nodemailer from "nodemailer";
+import ToolClass from "@/utils/Tool";
 
 // types
 import { TContactData } from "@/utils/types";
+
+// classes
+const Tool = new ToolClass();
 
 export default class Email {
   send(
@@ -47,7 +51,9 @@ export default class Email {
   ): Promise<void> {
     const fileClient = fs
       .readFileSync(
-        "utils/email/fr/newsletter/subscribe.html",
+        `${Tool.filePath(
+          "email/fr/newsletter/subscribe.html",
+        )}`,
       )
       .toString();
 
@@ -75,7 +81,9 @@ export default class Email {
   }: TContactData): Promise<void> {
     const fileClient = fs
       .readFileSync(
-        "utils/email/fr/contact/request.html",
+        `${Tool.filePath(
+          "email/fr/contact/request.html",
+        )}`,
       )
       .toString();
 

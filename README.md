@@ -16,7 +16,7 @@
 - google search console
 - ajouter un captcha
 - mettre en place les cors
-- template email pour la newsletter
+- template email pour la newsletter (+ footer professionnel)
 - automatisation envoie email de newsletter
 - créer 3 mails de newsletter en avance
 - sitemap.xml
