@@ -5,7 +5,7 @@ import {
 import axios from "axios";
 import NewsletterValidatorClass from "@/utils/validators/NewsletterValidator";
 import InternalErrorClass from "@/utils/InternalError";
-import EmailClass from "@/utils/email/Email";
+import EmailClass from "@/utils/Email";
 
 // classes
 import MongoDB from "@/utils/MongoDB";
