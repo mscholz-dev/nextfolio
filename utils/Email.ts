@@ -50,7 +50,7 @@ export default class Email {
     email: string,
   ): Promise<void> {
     const fileClient = Tool.readFileSync(
-      "../public/emails/fr/newsletter/subscribe.html",
+      "public/emails/fr/newsletter/subscribe.html",
     );
 
     const fileHtmlClient = fileClient.replace(
@@ -76,7 +76,7 @@ export default class Email {
     consent,
   }: TContactData): Promise<void> {
     const fileClient = Tool.readFileSync(
-      "../public/emails/fr/contact/request.html",
+      "public/emails/fr/contact/request.html",
     );
 
     const fileHtmlClient = fileClient
