@@ -72,6 +72,16 @@ const contact = async (
         updated_at: newDate,
       });
 
+      // send contact request email
+      await Email.contactRequestTemplate({
+        fullName,
+        email,
+        phone,
+        subject,
+        message,
+        consent,
+      });
+
       // create discord contact request
       await axios.post(
         `https://discord.com/api/webhooks/${process.env.WEBHOOK_CONTACT}`,
@@ -88,16 +98,6 @@ ${message}
           `,
         },
       );
-
-      // send contact request email
-      await Email.contactRequestTemplate({
-        fullName,
-        email,
-        phone,
-        subject,
-        message,
-        consent,
-      });
 
       // return empty response
       return res.status(200).end();

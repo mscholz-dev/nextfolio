@@ -47,7 +47,7 @@ export default class Email {
   ): Promise<void> {
     const fileClient = fs
       .readFileSync(
-        "./utils/email/fr/newsletter/subscribe.html",
+        "utils/email/fr/newsletter/subscribe.html",
       )
       .toString();
 
@@ -75,7 +75,7 @@ export default class Email {
   }: TContactData): Promise<void> {
     const fileClient = fs
       .readFileSync(
-        "./utils/email/fr/contact/request.html",
+        "utils/email/fr/contact/request.html",
       )
       .toString();
 

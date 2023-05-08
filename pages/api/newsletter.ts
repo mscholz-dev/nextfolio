@@ -67,6 +67,11 @@ const newsletter = async (
             updated_at: newDate,
           });
 
+        // send subscribe email
+        await Email.newsletterSubscribeTemplate(
+          newsletter,
+        );
+
         // create discord newsletter-log request
         await axios.post(
           `https://discord.com/api/webhooks/${process.env.WEBHOOK_NEWSLETTER_LOG}`,
@@ -75,11 +80,6 @@ const newsletter = async (
   **Nouvelle abonnement**
                 `,
           },
-        );
-
-        // send subscribe email
-        await Email.newsletterSubscribeTemplate(
-          newsletter,
         );
       }
 
