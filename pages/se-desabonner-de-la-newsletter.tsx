@@ -3,6 +3,9 @@ import Page from "@/templates/layouts/Page";
 import FormUnsubscribe from "@/templates/components/Form/FormUnsubscribe";
 import { GetServerSidePropsContext } from "next";
 
+// data
+import metaData from "@/utils/data/meta";
+
 // interfaces
 import { INewsletterUnsubscribe } from "@/utils/interfaces";
 
@@ -37,7 +40,9 @@ const NewsletterUnsubscribe: FC<
   return (
     <Page
       title="Désabonnement de la newsletter"
-      description="TODO:"
+      description={
+        metaData.newsletterUnsubscribeDescription
+      }
       padding
       center
     >

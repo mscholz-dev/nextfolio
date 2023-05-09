@@ -6,7 +6,10 @@ import projectsData from "@/utils/data/projects";
 
 const Projects: FC = () => {
   return (
-    <section className="projects wrapper-padding-x">
+    <section
+      id="projets"
+      className="projects wrapper-padding-x"
+    >
       <h2 className="title-home-secondary">
         Projets
       </h2>

@@ -1,4 +1,8 @@
-import React, { FC, useState } from "react";
+import React, {
+  FC,
+  useState,
+  MouseEvent,
+} from "react";
 import Link from "next/link";
 import IconLogo from "@/public/icons/logo.svg";
 import IconBurgerMenu from "@/public/icons/burger-menu.svg";
@@ -62,7 +66,27 @@ const Header: FC = () => {
 
   const handleOpen = () => setOpen(!open);
 
-  const handleClick = () => setOpen(false);
+  const handleClick = (
+    e: MouseEvent<HTMLAnchorElement>,
+    url: string,
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const section = document.querySelector(url);
+
+    if (section) {
+      window.scrollTo({
+        top:
+          section.getBoundingClientRect().top +
+          window.scrollY -
+          96,
+        behavior: "smooth",
+      });
+    }
+
+    setOpen(false);
+  };
 
   return (
     <header
@@ -84,7 +108,9 @@ const Header: FC = () => {
               key={id}
               href={url}
               className="header-category-item"
-              onClick={handleClick}
+              onClick={(
+                e: MouseEvent<HTMLAnchorElement>,
+              ) => handleClick(e, url)}
             >
               <span className="header-category-item-container">
                 <span className="header-category-item-title">

@@ -85,7 +85,10 @@ const Newsletter: FC = () => {
   };
 
   return (
-    <section className="newsletter wrapper-padding-y wrapper-padding-x">
+    <section
+      id="newsletter"
+      className="newsletter wrapper-padding-y wrapper-padding-x"
+    >
       <div className="newsletter-wrapper">
         <h2 className="newsletter-title">
           S&apos;abonner à la newsletter

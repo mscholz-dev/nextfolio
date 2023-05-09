@@ -6,7 +6,10 @@ import testimonies from "@/utils/data/testimonies";
 
 const Testimony: FC = () => {
   return (
-    <section className="testimony wrapper-padding-x">
+    <section
+      id="temoignages"
+      className="testimony wrapper-padding-x"
+    >
       <h2 className="title-home-secondary">
         Témoignages
       </h2>

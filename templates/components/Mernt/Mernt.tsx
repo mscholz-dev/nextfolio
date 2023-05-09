@@ -146,7 +146,10 @@ const Mernt: FC = () => {
   }, []);
 
   return (
-    <section className="mernt wrapper-padding-x">
+    <section
+      id="competences-techniques"
+      className="mernt wrapper-padding-x"
+    >
       <h2 className="title-home-secondary">
         Ma MERN-T stack
       </h2>

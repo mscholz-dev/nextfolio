@@ -7,7 +7,10 @@ import statistics from "@/utils/data/details/statistics";
 
 const Details: FC = () => {
   return (
-    <section className="details wrapper-padding-x">
+    <section
+      id="presentation"
+      className="details wrapper-padding-x"
+    >
       <div className="details-titles">
         <p className="details-info-title">
           Solutions de développement web uniques

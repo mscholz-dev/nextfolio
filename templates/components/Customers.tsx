@@ -5,7 +5,10 @@ import customersData from "@/utils/data/customers";
 
 const Customers: FC = () => {
   return (
-    <section className="customers wrapper-padding-x">
+    <section
+      id="clients-conquis"
+      className="customers wrapper-padding-x"
+    >
       <h2 className="title-home-secondary title-secondary">
         Clients conquis
       </h2>

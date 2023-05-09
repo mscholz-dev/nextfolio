@@ -15,6 +15,21 @@ const diplomas = [
   },
   {
     id: 2,
+    title:
+      "Formation avec un consultant sur l'accessibilité web",
+    school: "Freelance",
+    category: "Accessibilité",
+    year: 2022,
+  },
+  {
+    id: 3,
+    title: "Formation autodidacte Three.js",
+    school: "Three.js journey",
+    category: "Three.js /  webgl",
+    year: 2022,
+  },
+  {
+    id: 4,
     title: "Concepteur développeur web",
     school: "3W Academy",
     category: "Développement web",

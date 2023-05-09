@@ -5,7 +5,10 @@ import servicesData from "@/utils/data/services";
 
 const Services: FC = () => {
   return (
-    <section className="services wrapper-padding-x">
+    <section
+      id="services"
+      className="services wrapper-padding-x"
+    >
       <h2 className="title-home-secondary title-secondary">
         Services
       </h2>

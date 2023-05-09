@@ -6,7 +6,10 @@ import articlesData from "@/utils/data/articles";
 
 const Articles: FC = () => {
   return (
-    <section className="articles wrapper-padding-x">
+    <section
+      id="articles"
+      className="articles wrapper-padding-x"
+    >
       <h2 className="title-home-secondary">
         Articles
       </h2>

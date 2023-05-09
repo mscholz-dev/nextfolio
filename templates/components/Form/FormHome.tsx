@@ -96,7 +96,10 @@ const FormHome: FC = () => {
   };
 
   return (
-    <section className="form-home wrapper-padding-x">
+    <section
+      id="contact"
+      className="form-home wrapper-padding-x"
+    >
       <h2 className="title-home-secondary">
         Contactez-moi pour votre projet web
       </h2>

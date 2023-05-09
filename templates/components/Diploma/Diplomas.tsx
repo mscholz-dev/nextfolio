@@ -6,7 +6,10 @@ import diplomasData from "@/utils/data/diplomas";
 
 const Diplomas: FC = () => {
   return (
-    <section className="diplomas wrapper-padding-x">
+    <section
+      id="diplomes"
+      className="diplomas wrapper-padding-x"
+    >
       <h2 className="title-home-secondary">
         Diplômes
       </h2>

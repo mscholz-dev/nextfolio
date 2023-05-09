@@ -1,0 +1,30 @@
+.legal-notice {
+  margin: 0 auto;
+  max-width: 1000px;
+
+  h2 {
+    color: $primary-color;
+    font-size: 24px;
+    margin: 32px 0 24px;
+
+    @include responsive(s-xl) {
+      font-size: 26px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 28px;
+    }
+  }
+
+  p {
+    margin-bottom: 6px;
+
+    @include responsive(t-xs) {
+      margin-bottom: 12px;
+    }
+  }
+
+  b {
+    font-family: $secondary-font-bold;
+  }
+}

@@ -13,11 +13,14 @@ import Testimony from "@/templates/components/Testimony/Testimony";
 import Mernt from "@/templates/components/Mernt/Mernt";
 import FormHome from "@/templates/components/Form/FormHome";
 
+// data
+import metaData from "@/utils/data/meta";
+
 const Index: FC = () => {
   return (
     <Page
       title="Page d'accueil"
-      description="TODO:"
+      description={metaData.indexDescription}
       padding
     >
       <>
