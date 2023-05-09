@@ -6,13 +6,14 @@ import axios from "axios";
 import ContactValidatorClass from "@/utils/validators/ContactValidator";
 import InternalErrorClass from "@/utils/InternalError";
 import EmailClass from "@/utils/Email";
+import MongoDBClass from "@/utils/MongoDB";
 
 // classes
-import MongoDB from "@/utils/MongoDB";
 const ContactValidator =
   new ContactValidatorClass();
 const InternalError = new InternalErrorClass();
 const Email = new EmailClass();
+const MongoDB = new MongoDBClass();
 
 const contact = async (
   req: NextApiRequest,

@@ -6,13 +6,14 @@ import axios from "axios";
 import NewsletterValidatorClass from "@/utils/validators/NewsletterValidator";
 import InternalErrorClass from "@/utils/InternalError";
 import EmailClass from "@/utils/Email";
+import MongoDBClass from "@/utils/MongoDB";
 
 // classes
-import MongoDB from "@/utils/MongoDB";
 const NewsletterValidator =
   new NewsletterValidatorClass();
 const InternalError = new InternalErrorClass();
 const Email = new EmailClass();
+const MongoDB = new MongoDBClass();
 
 const newsletter = async (
   req: NextApiRequest,

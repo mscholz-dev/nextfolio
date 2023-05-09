@@ -1,12 +1,11 @@
-import fs from "fs";
 import nodemailer from "nodemailer";
-import ToolClass from "@/utils/Tool";
+import MongoDBClass from "@/utils/MongoDB";
 
 // types
 import { TContactData } from "@/utils/types";
 
 // classes
-const Tool = new ToolClass();
+const MongoDB = new MongoDBClass();
 
 export default class Email {
   send(
@@ -49,20 +48,34 @@ export default class Email {
   async newsletterSubscribeTemplate(
     email: string,
   ): Promise<void> {
-    const fileClient = Tool.readFileSync([
-      process.env.NODEENV === "prod"
-        ? "../../.."
-        : "public",
-      "emails",
-      "fr",
-      "newsletter",
-      "subscribe.html",
-    ]);
-
-    const fileHtmlClient = fileClient.replace(
-      "$email",
-      email,
+    // get template_email
+    const client = await MongoDB.clientPromise();
+    const db = client.db(
+      `portfolio${
+        process.env.NODEENV === "dev"
+          ? "_dev"
+          : ""
+      }`,
     );
+
+    const mongoFile = await db
+      .collection("template_email")
+      .findOne(
+        {
+          name: "newsletter_subscribe",
+        },
+        {
+          projection: {
+            template: 1,
+          },
+        },
+      );
+
+    if (typeof mongoFile?.template !== "string")
+      throw "template email not found";
+
+    const fileHtmlClient =
+      mongoFile.template.replace("$email", email);
 
     await this.send(
       email,
@@ -81,17 +94,33 @@ export default class Email {
     message,
     consent,
   }: TContactData): Promise<void> {
-    const fileClient = Tool.readFileSync([
-      process.env.NODEENV === "prod"
-        ? "../../.."
-        : "public",
-      "emails",
-      "fr",
-      "contact",
-      "request.html",
-    ]);
+    // get template_email
+    const client = await MongoDB.clientPromise();
+    const db = client.db(
+      `portfolio${
+        process.env.NODEENV === "dev"
+          ? "_dev"
+          : ""
+      }`,
+    );
 
-    const fileHtmlClient = fileClient
+    const mongoFile = await db
+      .collection("template_email")
+      .findOne(
+        {
+          name: "contact_request",
+        },
+        {
+          projection: {
+            template: 1,
+          },
+        },
+      );
+
+    if (typeof mongoFile?.template !== "string")
+      throw "template email not found";
+
+    const fileHtmlClient = mongoFile.template
       .replace("$fullName", fullName)
       .replace("$email", email)
       .replace("$phone", phone || "non renseigné")

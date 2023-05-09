@@ -1,7 +1,6 @@
 # URGENT
 
 - tester en prod newsletter / contact
-- changer mongodb to no static
 
 - contenu blog
 - contenu projets
