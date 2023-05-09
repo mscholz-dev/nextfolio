@@ -12,11 +12,14 @@ import Details from "@/templates/components/Details";
 import Testimony from "@/templates/components/Testimony/Testimony";
 import Mernt from "@/templates/components/Mernt/Mernt";
 import FormHome from "@/templates/components/Form/FormHome";
+import { useRouter } from "next/router";
 
 // data
 import metaData from "@/utils/data/meta";
 
 const Index: FC = () => {
+  const router = useRouter();
+
   return (
     <Page
       title="Page d'accueil"

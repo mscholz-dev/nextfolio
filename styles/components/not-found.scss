@@ -1,0 +1,67 @@
+.not-found {
+  margin: auto;
+  max-width: 1000px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  &-section {
+    align-items: center;
+    display: flex;
+  }
+
+  &-title {
+    color: $white;
+    font-size: 32px;
+    margin-bottom: 48px;
+    max-width: 500px;
+
+    @include responsive(s-xl) {
+      font-size: 38px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 48px;
+      margin-bottom: 96px;
+    }
+  }
+
+  &-text {
+    color: $white;
+    font-size: 20px;
+    margin-bottom: 32px;
+    max-width: 800px;
+
+    @include responsive(t-xs) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &-btn {
+    @include background200vw($white, $black);
+    border: 2px solid $black;
+    display: flex;
+    font-size: 20px;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.25s background-position
+        ease-in-out,
+      0.25s color ease-in-out,
+      0.25s transform ease-in-out;
+    width: fit-content;
+
+    @include responsive(s-xl) {
+      padding: 16px 32px;
+    }
+
+    &:hover {
+      background-position: left;
+      color: $black;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}

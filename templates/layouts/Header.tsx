@@ -2,78 +2,76 @@ import React, {
   FC,
   useState,
   MouseEvent,
+  useEffect,
 } from "react";
 import Link from "next/link";
 import IconLogo from "@/public/icons/logo.svg";
 import IconBurgerMenu from "@/public/icons/burger-menu.svg";
+import { useRouter } from "next/router";
 
 const Header: FC = () => {
   const [open, setOpen] =
     useState<boolean>(false);
 
+  const router = useRouter();
+
   const links = [
     {
       id: 0,
-      url: "#presentation",
+      url: "presentation",
       title: "👨‍💻 Présentation",
     },
     {
       id: 1,
-      url: "#diplomes",
+      url: "diplomes",
       title: "💡 Diplômes",
     },
     {
       id: 2,
-      url: "#projets",
+      url: "projets",
       title: "⚡ Projets",
     },
     {
       id: 3,
-      url: "#competences-techniques",
+      url: "competences-techniques",
       title: "🧠 Compétences techniques",
     },
     {
       id: 4,
-      url: "#services",
+      url: "services",
       title: "👨‍💼 Services",
     },
     {
       id: 5,
-      url: "#clients-conquis",
+      url: "clients-conquis",
       title: "👨‍💼 Clients conquis",
     },
     {
       id: 6,
-      url: "#temoignages",
+      url: "temoignages",
       title: "🗨️ Témoignages",
     },
     {
       id: 7,
-      url: "#articles",
+      url: "articles",
       title: "📚 Articles",
     },
     {
       id: 8,
-      url: "#newsletter",
+      url: "newsletter",
       title: "📩 Newsletter",
     },
     {
       id: 9,
-      url: "#contact",
+      url: "contact",
       title: "📨 Contact",
     },
   ];
 
   const handleOpen = () => setOpen(!open);
 
-  const handleClick = (
-    e: MouseEvent<HTMLAnchorElement>,
-    url: string,
-  ) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const section = document.querySelector(url);
+  const handleSection = (url: string) => {
+    const section = document.getElementById(url);
 
     if (section) {
       window.scrollTo({
@@ -87,6 +85,32 @@ const Header: FC = () => {
 
     setOpen(false);
   };
+
+  const handleClick = (
+    e: MouseEvent<HTMLAnchorElement>,
+    url: string,
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    router.push(`/?section=${url}`);
+  };
+
+  useEffect(() => {
+    if (typeof router.query.section !== "string")
+      return;
+
+    // prevent sizing error
+    setTimeout(
+      () =>
+        handleSection(
+          router.query.section as string,
+        ),
+      0,
+    );
+
+    // eslint-disable-next-line
+  }, [router.query]);
 
   return (
     <header
@@ -106,7 +130,7 @@ const Header: FC = () => {
           {links.map(({ id, url, title }) => (
             <Link
               key={id}
-              href={url}
+              href={`?section=${url}`}
               className="header-category-item"
               onClick={(
                 e: MouseEvent<HTMLAnchorElement>,
