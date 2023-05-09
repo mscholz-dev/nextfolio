@@ -142,4 +142,31 @@
       font-size: 14px;
     }
   }
+
+  &-legal-notice {
+    color: $white;
+    position: relative;
+    font-family: $secondary-font-bold;
+    text-decoration: none;
+    transition: 0.25s color ease-in-out;
+
+    &:after {
+      background: $primary-color;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      transition: 0.25s width ease-in-out;
+      width: 0;
+    }
+
+    &:hover {
+      color: $primary-color;
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
 }

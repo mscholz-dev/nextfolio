@@ -48,7 +48,13 @@ const Footer: FC = () => {
         <div className="footer-copyright">
           <IconCopyright className="footer-copyright-icon" />
           <p className="footer-copyright-text">
-            Avril 2023 mscholz.dev
+            Avril 2023 •{" "}
+            <Link
+              href="/mentions-legales"
+              className="footer-legal-notice"
+            >
+              Mentions légales
+            </Link>
           </p>
         </div>
       </div>

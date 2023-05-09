@@ -2,17 +2,22 @@ import React, { FC } from "react";
 
 // interfaces
 import { IArticle } from "@/utils/interfaces";
+import Link from "next/link";
 
 const Article: FC<IArticle> = ({
   imgSrc,
   imgAlt,
   title,
+  url,
   description,
   category,
   date,
 }) => {
   return (
-    <article className="article">
+    <Link
+      href={`/articles/${url}`}
+      className="article"
+    >
       <span className="article-img-container">
         {/* eslint-disable-next-line */}
         <img
@@ -39,7 +44,7 @@ const Article: FC<IArticle> = ({
           {description}
         </p>
       </div>
-    </article>
+    </Link>
   );
 };
 

@@ -24,6 +24,7 @@ const Articles: FC = () => {
             imgSrc,
             imgAlt,
             title,
+            url,
             description,
             category,
             date,
@@ -33,6 +34,7 @@ const Articles: FC = () => {
               imgSrc={imgSrc}
               imgAlt={imgAlt}
               title={title}
+              url={url}
               description={description}
               category={category}
               date={date}

@@ -33,6 +33,7 @@ export interface IArticle {
   imgSrc: string;
   imgAlt: string;
   title: string;
+  url: string;
   description: string;
   category: string;
   date: string;
@@ -97,4 +98,16 @@ export interface INewsletterUnsubscribe {
 
 export interface IFormUnsubscribe {
   email: string;
+}
+
+export interface IArticleUrl {
+  id: number;
+  imgSrc: string;
+  imgAlt: string;
+  title: string;
+  url: string;
+  description: string;
+  category: string;
+  date: string;
+  content: string;
 }
