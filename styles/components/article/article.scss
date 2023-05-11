@@ -1,6 +1,7 @@
 .article {
   border: 2px solid $black;
   cursor: pointer;
+  display: flex;
   flex-direction: column;
   margin-bottom: 24px;
   text-decoration: none;

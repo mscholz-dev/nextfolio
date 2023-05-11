@@ -1,10 +1,12 @@
 .article-url {
-  margin-top: 55px;
-
   &-img {
-    height: 200px;
+    height: 256px;
     object-fit: cover;
     width: 100%;
+
+    @include responsive(t-xs) {
+      height: 356px;
+    }
   }
 
   &-main {
@@ -13,20 +15,30 @@
   }
 
   &-title {
-    font-size: 24px;
+    font-size: 26px;
     margin: 32px 0;
+    max-width: 750px;
+
+    @include responsive(s-xl) {
+      font-size: 30px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 34px;
+    }
   }
 
   &-details {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 32px;
+    max-width: 500px;
 
     &-item {
       display: flex;
       flex-direction: column;
 
       &-title {
+        color: $dark;
         margin-bottom: 6px;
       }
 
@@ -37,12 +49,23 @@
   }
 
   &-content {
-    h3 {
-      font-size: 20px;
-      margin-bottom: 24px;
+    margin-bottom: 32px;
+
+    @include responsive(s-xl) {
+      margin-bottom: 48px;
     }
 
-    p {
+    h3 {
+      font-size: 22px;
+      margin: 32px 0 12px;
+
+      @include responsive(s-xl) {
+        font-size: 24px;
+      }
+
+      @include responsive(t-xs) {
+        font-size: 26px;
+      }
     }
   }
 }

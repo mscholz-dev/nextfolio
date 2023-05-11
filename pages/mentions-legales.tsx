@@ -83,7 +83,7 @@ const LegalNotice: FC = () => {
           les textes, les images, les graphiques,
           les logos et les vidéos, sont{" "}
           <b>
-            protégés par des droits d&poas;auteur
+            protégés par des droits d&apos;auteur
             et sont la propriété exclusive de
             Morgan Scholz
           </b>
