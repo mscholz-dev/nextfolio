@@ -92,7 +92,7 @@ const contact = async (
 
       // create discord contact-log request
       await axios.post(
-        `https://discord.com/api/webhooks/${process.env.WEBHOOK_CONTACT}`,
+        `https://discord.com/api/webhooks/${process.env.WEBHOOK_CONTACT_LOG}`,
         {
           content: `
 **Nouvelle demande de contact :** ${uuid}
