@@ -77,6 +77,12 @@ export default class ContactValidator extends Validator {
           return "Vous devez accepter que vos données soient traitées dans le cadre de votre demande";
         return "";
 
+      // token
+      case "token":
+        if (!value)
+          return "Le champ Jeton est requis";
+        return "";
+
       default:
         return "Une erreur est survenu";
     }
