@@ -1,8 +1,14 @@
+import {
+  NextApiRequest,
+  NextApiResponse,
+} from "next";
 import fs from "fs";
 import path from "path";
 
-// eslint-disable-next-line
-export default (req, res) => {
+const img = (
+  req: NextApiRequest,
+  res: NextApiResponse,
+) => {
   const dirRelativeToPublicFolder = "img";
 
   const dir = path.resolve(
@@ -23,3 +29,5 @@ export default (req, res) => {
   res.statusCode = 200;
   res.json(images);
 };
+
+export default img;
