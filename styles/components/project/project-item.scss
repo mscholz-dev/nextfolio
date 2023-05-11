@@ -167,8 +167,10 @@
     }
 
     &-arrow {
+      fill: $black;
       height: 16px;
       margin-left: 12px;
+      transform: rotate(180deg);
       transition: 0.25s margin-left ease-in-out;
       width: 16px;
 

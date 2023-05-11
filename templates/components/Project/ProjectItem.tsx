@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import IconArrow from "@/public/icons/arrow.svg";
+import IconChevron from "@/public/icons/chevron.svg";
 
 // interfaces
 import { IProjectItem } from "@/utils/interfaces";
@@ -40,7 +40,7 @@ const ProjectItem: FC<IProjectItem> = ({
           <span className="project-item-cta-text">
             Voir plus
           </span>
-          <IconArrow className="project-item-cta-arrow" />
+          <IconChevron className="project-item-cta-arrow" />
         </p>
       </div>
     </div>

@@ -5,6 +5,7 @@ import React, {
   useState,
 } from "react";
 import HTMLReactParser from "html-react-parser";
+import IconChevron from "@/public/icons/chevron.svg";
 
 // interfaces
 import { IMerntItem } from "@/utils/interfaces";
@@ -114,6 +115,12 @@ const MerntItem: FC<IMerntItem> = ({
         <h3 className="mernt-item-title">
           {title}
         </h3>
+        <IconChevron
+          className="mernt-item-chevron"
+          style={{
+            fill: color,
+          }}
+        />
       </div>
 
       <div
