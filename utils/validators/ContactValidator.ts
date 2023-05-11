@@ -16,6 +16,16 @@ export default class ContactValidator extends Validator {
 
     return errors;
   }
+
+  inspectDeleteData(token: string) {
+    const errors = this.inspectData(
+      { token },
+      this.errorMessage,
+    );
+
+    return errors;
+  }
+
   errorMessage(
     id: string,
     value: string,

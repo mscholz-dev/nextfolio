@@ -7,6 +7,7 @@ import NewsletterValidatorClass from "@/utils/validators/NewsletterValidator";
 import InternalErrorClass from "@/utils/InternalError";
 import EmailClass from "@/utils/Email";
 import MongoDBClass from "@/utils/MongoDB";
+import SecurityClass from "@/utils/Security";
 
 // classes
 const NewsletterValidator =
@@ -14,6 +15,7 @@ const NewsletterValidator =
 const InternalError = new InternalErrorClass();
 const Email = new EmailClass();
 const MongoDB = new MongoDBClass();
+const Security = new SecurityClass();
 
 const newsletter = async (
   req: NextApiRequest,
@@ -60,9 +62,13 @@ const newsletter = async (
         // same datetime
         const newDate = new Date();
 
+        // create uuid
+        const uuid = Security.createUUID();
+
         await db
           .collection("newsletter")
           .insertOne({
+            token: uuid,
             email: newsletter,
             created_at: newDate,
             updated_at: newDate,
@@ -71,6 +77,7 @@ const newsletter = async (
         // send subscribe email
         await Email.newsletterSubscribeTemplate(
           newsletter,
+          uuid,
         );
 
         // create discord newsletter-log request
@@ -78,7 +85,7 @@ const newsletter = async (
           `https://discord.com/api/webhooks/${process.env.WEBHOOK_NEWSLETTER_LOG}`,
           {
             content: `
-  **Nouvelle abonnement**
+  **Nouvelle abonnement :** ${uuid}
                 `,
           },
         );
@@ -90,18 +97,18 @@ const newsletter = async (
 
     // DELETE request
     if (req.method === "DELETE") {
-      const { email } = req.query;
+      const { token } = req.query;
 
       // prevent non string value
-      if (typeof email !== "string")
+      if (typeof token !== "string")
         return res.status(400).json({
-          err: "Le champ Email est invalide",
+          err: "Le champ Jeton est invalide",
         });
 
       // validate data
       const errors =
-        NewsletterValidator.inspectNewsletterData(
-          { newsletter: email },
+        NewsletterValidator.inspectUnsubscribeData(
+          token,
         );
 
       // throw errors
@@ -124,7 +131,7 @@ const newsletter = async (
       const { deletedCount } = await db
         .collection("newsletter")
         .deleteOne({
-          email,
+          token,
         });
 
       // email really deleted ?
@@ -134,7 +141,7 @@ const newsletter = async (
           `https://discord.com/api/webhooks/${process.env.WEBHOOK_NEWSLETTER_LOG}`,
           {
             content: `
-    **Suppression d'abonnement**
+    **Suppression d'abonnement :** ${token}
                   `,
           },
         );

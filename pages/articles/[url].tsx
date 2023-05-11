@@ -75,8 +75,6 @@ export const getStaticPaths: GetStaticPaths<{
     ({ url }) => `/articles/${url}`,
   );
 
-  console.log(paths);
-
   return { paths, fallback: false };
 };
 

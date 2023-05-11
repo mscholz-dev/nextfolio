@@ -7,6 +7,8 @@ const meta = {
     "Consultez nos mentions légales pour obtenir toutes les informations légales et réglementaires relatives à notre site web. Découvrez nos conditions d'utilisation, politique de confidentialité et droits d'auteur. Soyez assuré que nous respectons votre vie privée et veillons à votre sécurité en ligne.",
   notFoundDescription:
     "Désolé, nous n'avons pas trouvé la page que vous recherchez. Notre équipe travaille activement pour résoudre ce problème. Veuillez revenir ultérieurement ou explorer nos autres pages pour trouver ce que vous cherchez. Merci de votre compréhension.",
+  contactDeleteDescription:
+    "Supprimez vos données personnelles en toute simplicité. Utilisez notre page de suppression des données pour retirer vos informations de notre base de contacts. Respect de votre vie privée et conformité aux réglementations en vigueur. Protégez votre confidentialité dès maintenant.",
 };
 
 export default meta;

@@ -80,7 +80,7 @@ const FormHome: FC = () => {
       await axios.post("/api/contact", form);
 
       toast.success(
-        "Votre demande a été pris en compte !",
+        "Votre demande de contact a été prise en compte !",
       );
 
       setForm(initForm);

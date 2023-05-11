@@ -93,7 +93,7 @@ export interface INetworkLoader {
 }
 
 export interface INewsletterUnsubscribe {
-  email: string;
+  token: string;
 }
 
 export interface IFormUnsubscribe {
@@ -110,4 +110,8 @@ export interface IArticleUrl {
   category: string;
   date: string;
   content: string;
+}
+
+export interface ContactDelete {
+  token: string;
 }

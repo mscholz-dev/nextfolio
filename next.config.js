@@ -34,8 +34,9 @@ module.exports = {
     NODEENV: process.env.NODEENV,
 
     // DISCORD
-    WEBHOOK_CONTACT: process.env.WEBHOOK_CONTACT,
     WEBHOOK_500: process.env.WEBHOOK_500,
+    WEBHOOK_CONTACT_LOG:
+      process.env.WEBHOOK_CONTACT_LOG,
     WEBHOOK_NEWSLETTER_LOG:
       process.env.WEBHOOK_NEWSLETTER_LOG,
 

@@ -30,6 +30,21 @@
       color: $light;
     }
 
+    &-color {
+      @extend .btn-primary;
+      @include background200vw(
+        $white,
+        $primary-color
+      );
+      border: 2px solid $primary-color;
+      color: $white;
+
+      &:hover {
+        background-position: left;
+        color: $primary-color;
+      }
+    }
+
     &-full {
       @extend .btn-primary;
       width: 100%;
@@ -116,12 +131,6 @@
           background: $black;
         }
       }
-    }
-  }
-
-  &-width {
-    &-full {
-      width: 100%;
     }
   }
 }

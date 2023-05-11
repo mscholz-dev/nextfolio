@@ -1,0 +1,19 @@
+.unsubscribe {
+  margin: 0 auto;
+  max-width: 500px;
+
+  &-btn {
+    font-size: 18px;
+    text-transform: uppercase;
+
+    &-container {
+      display: grid;
+      grid-gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+
+      @include responsive(s-xl) {
+        grid-gap: 24px;
+      }
+    }
+  }
+}
