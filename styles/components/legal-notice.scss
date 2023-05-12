@@ -1,6 +1,10 @@
 .legal-notice {
-  margin: 0 auto;
+  margin: 0 auto 32px;
   max-width: 1000px;
+
+  @include responsive(t-xs) {
+    margin-bottom: 48px;
+  }
 
   h2 {
     color: $primary-color;
