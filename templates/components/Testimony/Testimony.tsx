@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import TestimonyItem from "./TestimonyItem";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import testimonies from "@/utils/data/testimonies";
@@ -10,12 +12,8 @@ const Testimony: FC = () => {
       id="temoignages"
       className="testimony wrapper-padding-x"
     >
-      <h2 className="title-home-secondary">
-        Témoignages
-      </h2>
-      <p className="title-home-subtitle">
-        Ce qu&apos;on dit de moi
-      </p>
+      <TagTitle title="Témoignages" />
+      <TagSubtitle subtitle="Ce qu'on dit de moi" />
 
       <article className="testimony-wrapper">
         {testimonies.map(

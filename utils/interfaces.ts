@@ -30,6 +30,7 @@ export interface IDiploma {
 }
 
 export interface IArticle {
+  id: number;
   imgSrc: string;
   imgAlt: string;
   title: string;
@@ -114,4 +115,12 @@ export interface IArticleUrl {
 
 export interface ContactDelete {
   token: string;
+}
+
+export interface ITagTitle {
+  title: string;
+}
+
+export interface ITagSubtitle {
+  subtitle: string;
 }

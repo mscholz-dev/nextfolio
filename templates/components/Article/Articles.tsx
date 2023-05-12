@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import Article from "@/templates/components/Article/Article";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import articlesData from "@/utils/data/articles";
@@ -10,12 +12,8 @@ const Articles: FC = () => {
       id="articles"
       className="articles wrapper-padding-x"
     >
-      <h2 className="title-home-secondary">
-        Articles
-      </h2>
-      <p className="title-home-subtitle">
-        Mes réflexions sur le développement web
-      </p>
+      <TagTitle title="Articles" />
+      <TagSubtitle subtitle="Mes réflexions sur le développement web" />
 
       <div className="articles-wrapper">
         {articlesData.map(
@@ -31,6 +29,7 @@ const Articles: FC = () => {
           }) => (
             <Article
               key={id}
+              id={id}
               imgSrc={imgSrc}
               imgAlt={imgAlt}
               title={title}
@@ -43,9 +42,9 @@ const Articles: FC = () => {
         )}
       </div>
 
-      <button className="btn-primary-full articles-btn">
+      {/* <button className="btn-primary-full articles-btn">
         Chercher plus d&apos;articles
-      </button>
+      </button> */}
     </section>
   );
 };

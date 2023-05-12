@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import customersData from "@/utils/data/customers";
@@ -9,18 +11,16 @@ const Customers: FC = () => {
       id="clients-conquis"
       className="customers wrapper-padding-x"
     >
-      <h2 className="title-home-secondary title-secondary">
-        Clients conquis
-      </h2>
-      <p className="title-home-subtitle">
-        Clientèle satisfaite, résultats concrets
-      </p>
+      <TagTitle title="Clients conquis" />
+      <TagSubtitle subtitle="Clientèle satisfaite, résultats concrets" />
 
       <article className="customers-wrapper">
         {customersData.map(
-          ({ id, icon, name }) => (
-            <div
+          ({ id, icon, name, url }) => (
+            <a
               key={id}
+              href={url}
+              target="_blank"
               className="customers-item"
             >
               <span className="customers-item-icon">
@@ -29,7 +29,7 @@ const Customers: FC = () => {
               <p className="customers-item-name">
                 {name}
               </p>
-            </div>
+            </a>
           ),
         )}
       </article>

@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import servicesData from "@/utils/data/services";
@@ -9,12 +11,8 @@ const Services: FC = () => {
       id="services"
       className="services wrapper-padding-x"
     >
-      <h2 className="title-home-secondary title-secondary">
-        Services
-      </h2>
-      <p className="title-home-subtitle">
-        Solution web personnalisée sur mesure
-      </p>
+      <TagTitle title="Services" />
+      <TagSubtitle subtitle="Solution web personnalisée sur mesure" />
 
       <article className="services-wrapper">
         {servicesData.map(

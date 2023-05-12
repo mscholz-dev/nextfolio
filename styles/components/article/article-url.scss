@@ -15,16 +15,16 @@
   }
 
   &-title {
-    font-size: 26px;
+    font-size: 30px;
     margin: 32px 0;
     max-width: 750px;
 
     @include responsive(s-xl) {
-      font-size: 30px;
+      font-size: 34px;
     }
 
     @include responsive(t-xs) {
-      font-size: 34px;
+      font-size: 38px;
     }
   }
 

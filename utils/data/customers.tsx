@@ -5,6 +5,7 @@ const customers = [
     id: 0,
     icon: <IconPCGenius />,
     name: "PC Genius",
+    url: "https://pcgenius.fr",
   },
 ];
 

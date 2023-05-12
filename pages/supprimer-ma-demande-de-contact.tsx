@@ -10,6 +10,8 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import ContactValidatorClass from "@/utils/validators/ContactValidator";
 import { toast } from "react-toastify";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import metaData from "@/utils/data/meta";
@@ -105,15 +107,8 @@ const ContactDelete: FC<ContactDelete> = ({
       center
     >
       <section className="question wrapper-padding-x">
-        <h2 className="title-home-secondary">
-          Souhaitez-vous supprimer votre demande
-          de contact ?
-        </h2>
-
-        <p className="title-home-subtitle">
-          Prenez le contrôle : Effacez votre
-          demande de contact en un clic !
-        </p>
+        <TagTitle title="Souhaitez-vous supprimer votre demande de contact ?" />
+        <TagSubtitle subtitle="Prenez le contrôle : Effacez votre demande de contact en un clic !" />
 
         <div className="question-btn-container">
           <button

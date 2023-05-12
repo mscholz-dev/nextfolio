@@ -6,6 +6,8 @@ import React, {
 } from "react";
 import MerntItem from "./MerntItem";
 import IconStackGeometry from "@/public/icons/stack-geometry.svg";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import merntData from "@/utils/data/mernt";
@@ -150,13 +152,11 @@ const Mernt: FC = () => {
       id="competences-techniques"
       className="mernt wrapper-padding-x"
     >
-      <h2 className="title-home-secondary">
-        Ma MERN-T stack
-      </h2>
-      <p className="title-home-subtitle">
-        Réalisation de projets à la pointe de la
-        technologie
-      </p>
+      <TagTitle title="Ma MERN-T stack" />
+      <TagSubtitle
+        subtitle="Réalisation de projets à la pointe de la
+        technologie"
+      />
 
       <div className="mernt-main">
         <article className="mernt-wrapper">

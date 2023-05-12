@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import ProjectItem from "@/templates/components/Project/ProjectItem";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import projectsData from "@/utils/data/projects";
@@ -10,12 +12,8 @@ const Projects: FC = () => {
       id="projets"
       className="projects wrapper-padding-x"
     >
-      <h2 className="title-home-secondary">
-        Projets
-      </h2>
-      <p className="title-home-subtitle">
-        Projets web innovants
-      </p>
+      <TagTitle title="Projets" />
+      <TagSubtitle subtitle="Projets web innovants" />
 
       <article className="projects-wrapper">
         {projectsData.map(

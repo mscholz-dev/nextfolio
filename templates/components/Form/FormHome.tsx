@@ -16,6 +16,10 @@ import NetworkLoader from "@/templates/components/Loader/NetworkLoader";
 import ContactValidatorClass from "@/utils/validators/ContactValidator";
 import { toast } from "react-toastify";
 import axios from "axios";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
+import { motion } from "framer-motion";
+import FramerMotion from "@/utils/FramerMotion";
 
 // types
 import { TContactData } from "@/utils/types";
@@ -100,139 +104,260 @@ const FormHome: FC = () => {
       id="contact"
       className="form-home wrapper-padding-x"
     >
-      <h2 className="title-home-secondary">
-        Contactez-moi pour votre projet web
-      </h2>
-
-      <p className="title-home-subtitle">
-        Parlons de votre projet web sur mesure
-      </p>
+      <TagTitle title="Contactez-moi pour votre projet web" />
+      <TagSubtitle subtitle="Parlons de votre projet web sur mesure" />
 
       <div className="form-home-wrapper">
-        <p className="form-home-asterix">
+        <motion.p
+          className="form-home-asterix"
+          // motion
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Tous les champs avec un astérix (*) sont
           obligatoires
-        </p>
+        </motion.p>
 
         <form
           className="form-home-form"
           onSubmit={handleSubmit}
         >
-          <FormInput
-            icon={<IconUser />}
-            id="fullName"
-            handleChange={(e: ChangeEvent) =>
-              Form.handleChange(
-                e,
-                "fullName",
-                setForm,
-                form,
-              )
-            }
-            label="Nom et prénom"
-            type="text"
-            value={form.fullName}
-            min={0}
-            max={60}
-            asterix={true}
-          />
-
-          <FormInput
-            icon={<IconEnvelope />}
-            id="email"
-            handleChange={(e: ChangeEvent) =>
-              Form.handleChange(
-                e,
-                "email",
-                setForm,
-                form,
-              )
-            }
-            label="Email"
-            type="email"
-            value={form.email}
-            min={0}
-            max={255}
-            asterix={true}
-          />
-
-          <FormInput
-            icon={<IconPhone />}
-            id="phone"
-            handleChange={(e: ChangeEvent) =>
-              Form.handleChange(
-                e,
-                "phone",
-                setForm,
-                form,
-              )
-            }
-            label="Numéro de téléphone"
-            type="number"
-            value={form.phone}
-            min={0}
-            max={10}
-            asterix={false}
-          />
-
-          <FormInput
-            icon={<IconBellConcierge />}
-            id="subject"
-            handleChange={(e: ChangeEvent) =>
-              Form.handleChange(
-                e,
-                "subject",
-                setForm,
-                form,
-              )
-            }
-            label="Sujet"
-            type="text"
-            value={form.subject}
-            min={0}
-            max={255}
-            asterix={true}
-          />
-          <FormTextarea
-            id="message"
-            handleChange={(e: ChangeEvent) =>
-              Form.handleChange(
-                e,
-                "message",
-                setForm,
-                form,
-              )
-            }
-            label="Message"
-            value={form.message}
-            min={0}
-            max={5_000}
-            rows={4}
-            asterix={true}
-          />
-
-          <FormCheckbox
-            id="consent"
-            handleChange={(e: ChangeEvent) =>
-              Form.handleCheckboxChange(
-                e,
-                "consent",
-                setForm,
-                form,
-              )
-            }
-            label="J'accepte que mes données soient traitées dans le cadre de ma demande"
-            checked={form.consent}
-            asterix={true}
-          />
-
-          <button className="form-home-btn btn-moise">
-            {!loading ? (
-              "Envoyer ma demande"
-            ) : (
-              <NetworkLoader />
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+              x: -300,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
             )}
-          </button>
+          >
+            <FormInput
+              icon={<IconUser />}
+              id="fullName"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleChange(
+                  e,
+                  "fullName",
+                  setForm,
+                  form,
+                )
+              }
+              label="Nom et prénom"
+              type="text"
+              value={form.fullName}
+              min={0}
+              max={60}
+              asterix={true}
+            />
+          </motion.div>
+
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+              x: 300,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
+            <FormInput
+              icon={<IconEnvelope />}
+              id="email"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleChange(
+                  e,
+                  "email",
+                  setForm,
+                  form,
+                )
+              }
+              label="Email"
+              type="email"
+              value={form.email}
+              min={0}
+              max={255}
+              asterix={true}
+            />
+          </motion.div>
+
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+              x: -300,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
+            <FormInput
+              icon={<IconPhone />}
+              id="phone"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleChange(
+                  e,
+                  "phone",
+                  setForm,
+                  form,
+                )
+              }
+              label="Numéro de téléphone"
+              type="number"
+              value={form.phone}
+              min={0}
+              max={10}
+              asterix={false}
+            />
+          </motion.div>
+
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+              x: 300,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
+            <FormInput
+              icon={<IconBellConcierge />}
+              id="subject"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleChange(
+                  e,
+                  "subject",
+                  setForm,
+                  form,
+                )
+              }
+              label="Sujet"
+              type="text"
+              value={form.subject}
+              min={0}
+              max={255}
+              asterix={true}
+            />
+          </motion.div>
+
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+              x: -300,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
+            <FormTextarea
+              id="message"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleChange(
+                  e,
+                  "message",
+                  setForm,
+                  form,
+                )
+              }
+              label="Message"
+              value={form.message}
+              min={0}
+              max={5_000}
+              rows={4}
+              asterix={true}
+            />
+          </motion.div>
+
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+              x: 300,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
+            <FormCheckbox
+              id="consent"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleCheckboxChange(
+                  e,
+                  "consent",
+                  setForm,
+                  form,
+                )
+              }
+              label="J'accepte que mes données soient traitées dans le cadre de ma demande"
+              checked={form.consent}
+              asterix={true}
+            />
+          </motion.div>
+
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+              x: -300,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
+            <button className="form-home-btn btn-moise">
+              {!loading ? (
+                "Envoyer ma demande"
+              ) : (
+                <NetworkLoader />
+              )}
+            </button>
+          </motion.div>
         </form>
       </div>
     </section>

@@ -4,12 +4,17 @@ import React, {
   useRef,
 } from "react";
 import IconLogo from "@/public/icons/logo.svg";
-import Banner from "./Banner";
+import Banner from "@/templates/components/Banner";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+import FramerMotion from "@/utils/FramerMotion";
 
 // data
 import homeBanner from "@/utils/data/homeBanner";
 
 const Intro: FC = () => {
+  const router = useRouter();
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLImageElement>(null);
 
@@ -29,6 +34,10 @@ const Intro: FC = () => {
     sectionRef.current.style.paddingBottom = `${0}px`;
   };
 
+  const handleProjectClick = () => {
+    router.push(`/?section=contact`);
+  };
+
   useEffect(() => {
     handleSectionPadding();
 
@@ -39,9 +48,20 @@ const Intro: FC = () => {
   }, []);
 
   return (
-    <section
+    <motion.section
       ref={sectionRef}
       className="intro wrapper-padding-x"
+      // motion
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      viewport={FramerMotion.viewportOne}
+      transition={FramerMotion.transitionEaseInOut(
+        1,
+      )}
     >
       <div className="intro-main">
         <h2 className="intro-title">
@@ -75,7 +95,10 @@ const Intro: FC = () => {
           </h3>
         </div>
 
-        <button className="intro-btn">
+        <button
+          className="intro-btn"
+          onClick={handleProjectClick}
+        >
           <div className="intro-btn-container">
             <span className="intro-btn-text">
               Un projet ?
@@ -104,7 +127,7 @@ const Intro: FC = () => {
         className="intro-photo"
       />
       <Banner words={homeBanner} />
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import IconLogo from "@/public/icons/logo.svg";
+import IconFileDownload from "@/public/icons/file-download.svg";
 
 // data
 import informations from "@/utils/data/details/informations";
@@ -99,6 +100,18 @@ const Details: FC = () => {
           </div>
         ))}
       </article>
+
+      <a
+        href="/pdf/CV_Morgan_SCHOLZ.pdf"
+        target="_blank"
+        className="details-download"
+      >
+        <IconFileDownload className="details-download-icon" />
+
+        <p className="details-download-text">
+          Télécharger mon CV
+        </p>
+      </a>
     </section>
   );
 };

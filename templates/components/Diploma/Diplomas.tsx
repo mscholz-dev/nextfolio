@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import Diploma from "@/templates/components/Diploma/Diploma";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import diplomasData from "@/utils/data/diplomas";
@@ -10,12 +12,8 @@ const Diplomas: FC = () => {
       id="diplomes"
       className="diplomas wrapper-padding-x"
     >
-      <h2 className="title-home-secondary">
-        Diplômes
-      </h2>
-      <p className="title-home-subtitle">
-        Mon parcours en développement web
-      </p>
+      <TagTitle title="Diplômes" />
+      <TagSubtitle subtitle="Mon parcours en développement web" />
 
       <article className="diplomas-wrapper">
         {diplomasData.map(

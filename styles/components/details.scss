@@ -5,7 +5,7 @@
   @include responsive(t-xs) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
@@ -105,6 +105,7 @@
 
   &-article {
     border: 2px solid $black;
+    margin-bottom: 24px;
 
     @include responsive(s-xl) {
       display: grid;
@@ -181,6 +182,66 @@
           font-size: 18px;
         }
       }
+    }
+  }
+
+  &-download {
+    align-items: center;
+    background: $primary-color;
+    border: 2px solid $primary-color;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    text-decoration: none;
+    transition: 0.15s transform ease-in-out,
+      0.25s background ease-in-out;
+    width: 100%;
+
+    @include responsive(t-xs) {
+      grid-area: 3 / 1 / 4 / 3;
+    }
+
+    &-icon {
+      fill: $white;
+      height: 28px;
+      margin-right: 12px;
+      transition: 0.25s fill ease-in-out;
+      width: 28px;
+
+      @include responsive(s-xl) {
+        height: 32px;
+        width: 32px;
+      }
+    }
+
+    &-text {
+      color: $white;
+      font-size: 18px;
+      text-transform: uppercase;
+      transition: 0.25s color ease-in-out;
+
+      @include responsive(s-xl) {
+        font-size: 22px;
+      }
+    }
+
+    &:hover {
+      background: $white;
+
+      .details-download {
+        &-icon {
+          fill: $primary-color;
+        }
+
+        &-text {
+          color: $primary-color;
+        }
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 }

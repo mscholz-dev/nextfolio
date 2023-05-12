@@ -15,7 +15,7 @@
   "dependencies": {
     "@svgr/webpack": "^7.0.0",
     "axios": "^1.4.0",
-    "framer-motion": "^10.12.4",
+    "framer-motion": "^10.12.10",
     "html-react-parser": "^3.0.16",
     "mongodb": "^5.4.0",
     "next": "^13.3.1",

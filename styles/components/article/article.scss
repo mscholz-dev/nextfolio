@@ -3,7 +3,6 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
   text-decoration: none;
   transition: 0.25s background ease-in-out;
 
@@ -47,6 +46,14 @@
           order: -1;
         }
       }
+    }
+  }
+
+  &-motion {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 

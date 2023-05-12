@@ -10,6 +10,8 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import NewsletterValidatorClass from "@/utils/validators/NewsletterValidator";
 import { toast } from "react-toastify";
+import TagTitle from "@/templates/components/Tag/TagTitle";
+import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
 
 // data
 import metaData from "@/utils/data/meta";
@@ -107,15 +109,8 @@ const NewsletterUnsubscribe: FC<
       center
     >
       <section className="question wrapper-padding-x">
-        <h2 className="title-home-secondary">
-          Souhaitez-vous vous désabonner de la
-          newsletter ?
-        </h2>
-
-        <p className="title-home-subtitle">
-          Libérez-vous de la newsletter :
-          Désabonnez-vous en toute simplicité !
-        </p>
+        <TagTitle title="Souhaitez-vous vous désabonner de la newsletter ?" />
+        <TagSubtitle subtitle="Libérez-vous de la newsletter : Désabonnez-vous en toute simplicité !" />
 
         <div className="question-btn-container">
           <button

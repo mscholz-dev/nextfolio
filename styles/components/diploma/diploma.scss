@@ -2,14 +2,9 @@
   border: 2px solid $black;
   cursor: pointer;
   display: flex;
-  margin-bottom: 24px;
   padding: 12px;
   transition: 0.25s background ease-in-out,
     0.15s transform ease-in-out;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 
   &:hover {
     background: $black;
@@ -44,6 +39,14 @@
 
   @include responsive(s-xl) {
     padding: 24px;
+  }
+
+  &-motion {
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &-title,

@@ -1,12 +1,16 @@
 import React, { FC } from "react";
-import IconLogo from "@/public/icons/logo.svg";
 import { motion } from "framer-motion";
 import FramerMotion from "@/utils/FramerMotion";
 
-const Separator: FC = () => {
+// interfaces
+import { ITagSubtitle } from "@/utils/interfaces";
+
+const TagSubtitle: FC<ITagSubtitle> = ({
+  subtitle,
+}) => {
   return (
-    <motion.div
-      className="separator wrapper-padding-x"
+    <motion.p
+      className="title-home-subtitle"
       // motion
       initial={{
         opacity: 0,
@@ -19,11 +23,9 @@ const Separator: FC = () => {
         1,
       )}
     >
-      <span className="separator-line-one" />
-      <IconLogo className="separator-icon" />
-      <span className="separator-line-one" />
-    </motion.div>
+      {subtitle}
+    </motion.p>
   );
 };
 
-export default Separator;
+export default TagSubtitle;
