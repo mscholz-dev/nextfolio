@@ -17,6 +17,7 @@
   &-item {
     border: 2px solid $black;
     cursor: pointer;
+    height: calc(100% - 48px);
     padding: 24px 12px;
     transition: 0.25s background ease-in-out,
       0.15s transform ease-in-out;

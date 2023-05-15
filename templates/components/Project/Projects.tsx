@@ -26,6 +26,7 @@ const Projects: FC = () => {
           }) => (
             <ProjectItem
               key={id}
+              id={id}
               imgSrc={imgSrc}
               imgAlt={imgAlt}
               category={category}

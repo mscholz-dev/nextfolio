@@ -6,6 +6,8 @@ import React, {
 } from "react";
 import HTMLReactParser from "html-react-parser";
 import IconChevron from "@/public/icons/chevron.svg";
+import { motion } from "framer-motion";
+import FramerMotion from "@/utils/FramerMotion";
 
 // interfaces
 import { IMerntItem } from "@/utils/interfaces";
@@ -91,7 +93,7 @@ const MerntItem: FC<IMerntItem> = ({
   }, [winW]);
 
   return (
-    <button
+    <motion.button
       className={`mernt-item${
         open[id] ? " mernt-item-open" : ""
       }${hover[id] ? " mernt-item-hover" : ""}`}
@@ -102,6 +104,19 @@ const MerntItem: FC<IMerntItem> = ({
       // end transition event
       onMouseLeave={() => handleBlur(id)}
       onBlur={() => handleBlur(id)}
+      // motion
+      initial={{
+        opacity: 0,
+        x: -200,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={FramerMotion.viewportOne}
+      transition={FramerMotion.transitionEaseInOut(
+        1,
+      )}
     >
       <span
         className="mernt-item-line"
@@ -138,7 +153,7 @@ const MerntItem: FC<IMerntItem> = ({
           </div>
         </div>
       </div>
-    </button>
+    </motion.button>
   );
 };
 

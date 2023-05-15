@@ -17,37 +17,50 @@ const Article: FC<IArticle> = ({
   date,
 }) => {
   return (
-    <motion.div
-      className="article-motion"
-      // motion
-      initial={{
-        opacity: 0,
-        x: id % 2 === 0 ? -300 : 300,
-      }}
-      whileInView={{
-        opacity: 1,
-        x: 0,
-      }}
-      viewport={FramerMotion.viewportOne}
-      transition={FramerMotion.transitionEaseInOut(
-        1,
-      )}
-    >
+    <div className="article-motion">
       <Link
         href={`/articles/${url}`}
         className="article"
       >
         <span className="article-img-container">
           {/* eslint-disable-next-line */}
-          <img
+          <motion.img
             src={`/img/articles/${imgSrc}.webp`}
             alt={imgAlt}
             className="article-img"
+            // motion
+            initial={{
+              clipPath:
+                FramerMotion.clipPathPolygonLeftClose,
+            }}
+            whileInView={{
+              clipPath:
+                FramerMotion.clipPathPolygonOpen,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
           />
         </span>
 
         <div className="article-wrapper">
-          <p className="article-details">
+          <motion.p
+            className="article-details"
+            // motion
+            initial={{
+              opacity: 0,
+              x: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             <span className="article-details-item">
               {category}
             </span>{" "}
@@ -55,18 +68,56 @@ const Article: FC<IArticle> = ({
             <span className="article-details-item">
               {date}
             </span>
-          </p>
+          </motion.p>
 
-          <h3 className="article-title">
+          <motion.h3
+            className="article-title"
+            // motion
+            // motion
+            initial={{
+              opacity: 0,
+              x: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={{
+              ...FramerMotion.transitionEaseInOut(
+                1,
+              ),
+              delay: 0.25,
+            }}
+          >
             {title}
-          </h3>
+          </motion.h3>
 
-          <p className="article-description">
+          <motion.p
+            className="article-description"
+            // motion
+            // motion
+            initial={{
+              opacity: 0,
+              x: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={{
+              ...FramerMotion.transitionEaseInOut(
+                1,
+              ),
+              delay: 0.5,
+            }}
+          >
             {description}
-          </p>
+          </motion.p>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 };
 

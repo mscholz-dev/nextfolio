@@ -11,6 +11,8 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import NetworkLoader from "@/templates/components/Loader/NetworkLoader";
 import NewsletterValidatorClass from "@/utils/validators/NewsletterValidator";
+import { motion } from "framer-motion";
+import FramerMotion from "@/utils/FramerMotion";
 
 // classes
 const Form = new FormClass();
@@ -85,9 +87,22 @@ const Newsletter: FC = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="newsletter"
       className="newsletter wrapper-padding-y wrapper-padding-x"
+      // motion
+      initial={{
+        clipPath:
+          FramerMotion.clipPathPolygonLeftClose,
+      }}
+      whileInView={{
+        clipPath:
+          FramerMotion.clipPathPolygonOpen,
+      }}
+      viewport={FramerMotion.viewportOne}
+      transition={FramerMotion.transitionEaseInOut(
+        1,
+      )}
     >
       <div className="newsletter-wrapper">
         <h2 className="newsletter-title">
@@ -126,7 +141,7 @@ const Newsletter: FC = () => {
           </button>
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

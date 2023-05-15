@@ -2,7 +2,7 @@
 
 - contenu projets
 - page projets
-- framer motion
+- framer motion (do article page)
 
 # SECONDAIRE
 

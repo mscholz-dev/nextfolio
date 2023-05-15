@@ -15,6 +15,7 @@ export interface IPage {
 export interface IFormInput extends TFormInput {}
 
 export interface IProjectItem {
+  id: number;
   imgSrc: string;
   imgAlt: string;
   category: string;

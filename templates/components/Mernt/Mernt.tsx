@@ -8,6 +8,8 @@ import MerntItem from "./MerntItem";
 import IconStackGeometry from "@/public/icons/stack-geometry.svg";
 import TagTitle from "@/templates/components/Tag/TagTitle";
 import TagSubtitle from "@/templates/components/Tag/TagSubtitle";
+import { motion } from "framer-motion";
+import FramerMotion from "@/utils/FramerMotion";
 
 // data
 import merntData from "@/utils/data/mernt";
@@ -197,41 +199,58 @@ const Mernt: FC = () => {
         >
           {merntData.map(
             ({ id, iconLarge, color }) => (
-              <button
+              <motion.div
                 key={id}
-                className={`mernt-stack-item${
-                  open[id]
-                    ? " mernt-stack-item-open"
-                    : ""
-                }${
-                  hover[id]
-                    ? " mernt-stack-item-hover"
-                    : ""
-                }`}
-                // click event
-                onClick={() =>
-                  handleStackClick(id)
+                className="mernt-stack-item-motion"
+                // motion
+                initial={{
+                  opacity: 0,
+                }}
+                whileInView={{
+                  opacity: 1,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
                 }
-                // start transition event
-                onMouseEnter={() =>
-                  handleFocus(id)
-                }
-                onFocus={() => handleFocus(id)}
-                // end transition event
-                onMouseLeave={() =>
-                  handleBlur(id)
-                }
-                onBlur={() => handleBlur(id)}
+                transition={FramerMotion.transitionEaseInOut(
+                  1,
+                )}
               >
-                <IconStackGeometry
-                  className="mernt-stack-item-background"
-                  style={{ fill: color }}
-                />
+                <button
+                  className={`mernt-stack-item${
+                    open[id]
+                      ? " mernt-stack-item-open"
+                      : ""
+                  }${
+                    hover[id]
+                      ? " mernt-stack-item-hover"
+                      : ""
+                  }`}
+                  // click event
+                  onClick={() =>
+                    handleStackClick(id)
+                  }
+                  // start transition event
+                  onMouseEnter={() =>
+                    handleFocus(id)
+                  }
+                  onFocus={() => handleFocus(id)}
+                  // end transition event
+                  onMouseLeave={() =>
+                    handleBlur(id)
+                  }
+                  onBlur={() => handleBlur(id)}
+                >
+                  <IconStackGeometry
+                    className="mernt-stack-item-background"
+                    style={{ fill: color }}
+                  />
 
-                <span className="mernt-stack-item-icon">
-                  {iconLarge}
-                </span>
-              </button>
+                  <span className="mernt-stack-item-icon">
+                    {iconLarge}
+                  </span>
+                </button>
+              </motion.div>
             ),
           )}
         </div>

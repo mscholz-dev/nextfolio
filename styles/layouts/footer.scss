@@ -18,12 +18,17 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    margin-bottom: 24px;
     text-decoration: none;
 
-    @include responsive(t-xs) {
-      grid-area: 1 / 1 / 2 / 2;
-      margin-bottom: 0;
+    &-motion {
+      align-items: center;
+      display: flex;
+      margin-bottom: 24px;
+
+      @include responsive(t-xs) {
+        grid-area: 1 / 1 / 2 / 2;
+        margin-bottom: 0;
+      }
     }
 
     &-logo {

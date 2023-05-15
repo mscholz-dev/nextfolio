@@ -18,7 +18,7 @@ const Diploma: FC<IDiploma> = ({
       // motion
       initial={{
         opacity: 0,
-        x: id % 2 === 0 ? -300 : 300,
+        x: id % 2 === 0 ? -200 : 200,
       }}
       whileInView={{
         opacity: 1,

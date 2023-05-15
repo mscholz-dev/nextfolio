@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import IconLogo from "@/public/icons/logo.svg";
 import IconFileDownload from "@/public/icons/file-download.svg";
+import { motion } from "framer-motion";
+import FramerMotion from "@/utils/FramerMotion";
 
 // data
 import informations from "@/utils/data/details/informations";
@@ -13,26 +15,87 @@ const Details: FC = () => {
       className="details wrapper-padding-x"
     >
       <div className="details-titles">
-        <p className="details-info-title">
+        <motion.p
+          className="details-info-title"
+          // motion
+          initial={{
+            opacity: 0,
+            x: -100,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Solutions de développement web uniques
           et évolutives, conçues pour répondre à
           vos besoins spécifiques et améliorer
           votre efficacité et votre rentabilité.
-        </p>
+        </motion.p>
 
-        <h2 className="details-title">
+        <motion.h2
+          className="details-title"
+          // motion
+          initial={{
+            opacity: 0,
+            x: -100,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Solutions de développement web sur
           mesure
-        </h2>
-        <h3 className="details-name">
+        </motion.h2>
+
+        <motion.h3
+          className="details-name"
+          // motion
+          initial={{
+            opacity: 0,
+            x: -100,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Morgan{" "}
           <IconLogo className="details-name-logo" />{" "}
           Scholz
-        </h3>
+        </motion.h3>
       </div>
 
       <div className="details-info">
-        <p className="details-info-text">
+        <motion.p
+          className="details-info-text"
+          // motion
+          initial={{
+            opacity: 0,
+            x: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Je suis un développeur web expérimenté,
           passionné par la création de solutions
           web personnalisées pour les entreprises
@@ -42,9 +105,24 @@ const Details: FC = () => {
           objectifs uniques, afin de concevoir des
           solutions web uniques et évolutives qui
           répondent à leurs besoins spécifiques.
-        </p>
+        </motion.p>
 
-        <p className="details-info-text">
+        <motion.p
+          className="details-info-text"
+          // motion
+          initial={{
+            opacity: 0,
+            x: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Mes solutions de développement web sur
           mesure sont conçues pour améliorer
           l&apos;efficacité et la rentabilité de
@@ -55,23 +133,54 @@ const Details: FC = () => {
           mes solutions web offrent une expérience
           utilisateur exceptionnelle, tout en
           répondant à vos objectifs commerciaux.
-        </p>
+        </motion.p>
 
-        <p className="details-info-text">
+        <motion.p
+          className="details-info-text"
+          // motion
+          initial={{
+            opacity: 0,
+            x: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Si vous cherchez un partenaire en
           développement web pour des solutions sur
           mesure, n&apos;hésitez pas à explorer
           mon portfolio pour découvrir mes
           réalisations et à me contacter pour
           discuter de votre projet.
-        </p>
+        </motion.p>
 
         <div className="details-info-wrapper">
           {informations.map(
             ({ id, title, text }) => (
-              <div
+              <motion.div
                 key={id}
                 className="details-info-item"
+                // motion
+                initial={{
+                  opacity: 0,
+                }}
+                whileInView={{
+                  opacity: 1,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={{
+                  ...FramerMotion.transitionEaseInOut(
+                    1,
+                  ),
+                  delay: (id - 1) * 0.25,
+                }}
               >
                 <p className="details-info-item-title">
                   {title}
@@ -79,7 +188,7 @@ const Details: FC = () => {
                 <p className="details-info-item-text">
                   {text}
                 </p>
-              </div>
+              </motion.div>
             ),
           )}
         </div>
@@ -87,9 +196,20 @@ const Details: FC = () => {
 
       <article className="details-article">
         {statistics.map(({ id, title, stat }) => (
-          <div
+          <motion.div
             key={id}
             className="details-article-item"
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
           >
             <p className="details-article-item-stat">
               {stat}
@@ -97,21 +217,36 @@ const Details: FC = () => {
             <p className="details-article-item-title">
               {title}
             </p>
-          </div>
+          </motion.div>
         ))}
       </article>
 
-      <a
-        href="/pdf/CV_Morgan_SCHOLZ.pdf"
-        target="_blank"
-        className="details-download"
+      <motion.div
+        className="details-download-motion"
+        // motion
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{
+          opacity: 1,
+        }}
+        viewport={FramerMotion.viewportOne}
+        transition={FramerMotion.transitionEaseInOut(
+          1,
+        )}
       >
-        <IconFileDownload className="details-download-icon" />
+        <a
+          href="/pdf/CV_Morgan_SCHOLZ.pdf"
+          target="_blank"
+          className="details-download"
+        >
+          <IconFileDownload className="details-download-icon" />
 
-        <p className="details-download-text">
-          Télécharger mon CV
-        </p>
-      </a>
+          <p className="details-download-text">
+            Télécharger mon CV
+          </p>
+        </a>
+      </motion.div>
     </section>
   );
 };

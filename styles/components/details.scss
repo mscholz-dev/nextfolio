@@ -198,8 +198,12 @@
       0.25s background ease-in-out;
     width: 100%;
 
-    @include responsive(t-xs) {
-      grid-area: 3 / 1 / 4 / 3;
+    &-motion {
+      width: 100%;
+
+      @include responsive(t-xs) {
+        grid-area: 3 / 1 / 4 / 3;
+      }
     }
 
     &-icon {

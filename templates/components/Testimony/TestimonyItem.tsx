@@ -8,6 +8,8 @@ import Image from "next/image";
 import IconPause from "@/public/icons/pause.svg";
 import IconPlay from "@/public/icons/play.svg";
 import IconBackward from "@/public/icons/backward.svg";
+import { motion } from "framer-motion";
+import FramerMotion from "@/utils/FramerMotion";
 
 // interfaces
 import { ITestimonyItem } from "@/utils/interfaces";
@@ -79,59 +81,76 @@ const TestimonyItem: FC<ITestimonyItem> = ({
   }, [audioFile]);
 
   return (
-    <button
-      className={`testimony-item${
-        listening
-          ? " testimony-item-listening"
-          : ""
-      }`}
-      onClick={handleClick}
+    <motion.div
+      className="testimony-item-motion"
+      // motion
+      initial={{
+        opacity: 0,
+        y: 50,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={FramerMotion.viewportOne}
+      transition={FramerMotion.transitionEaseInOut(
+        1,
+      )}
     >
-      <Image
-        src={`/img/testimonies/${img}.webp`}
-        alt={`${firstName} ${lastName}`}
-        className="testimony-item-img"
-        height={500}
-        width={500}
-      />
+      <button
+        className={`testimony-item${
+          listening
+            ? " testimony-item-listening"
+            : ""
+        }`}
+        onClick={handleClick}
+      >
+        <Image
+          src={`/img/testimonies/${img}.webp`}
+          alt={`${firstName} ${lastName}`}
+          className="testimony-item-img"
+          height={500}
+          width={500}
+        />
 
-      <span className="testimony-item-filter" />
+        <span className="testimony-item-filter" />
 
-      <div className="testimony-item-content">
-        <h3 className="testimony-item-title">
-          <span className="testimony-item-title-item">
-            {firstName}
-          </span>{" "}
-          <span className="testimony-item-title-item">
-            {lastName}
-          </span>
-        </h3>
+        <div className="testimony-item-content">
+          <h3 className="testimony-item-title">
+            <span className="testimony-item-title-item">
+              {firstName}
+            </span>{" "}
+            <span className="testimony-item-title-item">
+              {lastName}
+            </span>
+          </h3>
 
-        <p className="testimony-item-job">
-          {job}
-        </p>
+          <p className="testimony-item-job">
+            {job}
+          </p>
 
-        <p className="testimony-item-company">
-          {company}
-        </p>
-      </div>
+          <p className="testimony-item-company">
+            {company}
+          </p>
+        </div>
 
-      <span className="testimony-item-btn">
-        {audioFile !== null &&
-        audioFile.currentTime !== 0 ? (
-          <IconBackward className="testimony-item-btn-icon" />
-        ) : listening ? (
-          <IconPause className="testimony-item-btn-icon" />
-        ) : (
-          <IconPlay className="testimony-item-btn-icon play" />
-        )}
-      </span>
+        <span className="testimony-item-btn">
+          {audioFile !== null &&
+          audioFile.currentTime !== 0 ? (
+            <IconBackward className="testimony-item-btn-icon" />
+          ) : listening ? (
+            <IconPause className="testimony-item-btn-icon" />
+          ) : (
+            <IconPlay className="testimony-item-btn-icon play" />
+          )}
+        </span>
 
-      <span
-        ref={indicatorRef}
-        className="testimony-item-indicator"
-      />
-    </button>
+        <span
+          ref={indicatorRef}
+          className="testimony-item-indicator"
+        />
+      </button>
+    </motion.div>
   );
 };
 

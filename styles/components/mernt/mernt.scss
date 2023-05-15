@@ -39,59 +39,62 @@
       height: auto;
       justify-content: center;
       opacity: 0.5;
-      position: relative;
       transition: 0.25s opacity ease-in-out,
         0.15s transform ease-in-out;
       width: 100%;
 
-      @for $i from 1 through 5 {
-        &:nth-child(#{$i}) {
-          top: calc(86px + $i * 86px * -1);
-          z-index: 5 - $i;
-        }
-      }
+      &-motion {
+        position: relative;
 
-      @include responsive(s-xs) {
         @for $i from 1 through 5 {
           &:nth-child(#{$i}) {
-            top: calc(96px + $i * 96px * -1);
+            top: calc(86px + $i * 86px * -1);
             z-index: 5 - $i;
           }
         }
-      }
 
-      @include responsive(s) {
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            top: calc(124px + $i * 124px * -1);
-            z-index: 5 - $i;
+        @include responsive(s-xs) {
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              top: calc(96px + $i * 96px * -1);
+              z-index: 5 - $i;
+            }
           }
         }
-      }
 
-      @include responsive(s-xl) {
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            top: calc(156px + $i * 156px * -1);
-            z-index: 5 - $i;
+        @include responsive(s) {
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              top: calc(124px + $i * 124px * -1);
+              z-index: 5 - $i;
+            }
           }
         }
-      }
 
-      @include responsive(t-xs) {
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            top: calc(56px + $i * 96px * -1);
-            z-index: 5 - $i;
+        @include responsive(s-xl) {
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              top: calc(156px + $i * 156px * -1);
+              z-index: 5 - $i;
+            }
           }
         }
-      }
 
-      @include responsive(t) {
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            top: calc(86px + $i * 124px * -1);
-            z-index: 5 - $i;
+        @include responsive(t-xs) {
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              top: calc(56px + $i * 96px * -1);
+              z-index: 5 - $i;
+            }
+          }
+        }
+
+        @include responsive(t) {
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              top: calc(86px + $i * 124px * -1);
+              z-index: 5 - $i;
+            }
           }
         }
       }
