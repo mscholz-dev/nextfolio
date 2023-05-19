@@ -39,6 +39,22 @@ const homeBanner = [
     id: 9,
     word: "Design responsive",
   },
+  {
+    id: 10,
+    word: "Tests et débogage",
+  },
+  {
+    id: 11,
+    word: "Optimisation des performances",
+  },
+  {
+    id: 12,
+    word: "Base de données (SQL, NoSQL)",
+  },
+  {
+    id: 13,
+    word: "Portefeuille de projets réalisés",
+  },
 ];
 
 export default homeBanner;

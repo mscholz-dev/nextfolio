@@ -1,0 +1,30 @@
+.project-url {
+  &-img {
+    height: 256px;
+    object-fit: cover;
+    width: 100%;
+
+    @include responsive(t-xs) {
+      height: 356px;
+    }
+  }
+
+  &-main {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  &-title {
+    font-size: 30px;
+    margin: 32px 0;
+    max-width: 750px;
+
+    @include responsive(s-xl) {
+      font-size: 34px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 38px;
+    }
+  }
+}

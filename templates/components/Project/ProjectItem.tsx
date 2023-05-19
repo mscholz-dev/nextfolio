@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import IconChevron from "@/public/icons/chevron.svg";
 import { motion } from "framer-motion";
 import FramerMotion from "@/utils/FramerMotion";
+import Link from "next/link";
 
 // interfaces
 import { IProjectItem } from "@/utils/interfaces";
@@ -10,15 +11,19 @@ const ProjectItem: FC<IProjectItem> = ({
   id,
   imgSrc,
   imgAlt,
-  category,
   title,
+  url,
+  category,
 }) => {
   return (
-    <div className="project-item">
+    <Link
+      href={`/projets/${url}`}
+      className="project-item"
+    >
       <span className="project-item-cover">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <motion.img
-          src={`/img/cover/${imgSrc}.webp`}
+          src={`/img/projects/${imgSrc}.webp`}
           alt={imgAlt}
           className="project-item-img"
           // motion
@@ -112,7 +117,7 @@ const ProjectItem: FC<IProjectItem> = ({
           <IconChevron className="project-item-cta-arrow" />
         </motion.p>
       </div>
-    </div>
+    </Link>
   );
 };
 

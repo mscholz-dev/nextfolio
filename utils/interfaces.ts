@@ -18,8 +18,9 @@ export interface IProjectItem {
   id: number;
   imgSrc: string;
   imgAlt: string;
-  category: string;
   title: string;
+  url: string;
+  category: string;
 }
 
 export interface IDiploma {
@@ -124,4 +125,30 @@ export interface ITagTitle {
 
 export interface ITagSubtitle {
   subtitle: string;
+}
+
+export interface IProjectUrl {
+  id: number;
+  imgSrc: string;
+  imgAlt: string;
+  title: string;
+  url: string;
+  description: string;
+  category: string;
+  dates: {
+    id: number;
+    title: string;
+    value: string;
+  }[];
+  responsability: string;
+  problemToSolve: string;
+  goals: {
+    id: number;
+    value: string;
+  }[];
+  strenghts: {
+    id: number;
+    value: string;
+  }[];
+  content: string;
 }

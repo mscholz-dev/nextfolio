@@ -1,5 +1,6 @@
 .project-item {
   cursor: pointer;
+  text-decoration: none;
 
   @include responsive(s-xl) {
     display: flex;

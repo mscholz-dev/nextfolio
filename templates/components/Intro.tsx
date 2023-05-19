@@ -126,6 +126,7 @@ const Intro: FC = () => {
         alt="Photo de Morgan Scholz"
         className="intro-photo"
       />
+
       <Banner words={homeBanner} />
     </motion.section>
   );

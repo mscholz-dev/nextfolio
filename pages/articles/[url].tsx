@@ -1,11 +1,13 @@
-import Page from "@/templates/layouts/Page";
 import React, { FC } from "react";
+import Page from "@/templates/layouts/Page";
 import {
   GetStaticPaths,
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
 import HTMLReactParser from "html-react-parser";
+import { motion } from "framer-motion";
+import FramerMotion from "@/utils/FramerMotion";
 
 // data
 import articlesData from "@/utils/data/articles";
@@ -28,40 +30,158 @@ const ArticleUrl: FC<IArticleUrl> = ({
     <Page title={title} description={description}>
       <section className="article-url">
         {/* eslint-disable-next-line */}
-        <img
+        <motion.img
           src={`/img/articles/${imgSrc}.webp`}
           alt={imgAlt}
           className="article-url-img"
+          // motion
+          initial={{
+            clipPath:
+              FramerMotion.clipPathPolygonLeftClose,
+          }}
+          whileInView={{
+            clipPath:
+              FramerMotion.clipPathPolygonOpen,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
         />
 
         <div className="article-url-main wrapper-padding-x">
-          <h2 className="article-url-title">
+          <motion.h2
+            className="article-url-title"
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             {title}
-          </h2>
+          </motion.h2>
 
           <div className="article-url-details">
             <p className="article-url-details-item">
-              <span className="article-url-details-item-title">
+              <motion.span
+                className="article-url-details-item-title"
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: -100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={FramerMotion.transitionEaseInOut(
+                  1,
+                )}
+              >
                 Catégorie :
-              </span>
-              <span className="article-url-details-item-value">
+              </motion.span>
+
+              <motion.span
+                className="article-url-details-item-value"
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: -100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={{
+                  ...FramerMotion.transitionEaseInOut(
+                    1,
+                  ),
+                  delay: 0.25,
+                }}
+              >
                 {category}
-              </span>
+              </motion.span>
             </p>
 
             <p className="article-url-details-item">
-              <span className="article-url-details-item-title">
+              <motion.span
+                className="article-url-details-item-title"
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: -100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={{
+                  ...FramerMotion.transitionEaseInOut(
+                    1,
+                  ),
+                  delay: 0.5,
+                }}
+              >
                 Date :
-              </span>
-              <span className="article-url-details-item-value">
+              </motion.span>
+
+              <motion.span
+                className="article-url-details-item-value"
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: -100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={{
+                  ...FramerMotion.transitionEaseInOut(
+                    1,
+                  ),
+                  delay: 0.75,
+                }}
+              >
                 {date}
-              </span>
+              </motion.span>
             </p>
           </div>
 
-          <article className="article-url-content">
+          <motion.article
+            className="article-url-content"
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             {HTMLReactParser(content)}
-          </article>
+          </motion.article>
         </div>
       </section>
     </Page>
