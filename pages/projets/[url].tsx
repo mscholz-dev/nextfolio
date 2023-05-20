@@ -45,16 +45,7 @@ const ProjectUrl: FC<IProjectUrl> = ({
             {title}
           </h2>
 
-          <h3>
-            Quels sont les objectifs du projet ?
-          </h3>
-          <ul>
-            {goals.map(({ id, value }) => (
-              <li key={id}>{value}</li>
-            ))}
-          </ul>
-
-          <article>
+          <article className="project-url-content">
             {HTMLReactParser(content)}
           </article>
         </div>
