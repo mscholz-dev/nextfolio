@@ -193,6 +193,9 @@ const projects = [
     <h3>Conclusion</h3>
     <p>La réalisation de ce projet m'aura énormement appris que ça soit pour me sentir plus à l'aise avec TypeScript ou avec la mise en place de tests End-to-End et d'intégration côté front et API. De plus étant un projet que j'ai réalisé seul, je suis heureux de tout ce qui a été produit pour la réalisation de ce projet.</p>
     <p>Ce projet m'a permis d'obtenir mon Bac+3 en validant mon diplôme de concepteur développeur web devant un jury de deux développeurs séniors lors d'une présentation de deux heures.</p>
+
+    <h3>Le site est-il en ligne ?</h3>
+    <p>Non, puisque l'hébergement me coûterait 14€ par mois ce qui est actuellement au-dessus de mes moyens.</p>
     `,
   },
   {
@@ -203,9 +206,7 @@ const projects = [
       "Ikomobi : intégration captivante de sa page d'accueil",
     url: "ikomobi-integration-captivante-de-sa-page-d-accueil",
     category: "Agence web",
-    content: `
-    <h3></h3>
-    `,
+    content: ``,
   },
   {
     id: 2,
@@ -230,7 +231,7 @@ const projects = [
       <li>Monter en compétence, encore et toujours !</li>
     </ul>
 
-    <h3>>Combien de temps le projet a-t-il durée ?</h3>
+    <h3>Combien de temps le projet a-t-il durée ?</h3>
     <p>J'ai pris pratiquement 1 mois que ça soit pour l'idée, le design, la conception ainsi que le développement de la solution et la mise en production du site.</p>
     <p>J'ai notamment testé l'API de Notion pour avoir un backend déjà près à l'emploi mais l'API de Notion étant extrèmement lente (parfois plus de 8 secondes pour ajouter une petite donnée dans une base de données Notion), j'ai dû opter pour les webhooks de Discord ainsi que MongoDB pour stocker les données clientes.</p>
 
@@ -238,8 +239,8 @@ const projects = [
     <p>Le benchmark est une des étapes les plus importantes et qui permet de gagner beaucoup de temps dans le lancement d'un projet en s'inspirant de ce qui a déjà été fait pour faire MIEUX ! J'ai principalement benchmarké 3 sites d'entreprises se trouvant sur Lille :</p>
     <ul>
       <li><a href="https://www.supergeek.fr/depannage-informatique/hauts-de-france/lille/" target="_blank">supergeek.fr</a> ;</li>
-      <li><a href="https://www.ldlc.com/magasins-ldlc/magasin-470059/59-ldlc-villeneuve-d-ascq/" target="_blank">ldlc.com</a></li>
-      <li><a href="https://easytechlille.fr/" target="_blank">easytechlille.fr</a></li>
+      <li><a href="https://www.ldlc.com/magasins-ldlc/magasin-470059/59-ldlc-villeneuve-d-ascq/" target="_blank">ldlc.com</a> ;</li>
+      <li><a href="https://easytechlille.fr/" target="_blank">easytechlille.fr</a> ;</li>
     </ul>
 
     <h3>La phase design</h3>
@@ -250,30 +251,55 @@ const projects = [
       <figcaption>Charte graphique de Pixel Renovate</figcaption>
     </figure>
 
+    <p>Le choix des polices a été fait avec <a href="https://fonts.google.com/" target="_blank">fonts.google.com</a>. La police pour les titres se nomme "Cantarell" et celle pour les textes "Fira Code".</p>
+    <figure style="max-width: 400px">
+      <img src="/img/projects/pixel-renovate/pixel-renovate-font-cantarell.webp" alt="Police des titres"/>
+      <figcaption>Police des titres</figcaption>
+    </figure>
 
-    <p></p> TODO: ajouter les polices à chaque projet ainsi que les logos
+    <figure style="max-width: 400px">
+      <img src="/img/projects/pixel-renovate/pixel-renovate-font-fira-code.webp" alt="Police des textes"/>
+      <figcaption>Police des textes</figcaption>
+    </figure>
+
+    <p>Pour les pictogrammes, mon choix s'est tourné sur <a href="https://fontawesome.com/" target="_blank">fontawesome.com</a> pour sa grande variétée ainsi que la gratuitée de ses différents pictogrammes.</p>
+
+    <p>J'ai conçu un logo moderne en m'inspirant de logos déjà existant.</p>
+    <figure style="max-width: 200px">
+      <img src="/img/projects/pixel-renovate/logo-pixel-renovate.svg" alt="Logo de Pixel Renovate"/>
+      <figcaption>Logo de Pixel Renovate</figcaption>
+    </figure>
+
+    <p>J'ai ensuite trouvé une maquette pour le composant des retours utilisateurs. Je l'ai choisi car il permet de casser cet effet de block avec des éléments n'ayant pas la même orientation et se superposant.</p>
     <figure style="max-width: 500px">
       <img src="/img/projects/pixel-renovate/reviews-model.webp" alt="Maquette dribbble pour le design du block des avis des clients du site"/>
       <figcaption><a href="https://dribbble.com/shots/19247588-No-Code-Automation-SaaS-Website" target="_blank">Maquette dribbble pour le design du block des avis des clients du site</a></figcaption>
     </figure>
 
+    <p>Pour les cartes représentant chaque service, j'ai choisi cette maquette car les 2 CTA (call to action) collés bien avec l'idée que je me faisait du parcours utilisateurs en le laissant choisir entre la vue avec plus de détails du service ou la demande de prise en charge prérempli directement.</p>
     <figure style="max-width: 500px">
       <img src="/img/projects/pixel-renovate/service-card-model.webp" alt="Maquette dribble pour le design des différents services du site"/>
       <figcaption><a href="https://dribbble.com/shots/17440301-Card-Components" target="_blank">Maquette dribble pour le design des différents services du site</a></figcaption>
     </figure>
 
+    <p>Cette illustration est une des illustrations que j'ai trouvé sur dribbble permettant la promotion du serveur discord du projet. À savoir que toutes les autres images sont issues de <a href="https://unsplash.com/" target="_blank">unsplash.com</a> donc aussi gratuite, open source.</p>
     <figure  style="max-width: 500px">
       <img src="/img/projects/pixel-renovate/discord-illustration.webp" alt="Illustration trouvée sur dribbble de Discord"/>
       <figcaption><a href="https://dribbble.com/shots/20961326-Discord-Logo" target="_blank">Illustration trouvée sur dribbble de Discord</a></figcaption>
     </figure>
 
+    <h3>Qu'en est-il de la conception ?</h3>
+    <p>La phase de conception de ce projet a été très courte puisque ayant que un formulaire type, la base de données ne contien donc qu'une unique table que l'on peut voir ci-dessous dans le modèle physique de données.</p>
     <figure style="max-width: 300px">
       <img src="/img/projects/pixel-renovate/pixel-renovate-data-physic-model.webp" alt="Modèle physique de données"/>
       <figcaption>Modèle physique de données</figcaption>
     </figure>
 
     <h3>Comment le contenu du site a été créer ?</h3>
-    <p></p>
+    <p>J'ai été épauler par Chat GPT pour trouver des services cohérents et du contenu viable pour chaque service afin de rendre le site plus vrai que nature. J'ai aussi benchmarké quelques sites "concurrents" afin de me situer dans des tranches de prix résonnables.</p>
+
+    <h3>Le site est-il en ligne ?</h3>
+    <p>Bien sûr ! Vous pouvez le trouver à l'URL suivante : <a href="https://pixel-renovate.com/" target="_blank">pixel-renovate.com</a></p>
     `,
   },
   {
@@ -287,15 +313,32 @@ const projects = [
     content: `
     <h3></h3>
 
-    <figure>
+    <figure style="max-width: 400px">
       <img src="/img/projects/pc-genius/pc-genius-colors.webp" alt="Charte graphique de PC Genius"/>
       <figcaption>Charte graphique de PC Genius</figcaption>
     </figure>
 
-    <figure>
-      <img src="" alt="Maquette dribbble pour le design des différents services du site"/>
-      <figcaption><a href="" target="_blank">Maquette dribbble pour le design des différents services du site</a></figcaption>
+    <p>Le choix des polices a été fait avec <a href="https://fonts.google.com/" target="_blank">fonts.google.com</a>. La police pour les titres se nomme "Zen dots" et celle pour les textes "Rubik".</p>
+    <figure style="max-width: 400px">
+      <img src="/img/projects/pc-genius/pc-genius-font-zen-dots.webp" alt="Police des titres"/>
+      <figcaption>Police des titres</figcaption>
     </figure>
+
+    <figure style="max-width: 400px">
+      <img src="/img/projects/pc-genius/pc-genius-font-rubik.webp" alt="Police des textes"/>
+      <figcaption>Police des textes</figcaption>
+    </figure>
+
+    <p>Pour les pictogrammes, mon choix s'est tourné sur <a href="https://fontawesome.com/" target="_blank">fontawesome.com</a> pour sa grande variétée ainsi que la gratuitée de ses différents pictogrammes.</p>
+
+    <p>Nous avons conçu un logo représentant le plus possible l'univers informatique de manière minimaliste avec une hélice de ventilateur.</p>
+    <figure style="max-width: 150px">
+      <img src="/img/projects/pc-genius/pc-genius-logo.svg" alt="Logo de PC Genius"/>
+      <figcaption>Logo de PC Genius</figcaption>
+    </figure>
+
+    <h3>Le site est-il en ligne ?</h3>
+    <p>Non... Actuellement le site n'est plus en ligne puisque l'entreprise a fermé.</p>
     `,
   },
   {
@@ -341,20 +384,42 @@ const projects = [
     <h3>La phase design de Workunion</h3>
     <p>La réalisation de la charte graphique du projet a commencé par le choix des couleurs que portera le site. Avec <a href="https://colorhunt.co/" target="_blank">colorhunt.co</a> nous avons pu facilement trouvé des couleurs qui mettant en valeur la future intégration du site web.</p>
 
-    <figure>
+    <figure style="max-width: 300px">
       <img src="/img/projects/workunion/workunion-colors.webp" alt="Charte graphique de Workunion"/>
       <figcaption>Charte graphique de Workunion</figcaption>
     </figure>
 
-    <figure>
+    <p>Le choix des polices a été fait avec <a href="https://fonts.google.com/" target="_blank">fonts.google.com</a>. La police du site se nommme "Libre Baskerville".</p>
+    <figure style="max-width: 400px">
+      <img src="/img/projects/workunion/workunion-font-libre-baskerville.webp" alt="Police du site"/>
+      <figcaption>Police du site</figcaption>
+    </figure>
+
+    <p>Pour les pictogrammes, mon choix s'est tourné sur <a href="https://fontawesome.com/" target="_blank">fontawesome.com</a> pour sa grande variétée ainsi que la gratuitée de ses différents pictogrammes.</p>
+
+    <p>Nous avons conçu un logo ayant du caractère pour coller le plus possible au caractère e-commerce du site.</p>
+    <figure style="max-width: 200px">
+      <img src="/img/projects/workunion/workunion.webp" alt="Logo de Workunion"/>
+      <figcaption>Logo de Workunion</figcaption>
+    </figure>
+
+    <p>Je me suis aidé comme toujours de Dribbble pour trouver des composants / maquettes modernes et innovantes comme c'est le cas pour le composant ci-dessous.</p>
+    <figure style="max-width: 350px">
       <img src="/img/projects/workunion/select-model.webp" alt="Maquette dribbble du componsant des tarifs de domiciliations"/>
       <figcaption><a href="https://dribbble.com/shots/20081653-Gonline-Sales-Management-Landing-Page" target="_blank">Maquette dribbble du componsant des tarifs de domiciliations</a></figcaption>
     </figure>
 
-    <figure>
+    <h3>La phase de conception</h3>
+    <p>Ce projet a eu une petite phase de conception afin de savoir comment aller se dérouler la réservation en ligne pour en imaginer le parcours utilisateur final. On a déjà réfléchi aux données que l'on stockerai de l'utilisatur afin de l'identifier, puis nous avons défini les données que l'utilisateur verra sur chaque bureau pour ensuite relier les deux avec la possibilité de réserver des bureaux pour une période prédéfinie.</p>
+    <p>Niveau diagramme, un modèle physique de données a été conçu pour visualiser au mieux la base de données juste avant de pouvoir la construire dans le cloud. J'ai fait le choix d'afficher les relations même si ce diagramme ne doit normalement pas en contenir afin de ne pas avoir à faire un diagramme de classe.</p>
+
+    <figure style="max-width: 700px">
       <img src="/img/projects/workunion/workunion-data-physic-model.webp" alt="Modèle physique de données"/>
       <figcaption>Modèle physique de données</figcaption>
     </figure>
+
+    <h3>Le site est-il en ligne ?</h3>
+    <p>Bien sûr ! Vous pouvez le trouver à l'URL suivante : <a href="https://www.workunion.fr/" target="_blank">workunion.fr</a></p>
     `,
   },
   {
@@ -380,6 +445,25 @@ const projects = [
     <figure style="max-width:350px">
       <img src="/img/projects/portfolio/portfolio-colors.webp" alt="Charte graphique de mon portfolio"/>
       <figcaption>Charte graphique de mon portfolio</figcaption>
+    </figure>
+
+    <p>Le choix des polices a été fait avec <a href="https://fonts.google.com/" target="_blank">fonts.google.com</a>. La police pour les titres se nomme "Cantarell" et celle pour les textes "Fira Code".</p>
+    <figure style="max-width: 400px">
+      <img src="/img/projects/portfolio/portfolio-font-cantarell.webp" alt="Police des titres"/>
+      <figcaption>Police des titres</figcaption>
+    </figure>
+
+    <figure style="max-width: 400px">
+      <img src="/img/projects/portfolio/portfolio-font-fira-code.webp" alt="Police des textes"/>
+      <figcaption>Police des textes</figcaption>
+    </figure>
+
+    <p>Pour les pictogrammes, mon choix s'est tourné sur <a href="https://fontawesome.com/" target="_blank">fontawesome.com</a> pour sa grande variétée ainsi que la gratuitée de ses différents pictogrammes.</p>
+
+    <p>J'ai ensuite conçu un logo représentant ma passion pour le codage avec des caractères omniprésent dans le développement informatique.</p>
+    <figure style="max-width: 200px">
+      <img src="/img/projects/portfolio/logo.svg" alt="Logo de mon portfolio"/>
+      <figcaption>Logo de mon portfolio</figcaption>
     </figure>
 
     <p>Après de longues recherches, j'ai trouvé un componsant innovant et très technique à réaliser qui était parfait pour représenter mes compétences techniques étant donné qu'il serait le componsant le plus technique du portfolio !</p>
@@ -411,6 +495,9 @@ const projects = [
     <h3>Est-ce que ce portfolio respecte la RGPD (réglementation générale de la protection des données) ?</h3>
     <p>Oui ! Dès la conception, ces lois ont été prise en compte dès la conception. Une page mentions légales bien fournis est présente avec toutes les informations nécessaires sur les données que le site collecte.</p>
     <p>De plus, chaque soumission de formulaire, donc stockage de données utilisateurs qu'elles soient personnelles ou non, envoie un email à l'utilisateur concerné avec un lien permettant en 1 clic de <b>supprimer</b> les données de sa demande. Cela permet à chacun de changer à tout moment son avis et de supprimer tout passage sur le site !</p>
+
+    <h3>Le site est-il en ligne ?</h3>
+    <p>Dois-je vraiment répondre à cette question...</p>
     `,
   },
 ];
