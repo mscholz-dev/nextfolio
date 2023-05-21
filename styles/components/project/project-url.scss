@@ -55,25 +55,7 @@
 
     a {
       color: $primary-color;
-      position: relative;
-      text-decoration: none;
-
-      &:after {
-        background: $primary-color;
-        bottom: 0;
-        content: "";
-        height: 2px;
-        left: 0;
-        position: absolute;
-        transition: 0.25s width ease-in-out;
-        width: 100%;
-      }
-
-      &:hover {
-        &:after {
-          width: 0;
-        }
-      }
+      text-decoration: underline $primary-color;
     }
 
     figure {

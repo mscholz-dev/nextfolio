@@ -18,7 +18,3 @@ accessibilité
 performances
 SEO
 RGPD
-
-///
-
-mettre en 16/9 les preview

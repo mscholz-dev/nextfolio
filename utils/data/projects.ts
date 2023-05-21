@@ -171,7 +171,7 @@ const projects = [
     <h3>Les tests côté API</h3>
     <p>L'objectif principal des tests côté API est de s'assurer que toutes les parties d'une application fonctionnent correctement ensemble, en simulant des interactions réelles entre les différentes API. Ces tests peuvent être effectués à différents niveaux, tels que le niveau d'unité, le niveau de composant ou le niveau de système, en fonction de la complexité et des exigences du projet.</p>
     <p>Ici, j'ai choisi de faire des tests d'intégration en testant chaque route avec chaque cas d'erreur et de réussite possible afin d'avoir la couverture de test la plus grande possible.</p>
-    <figure>
+    <figure style="max-width: 600px">
       <img src="/img/projects/exact-form/api-test.webp" alt="Résultats des tests côté API"/>
       <figcaption>Résultats des tests côté API</figcaption>
     </figure>
@@ -216,24 +216,64 @@ const projects = [
     url: "pixel-renovate-explorez-notre-service-de-reparation-professionnel",
     category: "E-commerce",
     content: `
-    <h3></h3>
+    <h3>Qu'est ce que Pixel Renovate ?</h3>
+    <p>Pixel Renovate est un site web proposant des services de réparation informatique. Ce projet a pour but de ressembler le plus possible à un site d'entreprise actif.</p>
 
-    TODO: benchmark
+    <h3>Quel est mon rôle dans ce projet ?</h3>
+    <p>Je suis responsable du projet web puisque je suis le seul intervenant.</p>
 
-    <figure>
+    <h3>Quels ont été les objectifs de ce projet ?</h3>
+    <ul>
+      <li>Tester des intégrations tel que Notion ou les webhooks de Discord ;</li>
+      <li>Utiliser une librairie pour rendre le site très dynamique (framer-motion);</li>
+      <li>Utiliser l'API serverless de NextJS ;</li>
+      <li>Monter en compétence, encore et toujours !</li>
+    </ul>
+
+    <h3>>Combien de temps le projet a-t-il durée ?</h3>
+    <p>J'ai pris pratiquement 1 mois que ça soit pour l'idée, le design, la conception ainsi que le développement de la solution et la mise en production du site.</p>
+    <p>J'ai notamment testé l'API de Notion pour avoir un backend déjà près à l'emploi mais l'API de Notion étant extrèmement lente (parfois plus de 8 secondes pour ajouter une petite donnée dans une base de données Notion), j'ai dû opter pour les webhooks de Discord ainsi que MongoDB pour stocker les données clientes.</p>
+
+    <h3>Quels sites ont servis pour le benchmark ?</h3>
+    <p>Le benchmark est une des étapes les plus importantes et qui permet de gagner beaucoup de temps dans le lancement d'un projet en s'inspirant de ce qui a déjà été fait pour faire MIEUX ! J'ai principalement benchmarké 3 sites d'entreprises se trouvant sur Lille :</p>
+    <ul>
+      <li><a href="https://www.supergeek.fr/depannage-informatique/hauts-de-france/lille/" target="_blank">supergeek.fr</a> ;</li>
+      <li><a href="https://www.ldlc.com/magasins-ldlc/magasin-470059/59-ldlc-villeneuve-d-ascq/" target="_blank">ldlc.com</a></li>
+      <li><a href="https://easytechlille.fr/" target="_blank">easytechlille.fr</a></li>
+    </ul>
+
+    <h3>La phase design</h3>
+    <p>La réalisation de la charte graphique du projet a commencé par le choix des couleurs que portera le site. Avec <a href="https://colorhunt.co/" target="_blank">colorhunt.co</a> j'ai pu facilement trouvé des couleurs qui mettant en valeur la future intégration du site web.</p>
+
+    <figure style="max-width: 350px">
+      <img src="/img/projects/pixel-renovate/pixel-renovate-colors.webp" alt="Charte graphique de Pixel Renovate"/>
+      <figcaption>Charte graphique de Pixel Renovate</figcaption>
+    </figure>
+
+
+    <p></p> TODO: ajouter les polices à chaque projet ainsi que les logos
+    <figure style="max-width: 500px">
       <img src="/img/projects/pixel-renovate/reviews-model.webp" alt="Maquette dribbble pour le design du block des avis des clients du site"/>
       <figcaption><a href="https://dribbble.com/shots/19247588-No-Code-Automation-SaaS-Website" target="_blank">Maquette dribbble pour le design du block des avis des clients du site</a></figcaption>
     </figure>
 
-    <figure>
+    <figure style="max-width: 500px">
       <img src="/img/projects/pixel-renovate/service-card-model.webp" alt="Maquette dribble pour le design des différents services du site"/>
       <figcaption><a href="https://dribbble.com/shots/17440301-Card-Components" target="_blank">Maquette dribble pour le design des différents services du site</a></figcaption>
     </figure>
 
-    <figure>
+    <figure  style="max-width: 500px">
       <img src="/img/projects/pixel-renovate/discord-illustration.webp" alt="Illustration trouvée sur dribbble de Discord"/>
       <figcaption><a href="https://dribbble.com/shots/20961326-Discord-Logo" target="_blank">Illustration trouvée sur dribbble de Discord</a></figcaption>
     </figure>
+
+    <figure style="max-width: 300px">
+      <img src="/img/projects/pixel-renovate/pixel-renovate-data-physic-model.webp" alt="Modèle physique de données"/>
+      <figcaption>Modèle physique de données</figcaption>
+    </figure>
+
+    <h3>Comment le contenu du site a été créer ?</h3>
+    <p></p>
     `,
   },
   {
@@ -246,6 +286,11 @@ const projects = [
     category: "Premier client",
     content: `
     <h3></h3>
+
+    <figure>
+      <img src="/img/projects/pc-genius/pc-genius-colors.webp" alt="Charte graphique de PC Genius"/>
+      <figcaption>Charte graphique de PC Genius</figcaption>
+    </figure>
 
     <figure>
       <img src="" alt="Maquette dribbble pour le design des différents services du site"/>
@@ -262,11 +307,53 @@ const projects = [
     url: "workunion-explorez-notre-plateforme-de-reservation-d-espaces-de-coworking-et-de-domiciliation-en-ligne",
     category: "Réservation",
     content: `
-    <h3></h3>
+    <h3>Quel est mon rôle dans ce projet ?</h3>
+    <p>J'ai aidé à la conception du projet dans son intégralité en imaginant la base de données ainsi que le parcours utilisateur du début à la fin de la réservation d'un espace de coworking. Lors de ce projet, j'ai été épauler par un second concepteur développeur web où je me suis occupé de la partie back-end pendant que lui s'occupait de la partie front-end du site web.</p>
+
+    <h3>Quels sont les objectifs du site ?</h3>
+    <ul>
+      <li>Mettre le site de l'entreprise aux goûts du jour ;</li>
+      <li>Promouvoir la domiciliation ;</li>
+      <li>Permettre une réservation d'espace de coworking 100% automatisé ;</li>
+      <li>Monter en compétence en conception et en TypeScript ;</li>
+    </ul>
+
+    <h3>Combien de temps le projet a-t-il durée ?</h3>
+    <ul>
+      <li>La recherche de la charte graphique et de l'intégration de la page d'accueil a durée 1.5 semaines ;</li>
+      <li>La mise en place de la réservation des espaces de coworking 100% automatisé en ligne nous a pris 2 semaines en se répartissant les tâches intelligamment ;</li>
+    </ul>
+
+    <h3>Quelles ont été les choix technologiques pour ce site ?</h3>
+    <p>Pour commencer, le language pour créer les applications n'est pas le JavaScript mais le TypeScript. Ce choix a été fait pour plusieurs raisons :</p>
+    <ul>
+      <li>Le typage statique pour restreindre les données incorrectes et améliorer l'autocomplétion ;</li>
+      <li>Il est facultatif et réversible, le supprimer entièrement d'un projet n'est pas un problème ;</li>
+      <li>Sa transpilation ES6 permettant de coder en ES6+ et transformer le code en ES5 ou moins pour améliorer la compatibilité avec les serveurs / navigateurs web ;</li>
+      <li>Il est largement adopté par les développeurs JavaScript car il permet notamment de faciliter le travail en équipe pour les raisons ci-dessus ;</li>
+      <li>Surtout monter en compétence en tant que développeur JavaScript ;</li>
+    </ul>
+
+    <p>Pour le front, NextJS a été retenu étant donné que c'est un framework que je connais dans son intégralité. Pour l'API RESTful, j'ai choisi d'utiliser ExpressJS puisque c'est un framework permettant une grande liberté dans l'architecture du projet et pour sa rapidité (cela me permet de profiter de l'architecture de NestJS sans sa lenteur dans les requêtes HTTP).</p>
+    <p>Pour simplifier et uniformiser les requêtes d'une base de données à l'autre, j'ai utilisé Prisma comme ORM.</p>
+    <p>Pour la base de données, j'ai pris MongoDB pour son accès au cloud dès le développement afin de réduire un maximum les imprévus lors de mise en production. De plus, cela permet de n'avoir rien à installer en local facilitant ainsi la mise en place de l'environnement de développement.</p>
+
+    <h3>La phase design de Workunion</h3>
+    <p>La réalisation de la charte graphique du projet a commencé par le choix des couleurs que portera le site. Avec <a href="https://colorhunt.co/" target="_blank">colorhunt.co</a> nous avons pu facilement trouvé des couleurs qui mettant en valeur la future intégration du site web.</p>
+
+    <figure>
+      <img src="/img/projects/workunion/workunion-colors.webp" alt="Charte graphique de Workunion"/>
+      <figcaption>Charte graphique de Workunion</figcaption>
+    </figure>
 
     <figure>
       <img src="/img/projects/workunion/select-model.webp" alt="Maquette dribbble du componsant des tarifs de domiciliations"/>
       <figcaption><a href="https://dribbble.com/shots/20081653-Gonline-Sales-Management-Landing-Page" target="_blank">Maquette dribbble du componsant des tarifs de domiciliations</a></figcaption>
+    </figure>
+
+    <figure>
+      <img src="/img/projects/workunion/workunion-data-physic-model.webp" alt="Modèle physique de données"/>
+      <figcaption>Modèle physique de données</figcaption>
     </figure>
     `,
   },
@@ -284,24 +371,33 @@ const projects = [
 
     <h3>Combien de temps le projet a-t-il durée ?</h3>
     <p>J'ai pris un mois avec quelques pauses puisque cela est tombé en même temps que le passage de mon diplôme de concepteur développeur web.</p>
-
+    
     <h3>Quelles ont été mes inspirations pour la réalisation l'interface utilisateur ?</h3>
     <p>Lorsque je travaille sans design pour appuyer le développement d'un projet web, j'utilise sans modération <a href="https://dribbble.com/" target="_blank">dribbble.com</a> afin de trouver des design innovants et gratuitement. Une fois une maquette ou un composant me permettant de créer un block, je n'ai qu'à le reproduire en le mettant en adéquation avec ma charte graphique.</p>
     <p>Voici la maquette qui m'a permis de trouver les couleurs ainsi que la structure de la page d'accueil : <a href="https://cdn.dribbble.com/users/2328616/screenshots/18329565/downloads/Moxa%20%E2%9C%A6%20Homepage%20Full.png" target="_blank">lien dribbble</a></p>
-    <figure>
+
+    <p>Depuis cette maquette, j'ai obtenu les couleurs que le portfolio portera.</p>
+    <figure style="max-width:350px">
+      <img src="/img/projects/portfolio/portfolio-colors.webp" alt="Charte graphique de mon portfolio"/>
+      <figcaption>Charte graphique de mon portfolio</figcaption>
+    </figure>
+
+    <p>Après de longues recherches, j'ai trouvé un componsant innovant et très technique à réaliser qui était parfait pour représenter mes compétences techniques étant donné qu'il serait le componsant le plus technique du portfolio !</p>
+    <figure style="max-width:800px">
       <img src="/img/projects/portfolio/stack-model.webp" alt="Composant trouvé sur dribbble représentant mes compétences techniques sur l'accueil"/>
       <figcaption><a href="https://dribbble.com/shots/16137898-Introducing-Alloy-Ecommerce-Stack-2-0" target="_blank">Composant trouvé sur dribbble représentant mes compétences techniques sur l'accueil</a></figcaption>
     </figure>
 
-    <figure>
-      <img src="/img/projects/portfolio/testimony.webp" alt="Maquette dribble pour le design du block témoignage"/>
+    <p>Je voulais aussi que le portfolio est quelque chose de plus humain que les autres, j'ai donc décidé d'y intégrer des voix de mes anciens collègues qui se sont enregistré pour vous donner le ressentit qu'ils ont eu en travaillant avec moi !</p>
+    <figure style="max-width:800px">
+      <img src="/img/projects/portfolio/testimony-model.webp" alt="Maquette dribble pour le design du block témoignage"/>
       <figcaption><a href="https://dribbble.com/shots/20647721-Testimony-Alternative-Section" target="_blank">Maquette dribble pour le design du block témoignage</a></figcaption>
     </figure>
 
     <h3>Y-a-t'il eu une conception avec la mise en route du développement ?</h3>
     <p>Oui ! Un modèle physique de donnéees a été fait afin de savoir ce que chaque formulaire permettrait de stocker.</p>
-    <figure>
-      <img src="/img/projects/portfolio/data-physic-model.webp" alt="Modèle physique de données"/>
+    <figure style="max-width:500px">
+      <img src="/img/projects/portfolio/portfolio-data-physic-model.webp" alt="Modèle physique de données"/>
       <figcaption>Modèle physique de données</figcaption>
     </figure>
 
@@ -320,3 +416,10 @@ const projects = [
 ];
 
 export default projects;
+
+/*
+<figure>
+  <img src="" alt=""/>
+  <figcaption></figcaption>
+</figure>
+*/
