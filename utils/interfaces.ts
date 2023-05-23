@@ -56,6 +56,7 @@ export interface ITestimonyItem {
   company: string;
   audio: string;
   img: string;
+  transcription: string;
 }
 
 export interface IMerntItem {

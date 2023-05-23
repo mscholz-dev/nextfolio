@@ -25,6 +25,7 @@ const Testimony: FC = () => {
             company,
             audio,
             img,
+            transcription,
           }) => (
             <TestimonyItem
               key={id}
@@ -34,6 +35,7 @@ const Testimony: FC = () => {
               company={company}
               audio={audio}
               img={img}
+              transcription={transcription}
             />
           ),
         )}

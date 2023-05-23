@@ -21,6 +21,7 @@ const TestimonyItem: FC<ITestimonyItem> = ({
   job,
   company,
   audio,
+  transcription,
 }) => {
   const indicatorRef =
     useRef<HTMLSpanElement>(null);
@@ -114,6 +115,10 @@ const TestimonyItem: FC<ITestimonyItem> = ({
         />
 
         <span className="testimony-item-filter" />
+
+        <p className="testimony-item-transcription">
+          {transcription}
+        </p>
 
         <div className="testimony-item-content">
           <h3 className="testimony-item-title">

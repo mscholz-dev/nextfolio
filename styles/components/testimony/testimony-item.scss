@@ -112,6 +112,19 @@
     width: 0;
   }
 
+  &-transcription {
+    background: rgba($black, 0.75);
+    color: $white;
+    font-size: 16px;
+    left: 0;
+    opacity: 0;
+    padding: 12px 24px;
+    position: absolute;
+    top: 0;
+    transition: 0.25s opacity ease-in-out;
+    width: calc(100% - 48px);
+  }
+
   &-listening,
   &:hover {
     .testimony-item {
@@ -132,6 +145,10 @@
       &-btn {
         background: rgba($white, 0.25);
         border: 2px solid $primary-color;
+      }
+
+      &-transcription {
+        opacity: 1;
       }
     }
   }
