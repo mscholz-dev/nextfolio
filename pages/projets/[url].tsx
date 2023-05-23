@@ -23,31 +23,174 @@ const ProjectUrl: FC<IProjectUrl> = ({
   url,
   description,
   category,
-  dates,
-  responsability,
-  problemToSolve,
-  goals,
-  strenghts,
+  website,
   content,
 }) => {
   return (
     <Page title={title} description={description}>
       <section className="project-url">
         {/* eslint-disable-next-line */}
-        <img
+        <motion.img
           src={`/img/projects/${imgSrc}.webp`}
           alt={imgAlt}
           className="project-url-img"
+          // motion
+          initial={{
+            clipPath:
+              FramerMotion.clipPathPolygonLeftClose,
+          }}
+          whileInView={{
+            clipPath:
+              FramerMotion.clipPathPolygonOpen,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
         />
 
         <div className="project-url-main">
-          <h2 className="project-url-title">
+          <motion.h2
+            className="project-url-title"
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             {title}
-          </h2>
+          </motion.h2>
 
-          <article className="project-url-content">
+          <div className="project-url-details">
+            <p className="project-url-details-item">
+              <motion.span
+                className="project-url-details-item-title"
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: -100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={FramerMotion.transitionEaseInOut(
+                  1,
+                )}
+              >
+                Catégorie :
+              </motion.span>
+
+              <motion.span
+                className="project-url-details-item-value"
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: -100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={{
+                  ...FramerMotion.transitionEaseInOut(
+                    1,
+                  ),
+                  delay: 0.25,
+                }}
+              >
+                {category}
+              </motion.span>
+            </p>
+
+            <p className="project-url-details-item">
+              <motion.span
+                className="project-url-details-item-title"
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: -100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={{
+                  ...FramerMotion.transitionEaseInOut(
+                    1,
+                  ),
+                  delay: 0.5,
+                }}
+              >
+                Site web :
+              </motion.span>
+
+              <motion.span
+                className="project-url-details-item-value"
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: -100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={{
+                  ...FramerMotion.transitionEaseInOut(
+                    1,
+                  ),
+                  delay: 0.75,
+                }}
+              >
+                {website ? (
+                  <a
+                    href={`https://${website}`}
+                    target="_blank"
+                  >
+                    {website}
+                  </a>
+                ) : (
+                  "Hors ligne"
+                )}
+              </motion.span>
+            </p>
+          </div>
+
+          <motion.article
+            className="project-url-content"
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             {HTMLReactParser(content)}
-          </article>
+          </motion.article>
         </div>
       </section>
     </Page>

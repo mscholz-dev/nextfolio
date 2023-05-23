@@ -135,20 +135,6 @@ export interface IProjectUrl {
   url: string;
   description: string;
   category: string;
-  dates: {
-    id: number;
-    title: string;
-    value: string;
-  }[];
-  responsability: string;
-  problemToSolve: string;
-  goals: {
-    id: number;
-    value: string;
-  }[];
-  strenghts: {
-    id: number;
-    value: string;
-  }[];
+  website: string | null;
   content: string;
 }

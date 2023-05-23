@@ -28,6 +28,29 @@
     }
   }
 
+  &-details {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        color: $dark;
+        margin-bottom: 6px;
+      }
+
+      &-value {
+        color: $primary-color;
+
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
   &-content {
     margin-bottom: 32px;
 

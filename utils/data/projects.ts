@@ -6,8 +6,10 @@ const projects = [
     title:
       "Exact Form : simplifiez la collecte de données avec une solution intelligente",
     url: "exact-form-simplifiez-la-collecte-de-donnees-avec-une-solution-intelligente",
-    description: "",
+    description:
+      "Collectez facilement des données grâce à un lien unique. Simplifiez les soumissions de formulaires et optimisez la collecte de données. Une gestion fluide des données.",
     category: "E-commerce",
+    website: null,
     content: `
     <h3>Quel est mon rôle dans ce projet ?</h3>
     <p>Je suis responsable du projet web puisque je suis le seul intervenant.</p>
@@ -205,8 +207,20 @@ const projects = [
     title:
       "Ikomobi : intégration captivante de sa page d'accueil",
     url: "ikomobi-integration-captivante-de-sa-page-d-accueil",
+    description:
+      "Intégration personnalisée à 100% de la page d'accueil à partir de maquettes. Plongez les utilisateurs dans une expérience web personnalisée. Transformez les designs en interfaces web captivantes.",
     category: "Agence web",
-    content: ``,
+    website: "ikomobi.com",
+    content: `
+    <h3>Quel est mon rôle dans cette mission ?</h3>
+    <p>J'ai réalisé l'intégration complête de la page d'accueil d'Ikomobi, une agence web spécialisé dans le développement de site web 100% personnalisé. J'ai pu faire cette mission lors de mon alternance chez eux.</p>
+
+    <h3>Combien de temps la mission a-t-il durée ?</h3>
+    <p>Cette intégration m'a prise 2 semaines avec beaucoup de test car le but était d'avoir une intégration conforme aux maquettes ainsi que d'y ajouter du dynamisme avec des animations au scroll. Cette partie m'a demandé de nombreux jours de test afin de pouvoir comprendre et cerner les enjeux de la réalisation de composant intéractif et résponsive au scroll.</p>
+
+    <h3>Le site est-il en ligne ?</h3>
+    Bien sûr ! Vous pouvez le trouver à l'URL suivante : <a href="https://ikomobi.com/" target="_blank">ikomobi.com</a>
+    `,
   },
   {
     id: 2,
@@ -215,7 +229,10 @@ const projects = [
     title:
       "Pixel Renovate : explorez notre service de réparation professionnel",
     url: "pixel-renovate-explorez-notre-service-de-reparation-professionnel",
+    description:
+      "Site de réparation de matériel informatique. Redonnez vie à vos appareils grâce à des services de réparation fiables et efficaces. Des solutions pour tous vos problèmes techniques.",
     category: "E-commerce",
+    website: "pixel-renovate.com",
     content: `
     <h3>Qu'est ce que Pixel Renovate ?</h3>
     <p>Pixel Renovate est un site web proposant des services de réparation informatique. Ce projet a pour but de ressembler le plus possible à un site d'entreprise actif.</p>
@@ -309,9 +326,38 @@ const projects = [
     title:
       "PC Genius : découvrez l'univers en ligne de l'expertise informatique à travers le site web de notre client",
     url: "pc-genius-decouvrez-l-univers-en-ligne-de-l-expertise-informatique-a-travers-le-site-web-de-notre-client",
+    description:
+      "Site de réparation de matériel informatique basé à Lille. Faites confiance à des experts pour la réparation de vos équipements. Un service de qualité près de chez vous.",
     category: "Premier client",
+    website: "pcgenius.fr",
     content: `
-    <h3></h3>
+    <h3>Quel est mon rôle dans ce projet ?</h3>
+    <p>J'ai aidé à la conception du projet dans son intégralité en imaginant le parcours utilisateur du début à la fin. J'ai été épauler par un second concepteur dévéloppeur web où nous nous sommes occupés de l'intégration en équipe.</p>
+
+    <h3>Quels sont les objectifs du site ?</h3>
+    <ul>
+      <li>Créer une nouvelle filiale de réparation de matériel informatique ;</li>
+      <li>Promouvoir PC Genius en ligne ;</li>
+      <li>Monter en compétence en conception et en TypeScript ;</li>
+    </ul>
+
+    <h3>Combien de temps le projet a-t-il durée ?</h3>
+    <p>De la création du nom de l'entreprise à la mise en production de la solution final, il s'est écoulé 1 mois avec une phase de design importante étant donné que ce projet ne contient pas de base de données donc une conception minimaliste.</p>
+
+    <h3>Quelles ont été les choix technologiques pour ce site ?</h3>
+    <p>Pour commencer, le language pour créer les applications n'est pas le JavaScript mais le TypeScript. Ce choix a été fait pour plusieurs raisons :</p>
+    <ul>
+      <li>Le typage statique pour restreindre les données incorrectes et améliorer l'autocomplétion ;</li>
+      <li>Il est facultatif et réversible, le supprimer entièrement d'un projet n'est pas un problème ;</li>
+      <li>Sa transpilation ES6 permettant de coder en ES6+ et transformer le code en ES5 ou moins pour améliorer la compatibilité avec les serveurs / navigateurs web ;</li>
+      <li>Il est largement adopté par les développeurs JavaScript car il permet notamment de faciliter le travail en équipe pour les raisons ci-dessus ;</li>
+      <li>Surtout monter en compétence en tant que développeur JavaScript ;</li>
+    </ul>
+
+    <p>Pour le front, NextJS a été retenu étant donné que c'est le framework que je connais dans son intégralité.</p>
+
+    <h3>La phase design de Workunion</h3>
+    <p>La réalisation de la charte graphique du projet a commencé par le choix des couleurs que portera le site. Avec <a href="https://colorhunt.co/" target="_blank">colorhunt.co</a> nous avons pu facilement trouvé des couleurs qui mettant en valeur la future intégration du site web.</p>
 
     <figure style="max-width: 400px">
       <img src="/img/projects/pc-genius/pc-genius-colors.webp" alt="Charte graphique de PC Genius"/>
@@ -338,7 +384,7 @@ const projects = [
     </figure>
 
     <h3>Le site est-il en ligne ?</h3>
-    <p>Non... Actuellement le site n'est plus en ligne puisque l'entreprise a fermé.</p>
+    <p>Bien sûr ! Vous pouvez le consulter à l'URL suivante : <a href="https://pcgenius.fr/" target="_blank">pcgenius.fr</a></p>
     `,
   },
   {
@@ -348,7 +394,10 @@ const projects = [
     title:
       "Workunion : explorez notre plateforme de réservation d'espaces de coworking et de domiciliation en ligne",
     url: "workunion-explorez-notre-plateforme-de-reservation-d-espaces-de-coworking-et-de-domiciliation-en-ligne",
+    description:
+      "Réservation en ligne et domiciliation d'espaces de coworking. Profitez d'un service 100% en ligne pour réserver votre espace de travail et domicilier votre entreprise.",
     category: "Réservation",
+    website: "workunion.fr",
     content: `
     <h3>Quel est mon rôle dans ce projet ?</h3>
     <p>J'ai aidé à la conception du projet dans son intégralité en imaginant la base de données ainsi que le parcours utilisateur du début à la fin de la réservation d'un espace de coworking. Lors de ce projet, j'ai été épauler par un second concepteur développeur web où je me suis occupé de la partie back-end pendant que lui s'occupait de la partie front-end du site web.</p>
@@ -429,7 +478,10 @@ const projects = [
     title:
       "Mon Portfolio : de l'imagination à la réalisation d'un site web personnel",
     url: "mon-portfolio-de-l-imagination-a-la-realisation-d-un-site-web-personnel",
+    description:
+      "Découvrez mes projets et compétences techniques à travers mon portfolio. Explorez mes réalisations et mes expertises en développement web. Un aperçu de mon parcours professionnel.",
     category: "Promotionnel",
+    website: "mscholz.dev",
     content: `
     <h3>Pourquoi avoir créé un portfolio ?</h3>
     <p>À l'ère numérique, il est essentiel d'avoir une présence en ligne professionnelle. Mon portfolio me sert de vitrine en ligne où je présentes mon travail de manière professionnelle et accessible à tous. Cela facilite la recherche de mes réalisations par des clients potentiels, des recruteurs ou des collaborateurs, et cela me permet de contrôler l'image que vous souhaitez projeter.</p>
