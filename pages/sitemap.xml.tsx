@@ -1,5 +1,9 @@
 import { GetServerSidePropsContext } from "next";
 
+// data
+import projectsData from "@/utils/data/projects";
+import articlesData from "@/utils/data/articles";
+
 const Sitemap = () => {};
 
 export default Sitemap;
@@ -11,9 +15,20 @@ export const getServerSideProps = ({
 
   // basic urls
   urls.push("");
-  urls.push("/se-desabonner-de-la-newsletter");
+  urls.push("/me-desabonner-de-la-newsletter");
+  urls.push("/supprimer-ma-demande-de-contact");
   urls.push("/mentions-legales");
   urls.push("/404");
+
+  // projects url
+  for (const { url } of projectsData) {
+    urls.push(`/projets/${url}`);
+  }
+
+  // articles url
+  for (const { url } of articlesData) {
+    urls.push(`/articles/${url}`);
+  }
 
   // generate xml
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
