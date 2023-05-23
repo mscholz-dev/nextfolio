@@ -198,7 +198,7 @@ const Mernt: FC = () => {
           className="mernt-stack"
         >
           {merntData.map(
-            ({ id, iconLarge, color }) => (
+            ({ id, title, iconLarge, color }) => (
               <motion.div
                 key={id}
                 className="mernt-stack-item-motion"
@@ -217,6 +217,7 @@ const Mernt: FC = () => {
                 )}
               >
                 <button
+                  title={title}
                   className={`mernt-stack-item${
                     open[id]
                       ? " mernt-stack-item-open"
