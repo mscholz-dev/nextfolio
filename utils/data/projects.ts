@@ -215,7 +215,7 @@ const projects = [
     <h3>Quel est mon rôle dans cette mission ?</h3>
     <p>J'ai réalisé l'intégration complête de la page d'accueil d'Ikomobi, une agence web spécialisé dans le développement de site web 100% personnalisé. J'ai pu faire cette mission lors de mon alternance chez eux.</p>
 
-    <h3>Combien de temps la mission a-t-il durée ?</h3>
+    <h3>Combien de temps la mission a-t-elle durée ?</h3>
     <p>Cette intégration m'a prise 2 semaines avec beaucoup de test car le but était d'avoir une intégration conforme aux maquettes ainsi que d'y ajouter du dynamisme avec des animations au scroll. Cette partie m'a demandé de nombreux jours de test afin de pouvoir comprendre et cerner les enjeux de la réalisation de composant intéractif et résponsive au scroll.</p>
 
     <h3>Le site est-il en ligne ?</h3>
