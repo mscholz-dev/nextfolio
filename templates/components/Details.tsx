@@ -3,12 +3,17 @@ import IconLogo from "@/public/icons/logo.svg";
 import IconFileDownload from "@/public/icons/file-download.svg";
 import { motion } from "framer-motion";
 import FramerMotion from "@/utils/FramerMotion";
+import axios from "axios";
 
 // data
 import informations from "@/utils/data/details/informations";
 import statistics from "@/utils/data/details/statistics";
 
 const Details: FC = () => {
+  const handleDownloadResumeClick = async () => {
+    await axios.post("/api/download-resume");
+  };
+
   return (
     <section
       id="presentation"
@@ -239,6 +244,7 @@ const Details: FC = () => {
           href="/pdf/CV_Morgan_SCHOLZ.pdf"
           target="_blank"
           className="details-download"
+          onClick={handleDownloadResumeClick}
         >
           <IconFileDownload className="details-download-icon" />
 

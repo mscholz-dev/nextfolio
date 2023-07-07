@@ -39,6 +39,8 @@ module.exports = {
       process.env.WEBHOOK_CONTACT_LOG,
     WEBHOOK_NEWSLETTER_LOG:
       process.env.WEBHOOK_NEWSLETTER_LOG,
+    WEBHOOK_DOWNLOAD_RESUME_LOG:
+      process.env.WEBHOOK_DOWNLOAD_RESUME_LOG,
 
     // NODEMAILER
     MAILER_HOST: process.env.MAILER_HOST,
