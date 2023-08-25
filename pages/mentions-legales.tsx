@@ -36,8 +36,7 @@ const LegalNotice: FC = () => {
             <b>Nom et prénom : </b>Morgan Scholz
           </p>
           <p>
-            <b>Adresse : </b>1 rue du Maréchal de
-            Lattre de Tassigny, A106, Wasquehal,
+            <b>Adresse : </b>Wasquehal,
             France
           </p>
           <p>
