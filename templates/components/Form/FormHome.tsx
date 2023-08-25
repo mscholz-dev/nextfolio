@@ -66,9 +66,8 @@ const FormHome: FC = () => {
         );
 
       // existing ?
-      if (firstErrorElement) {
+      if (firstErrorElement)
         firstErrorElement.focus();
-      }
 
       // add error aspect to all inputs
       for (const { key, message } of errors) {
