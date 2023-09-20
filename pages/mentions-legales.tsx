@@ -36,8 +36,7 @@ const LegalNotice: FC = () => {
             <b>Nom et prénom : </b>Morgan Scholz
           </p>
           <p>
-            <b>Adresse : </b>Wasquehal,
-            France
+            <b>Adresse : </b>Lille, France
           </p>
           <p>
             <b>Email : </b>

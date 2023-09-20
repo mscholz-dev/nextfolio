@@ -112,7 +112,7 @@ const Footer: FC = () => {
         >
           <IconCopyright className="footer-copyright-icon" />
           <p className="footer-copyright-text">
-            Avril 2023 •{" "}
+            Septembre 2023 •{" "}
             <Link
               href="/mentions-legales"
               className="footer-legal-notice"
