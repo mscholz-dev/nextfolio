@@ -8,7 +8,7 @@ export default class Form {
   handleChange(
     e: ChangeEvent,
     id: string,
-    setter: Dispatch<SetStateAction<object>>,
+    setter: Dispatch<SetStateAction<any>>,
     state: object,
   ): void {
     setter({
@@ -20,7 +20,7 @@ export default class Form {
   handleCheckboxChange(
     e: ChangeEvent,
     id: string,
-    setter: Dispatch<SetStateAction<object>>,
+    setter: Dispatch<SetStateAction<any>>,
     state: object,
   ): void {
     setter({
