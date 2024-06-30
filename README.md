@@ -1,5 +1,7 @@
   <h1>🚀 Mon portfolio</h1>
 
+<p><a href="https://mscholz.dev/projet/07-nextfolio" target="_blank">mscholz.dev ▸ Nextfolio</a></p>
+
   <h2>💻 Technologies Utilisées</h2>
   <ul>
     <li>Next.js ⚛️</li>
